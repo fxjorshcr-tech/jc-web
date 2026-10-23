@@ -94,7 +94,7 @@ export default async function TourPage({ params }: { params: Promise<Params> }) 
             Tour {String(index + 1).padStart(2, "0")} · {tour.where}
           </p>
           <h1 className="mt-3 max-w-3xl text-4xl text-cream sm:text-5xl lg:text-6xl">{tour.name}</h1>
-          <p className="mt-3 max-w-2xl font-serif text-lg italic text-olive-100 sm:text-xl">{tour.tagline}</p>
+          <p className="mt-3 max-w-2xl font-serif text-lg text-gold-300 sm:text-xl">{tour.tagline}</p>
         </div>
       </section>
 

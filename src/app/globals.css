@@ -3,57 +3,74 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  /* Brand palette: olive from the current site, with natural supporting tones */
-  --color-olive-50: #f5f6ee;
-  --color-olive-100: #e9ecda;
-  --color-olive-200: #d5dbb8;
-  --color-olive-300: #bcc592;
-  --color-olive-400: #a4b075;
-  --color-olive-500: #909f5f;
-  --color-olive-600: #75834a;
-  --color-olive-700: #5c673b;
-  --color-olive-800: #4a5331;
-  --color-olive-900: #3d452a;
-  --color-olive-950: #202515;
+  /* Brand palette taken from the JC's Journeys logo: leaf greens, river teal, sun yellow and bark brown */
+  --color-olive-50: #eef6f0;
+  --color-olive-100: #d9ebde;
+  --color-olive-200: #b4d7c0;
+  --color-olive-300: #86bd9a;
+  --color-olive-400: #5aa176;
+  --color-olive-500: #3d8f5c;
+  --color-olive-600: #2f7a4c;
+  --color-olive-700: #27633f;
+  --color-olive-800: #215034;
+  --color-olive-900: #1b402b;
+  --color-olive-950: #10281b;
 
-  --color-cream: #f7f4ec;
-  --color-cream-deep: #efeadc;
-  --color-sand: #e6dfcc;
-  --color-earth: #8a6a4b;
-  --color-earth-deep: #5e4630;
-  --color-moss: #2f3a26;
-  --color-ink: #22281c;
-  --color-ink-soft: #4b5243;
+  --color-teal-50: #eaf5f8;
+  --color-teal-100: #d2eaf1;
+  --color-teal-200: #a9d5e2;
+  --color-teal-300: #74b9cd;
+  --color-teal-400: #3f9ab5;
+  --color-teal-500: #1f7f9c;
+  --color-teal-600: #176b86;
+  --color-teal-700: #15586f;
+  --color-teal-800: #164a5c;
+  --color-teal-900: #143d4c;
 
-  --font-serif: var(--font-fraunces), "Iowan Old Style", Georgia, serif;
-  --font-sans: var(--font-karla), ui-sans-serif, system-ui, sans-serif;
+  --color-gold-200: #f7e9a8;
+  --color-gold-300: #f2dc7a;
+  --color-gold-400: #e9c94f;
+  --color-gold-500: #d9b63f;
+  --color-gold-600: #b8962c;
+
+  --color-cream: #faf8f2;
+  --color-cream-deep: #f1ede2;
+  --color-sand: #e7e1d1;
+  --color-earth: #6b5435;
+  --color-earth-deep: #3a2e1c;
+  --color-moss: #163b33;
+  --color-ink: #1f2a24;
+  --color-ink-soft: #4d5a52;
+
+  --font-serif: var(--font-outfit), "Avenir Next", "Segoe UI", sans-serif;
+  --font-sans: var(--font-nunito-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, "SFMono-Regular", Menlo, monospace;
 
-  --radius-sm: 0.25rem;
-  --radius-md: 0.375rem;
-  --radius-lg: 0.5rem;
-  --radius-xl: 0.75rem;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
 
   /* shadcn/ui semantic tokens mapped to the brand palette */
   --color-background: var(--color-cream);
   --color-foreground: var(--color-ink);
-  --color-card: #fffdf8;
+  --color-card: #ffffff;
   --color-card-foreground: var(--color-ink);
-  --color-popover: #fffdf8;
+  --color-popover: #ffffff;
   --color-popover-foreground: var(--color-ink);
-  --color-primary: var(--color-olive-700);
-  --color-primary-foreground: var(--color-cream);
+  --color-primary: var(--color-teal-600);
+  --color-primary-foreground: #ffffff;
   --color-secondary: var(--color-sand);
   --color-secondary-foreground: var(--color-ink);
   --color-muted: var(--color-cream-deep);
   --color-muted-foreground: var(--color-ink-soft);
   --color-accent: var(--color-olive-100);
   --color-accent-foreground: var(--color-olive-900);
-  --color-destructive: #a23b2a;
+  --color-destructive: #b3412f;
   --color-destructive-foreground: #fff;
-  --color-border: #d9d3c2;
-  --color-input: #cfc8b4;
-  --color-ring: var(--color-olive-500);
+  --color-border: #ddd8ca;
+  --color-input: #cfc9b8;
+  --color-ring: var(--color-teal-500);
 
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
@@ -80,10 +97,14 @@
     font-feature-settings: "kern", "liga";
   }
   h1, h2, h3, h4 {
-    @apply font-serif tracking-tight text-balance;
+    @apply font-serif font-medium tracking-tight text-balance;
+  }
+  /* Accent word inside a heading: colour instead of italics (Outfit has no italic) */
+  h1 em, h2 em, h3 em {
+    @apply not-italic font-normal text-teal-600;
   }
   ::selection {
-    @apply bg-olive-200 text-ink;
+    @apply bg-gold-300 text-ink;
   }
 }
 
@@ -119,7 +140,7 @@
     @apply mt-8 mb-3 text-xl text-ink;
   }
   .prose-site blockquote {
-    @apply my-6 border-l-2 border-olive-400 pl-5 font-serif text-xl italic text-ink;
+    @apply my-6 border-l-2 border-teal-400 pl-5 font-sans text-xl italic text-ink;
   }
   .rule {
     @apply h-px w-full bg-border;

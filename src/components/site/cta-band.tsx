@@ -11,16 +11,16 @@ export function CtaBand({
 }) {
   return (
     <section className="container-site">
-      <div className="relative overflow-hidden rounded-2xl bg-olive-700 px-6 py-14 text-cream sm:px-12 sm:py-20">
+      <div className="relative overflow-hidden rounded-2xl bg-teal-700 px-6 py-14 text-cream sm:px-12 sm:py-20">
         <div
           aria-hidden
-          className="absolute -top-24 -right-24 size-72 rounded-full bg-olive-500/40 blur-3xl"
+          className="absolute -top-24 -right-24 size-72 rounded-full bg-gold-400/25 blur-3xl"
         />
         <div className="relative grid gap-8 lg:grid-cols-12 lg:items-center">
           <div className="lg:col-span-8">
-            <p className="eyebrow !text-olive-200">Book a tour</p>
+            <p className="eyebrow !text-gold-300">Book a tour</p>
             <h2 className="mt-3 text-3xl text-cream sm:text-4xl lg:text-5xl">{title}</h2>
-            <p className="mt-4 max-w-xl text-base leading-relaxed text-olive-100/90">{text}</p>
+            <p className="mt-4 max-w-xl text-base leading-relaxed text-teal-100/90">{text}</p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row lg:col-span-4 lg:justify-end">
             <Button asChild size="lg" variant="light">

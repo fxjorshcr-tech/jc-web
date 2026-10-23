@@ -43,7 +43,7 @@ export default function AboutPage() {
             </a>
             {about.meetTheGuide.text.split("ICT (Instituto Costarricense de Turismo)")[1]}
           </p>
-          <p className="mt-4 font-serif text-sm italic text-ink-soft">{about.meetTheGuide.licenseNote}</p>
+          <p className="mt-4 font-sans text-sm italic text-ink-soft">{about.meetTheGuide.licenseNote}</p>
           <dl className="mt-8 grid grid-cols-2 gap-6 border-t border-border/70 pt-6 text-sm sm:grid-cols-3">
             <div>
               <dt className="eyebrow">Languages</dt>

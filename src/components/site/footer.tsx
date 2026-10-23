@@ -17,8 +17,8 @@ export function Footer() {
     <footer className="mt-24 bg-moss text-cream">
       <div className="container-site grid gap-12 py-16 md:grid-cols-12">
         <div className="md:col-span-4">
-          <Logo light />
-          <p className="mt-5 max-w-xs text-sm leading-relaxed text-olive-100/80">{site.tagline}</p>
+          <Logo light full />
+          <p className="mt-6 max-w-xs text-sm leading-relaxed text-olive-100/80">{site.tagline}</p>
           <a
             href={`mailto:${site.email}`}
             className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-cream underline-offset-4 hover:underline"

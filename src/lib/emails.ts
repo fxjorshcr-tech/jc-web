@@ -10,20 +10,20 @@ function layout(title: string, body: string) {
   return `<!doctype html>
 <html lang="en">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>${escapeHtml(title)}</title></head>
-<body style="margin:0;padding:0;background:#f7f4ec;font-family:Georgia,'Times New Roman',serif;color:#22281c;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f7f4ec;padding:32px 16px;">
+<body style="margin:0;padding:0;background:#faf8f2;font-family:Helvetica,Arial,sans-serif;color:#1f2a24;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#faf8f2;padding:32px 16px;">
     <tr><td align="center">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;background:#fffdf8;border:1px solid #d9d3c2;border-radius:8px;">
-        <tr><td style="padding:28px 32px 8px;border-bottom:1px solid #e6dfcc;">
-          <div style="font-size:22px;letter-spacing:-0.01em;">JC&rsquo;s <em style="font-weight:300;">Journeys</em></div>
-          <div style="font-family:Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#5c673b;margin-top:4px;">Montezuma &middot; Costa Rica</div>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;background:#ffffff;border:1px solid #ddd8ca;border-radius:8px;">
+        <tr><td style="padding:28px 32px 8px;border-bottom:1px solid #e7e1d1;">
+          <div style="font-size:22px;font-weight:600;letter-spacing:-0.01em;">JC&rsquo;s Journeys</div>
+          <div style="font-family:Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#176b86;margin-top:4px;">Montezuma &middot; Costa Rica</div>
         </td></tr>
         <tr><td style="padding:28px 32px;font-family:Helvetica,Arial,sans-serif;font-size:15px;line-height:1.6;">
           ${body}
         </td></tr>
-        <tr><td style="padding:20px 32px 28px;border-top:1px solid #e6dfcc;font-family:Helvetica,Arial,sans-serif;font-size:12px;line-height:1.6;color:#4b5243;">
+        <tr><td style="padding:20px 32px 28px;border-top:1px solid #e7e1d1;font-family:Helvetica,Arial,sans-serif;font-size:12px;line-height:1.6;color:#4d5a52;">
           ${site.name} &middot; ${site.tagline}<br>
-          <a href="mailto:${site.email}" style="color:#5c673b;">${site.email}</a> &middot; <a href="${site.url}" style="color:#5c673b;">${site.url.replace(/^https?:\/\//, "")}</a>
+          <a href="mailto:${site.email}" style="color:#176b86;">${site.email}</a> &middot; <a href="${site.url}" style="color:#176b86;">${site.url.replace(/^https?:\/\//, "")}</a>
         </td></tr>
       </table>
     </td></tr>
@@ -37,7 +37,7 @@ function rows(pairs: [string, string | number | null | undefined][]) {
 ${pairs
   .map(
     ([k, v]) =>
-      `<tr><td style="padding:8px 0;border-bottom:1px solid #efeadc;color:#4b5243;width:38%;vertical-align:top;">${escapeHtml(k)}</td><td style="padding:8px 0;border-bottom:1px solid #efeadc;vertical-align:top;white-space:pre-line;">${escapeHtml(String(v ?? "") || "—")}</td></tr>`,
+      `<tr><td style="padding:8px 0;border-bottom:1px solid #f1ede2;color:#4d5a52;width:38%;vertical-align:top;">${escapeHtml(k)}</td><td style="padding:8px 0;border-bottom:1px solid #f1ede2;vertical-align:top;white-space:pre-line;">${escapeHtml(String(v ?? "") || "—")}</td></tr>`,
   )
   .join("\n")}
 </table>`;

@@ -56,10 +56,10 @@ export default function HomePage() {
         <Photo src="home/hero.jpg" alt="Sunrise over the Nicoya Gulf seen from the coast near Montezuma" priority sizes="100vw" align="top" />
         <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/35 to-ink/10" />
         <div className="container-site relative pb-16 pt-40 sm:pb-24">
-          <p className="eyebrow !text-olive-200">Southern Nicoya Peninsula · Est. 2013</p>
-          <h1 className="mt-4 max-w-3xl text-5xl font-light leading-[1.02] text-cream sm:text-6xl lg:text-7xl">
+          <p className="eyebrow !text-gold-300">Southern Nicoya Peninsula · Est. 2013</p>
+          <h1 className="mt-4 max-w-3xl text-5xl font-medium leading-[1.02] text-cream sm:text-6xl lg:text-7xl">
             {home.heroTagline.split(" – ")[0]}
-            <span className="block font-serif italic text-olive-200">Montezuma, Costa Rica</span>
+            <span className="block font-normal text-gold-300">Montezuma, Costa Rica</span>
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-cream/85 sm:text-lg">{home.heroIntro}</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
