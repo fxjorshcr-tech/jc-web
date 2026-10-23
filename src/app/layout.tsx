@@ -1,22 +1,27 @@
 import type { Metadata } from "next";
-import { Fraunces, Karla } from "next/font/google";
+import localFont from "next/font/local";
 import { Header } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
 import { site } from "@/data/site";
 import "./globals.css";
 
-const fraunces = Fraunces({
-  subsets: ["latin"],
+// Self-hosted variable fonts (SIL Open Font License, see src/fonts/LICENSE-*.txt).
+// Local files keep the build independent from Google Fonts availability.
+const fraunces = localFont({
+  src: [
+    { path: "../fonts/fraunces-variable.woff2", weight: "100 900", style: "normal" },
+    { path: "../fonts/fraunces-variable-italic.woff2", weight: "100 900", style: "italic" },
+  ],
   variable: "--font-fraunces",
-  style: ["normal", "italic"],
-  weight: ["300", "400", "500", "600"],
   display: "swap",
 });
 
-const karla = Karla({
-  subsets: ["latin"],
+const karla = localFont({
+  src: [
+    { path: "../fonts/karla-variable.woff2", weight: "200 800", style: "normal" },
+    { path: "../fonts/karla-variable-italic.woff2", weight: "200 800", style: "italic" },
+  ],
   variable: "--font-karla",
-  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
