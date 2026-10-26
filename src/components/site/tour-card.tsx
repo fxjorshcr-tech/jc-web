@@ -40,7 +40,7 @@ export function TourCard({ tour, index, className, featured }: TourCardProps) {
             {tour.name}
           </Link>
         </h3>
-        <p className="mt-2 font-serif text-base italic text-olive-800">{tour.tagline}</p>
+        <p className="mt-2 font-serif text-base text-teal-700">{tour.tagline}</p>
         <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-ink-soft">{tour.summary}</p>
         <dl className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-xs text-ink-soft">
           <div className="flex items-center gap-1.5">

@@ -46,7 +46,7 @@ export default function ToursPage() {
                     {tour.name}
                   </Link>
                 </h2>
-                <p className="mt-3 font-serif text-lg italic text-olive-800">{tour.tagline}</p>
+                <p className="mt-3 font-serif text-lg text-teal-700">{tour.tagline}</p>
                 <p className="mt-4 text-[1.02rem] leading-relaxed text-ink-soft">{tour.summary}</p>
                 <dl className="mt-6 space-y-2 text-sm text-ink-soft">
                   <div className="flex gap-2">

@@ -19,7 +19,22 @@ General guidance
 | `og/og-default.jpg` | 1200 × 630 | Default Open Graph / social share image |
 | `badges/travelers-against-plastic.png` | 400 × 400 (square, transparent ok) | Travelers Against Plastic badge in footer and home |
 
-## Priority 2 – Tours (hero = 2000 × 1250 landscape, gallery = 1600 × 1200 landscape or 1200 × 1600 portrait)
+## Priority 2 – Tours
+
+**Easiest way:** put your originals in one folder with a sub-folder per tour and run
+
+```bash
+npm run photos -- "C:\Users\you\Downloads\Fotos JC"
+```
+
+The script matches folders to tours by name, auto-rotates, resizes to 2000 px, saves JPEG q80 into
+`public/images/tours/<slug>/` as `hero.jpg`, `01.jpg`, `02.jpg`… Then commit and push.
+
+The tour page shows **every image in that folder** as the gallery (portrait photos stay portrait), so the
+file names below are only the fallback placeholders. Optional captions: add a `captions.json` next to the
+photos, e.g. `{"01.jpg": "Sunrise over the gulf"}`.
+
+Hero = 2000 × 1250 landscape; gallery = any orientation, 2000 px on the long edge.
 
 | File | Recommended size | Used for |
 | --- | --- | --- |

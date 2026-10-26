@@ -7,21 +7,18 @@ import "./globals.css";
 
 // Self-hosted variable fonts (SIL Open Font License, see src/fonts/LICENSE-*.txt).
 // Local files keep the build independent from Google Fonts availability.
-const fraunces = localFont({
-  src: [
-    { path: "../fonts/fraunces-variable.woff2", weight: "100 900", style: "normal" },
-    { path: "../fonts/fraunces-variable-italic.woff2", weight: "100 900", style: "italic" },
-  ],
-  variable: "--font-fraunces",
+const outfit = localFont({
+  src: [{ path: "../fonts/outfit-variable.woff2", weight: "100 900", style: "normal" }],
+  variable: "--font-outfit",
   display: "swap",
 });
 
-const karla = localFont({
+const nunitoSans = localFont({
   src: [
-    { path: "../fonts/karla-variable.woff2", weight: "200 800", style: "normal" },
-    { path: "../fonts/karla-variable-italic.woff2", weight: "200 800", style: "italic" },
+    { path: "../fonts/nunito-sans-variable.woff2", weight: "200 1000", style: "normal" },
+    { path: "../fonts/nunito-sans-variable-italic.woff2", weight: "200 1000", style: "italic" },
   ],
-  variable: "--font-karla",
+  variable: "--font-nunito-sans",
   display: "swap",
 });
 
@@ -64,7 +61,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${karla.variable}`}>
+    <html lang="en" className={`${outfit.variable} ${nunitoSans.variable}`}>
       <body className="flex min-h-screen flex-col">
         <a
           href="#main"

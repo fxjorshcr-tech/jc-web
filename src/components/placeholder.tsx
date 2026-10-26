@@ -2,11 +2,11 @@ import { ImageIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const TONES = [
-  "from-olive-400 via-olive-500 to-olive-700",
-  "from-olive-500 via-olive-600 to-olive-800",
-  "from-olive-600 via-olive-700 to-moss",
-  "from-earth/80 via-olive-600 to-olive-800",
-  "from-olive-700 via-olive-800 to-ink",
+  "from-olive-400 via-olive-600 to-teal-700",
+  "from-teal-400 via-teal-600 to-olive-800",
+  "from-olive-500 via-olive-700 to-moss",
+  "from-teal-500 via-olive-600 to-olive-900",
+  "from-olive-600 via-teal-700 to-teal-900",
 ] as const;
 
 function toneFor(key: string) {
