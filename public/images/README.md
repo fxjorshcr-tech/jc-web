@@ -38,12 +38,12 @@ Hero = 2000 × 1250 landscape; gallery = any orientation, 2000 px on the long ed
 
 | File | Recommended size | Used for |
 | --- | --- | --- |
-| `tours/nocturno/hero.jpg` | 2000 × 1250 (landscape) | Night hike through the forest near Montezuma, Costa Rica |
-| `tours/nocturno/frog.jpg` | 1600 × 1200 | Tree frog seen on the Nocturno night hike |
-| `tours/nocturno/mushroom.jpg` | 1600 × 1200 | Mushrooms growing on the forest floor at night |
-| `tours/nocturno/bird.jpg` | 1600 × 1200 | Bird roosting at night spotted with a flashlight |
-| `tours/nocturno/mushroom-2.jpg` | 1600 × 1200 | Close-up of a mushroom lit by headlamp |
-| `tours/nocturno/trail.jpg` | 1600 × 1200 | Green forest trail used for the night hike |
+| `tours/nocturno-night-journey/hero.jpg` | 2000 × 1250 (landscape) | Night hike through the forest near Montezuma, Costa Rica |
+| `tours/nocturno-night-journey/frog.jpg` | 1600 × 1200 | Tree frog seen on the Nocturno night hike |
+| `tours/nocturno-night-journey/mushroom.jpg` | 1600 × 1200 | Mushrooms growing on the forest floor at night |
+| `tours/nocturno-night-journey/bird.jpg` | 1600 × 1200 | Bird roosting at night spotted with a flashlight |
+| `tours/nocturno-night-journey/mushroom-2.jpg` | 1600 × 1200 | Close-up of a mushroom lit by headlamp |
+| `tours/nocturno-night-journey/trail.jpg` | 1600 × 1200 | Green forest trail used for the night hike |
 | `tours/bird-lovers-morning/hero.jpg` | 2000 × 1250 (landscape) | Crested caracara perched at sunrise near Montezuma |
 | `tours/bird-lovers-morning/sunrise-cabuya.jpg` | 1600 × 1200 | Sunrise over the Nicoya Gulf from Cabuya |
 | `tours/bird-lovers-morning/woodpecker.jpg` | 1600 × 1200 | Woodpecker spotted during the Bird Lover's Morning |
