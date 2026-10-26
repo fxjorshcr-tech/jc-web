@@ -10,6 +10,7 @@ import { JsonLd } from "@/components/site/json-ld";
 import { booking } from "@/data/content";
 import { site } from "@/data/site";
 import { commonTourNotes, getTour, tours } from "@/data/tours";
+import { getTourGallery } from "@/lib/tour-photos";
 
 interface Params {
   slug: string;
@@ -55,6 +56,7 @@ export default async function TourPage({ params }: { params: Promise<Params> }) 
   if (!tour) notFound();
   const index = tours.findIndex((t) => t.slug === tour.slug);
   const notes = [...tour.notes, ...commonTourNotes];
+  const { photos } = getTourGallery(tour);
 
   const touristTrip = {
     "@context": "https://schema.org",
@@ -125,7 +127,7 @@ export default async function TourPage({ params }: { params: Promise<Params> }) 
           <div className="mt-14">
             <p className="eyebrow">Gallery</p>
             <h2 className="mt-2 text-2xl text-ink sm:text-3xl">Moments from this journey</h2>
-            <Gallery images={tour.gallery} className="mt-6" />
+            <Gallery images={photos} className="mt-6" />
           </div>
         </div>
 
