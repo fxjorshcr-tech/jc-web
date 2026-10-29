@@ -33,13 +33,7 @@ export default function PartnersPage() {
         </div>
         <div className="lg:col-span-5 lg:col-start-8">
           <SectionHeading eyebrow={farm.title} title={farm.partner} />
-          <p className="prose-site mt-6">
-            {farm.text.split("Blue Flag Ecological Program")[0]}
-            <a href={farm.blueFlagUrl} target="_blank" rel="noopener noreferrer">
-              Blue Flag Ecological Program
-            </a>
-            {farm.text.split("Blue Flag Ecological Program")[1]}
-          </p>
+          <p className="prose-site mt-6">{farm.text}</p>
           <Button asChild className="mt-8">
             <Link href={farm.tourHref}>Visit the farm on Let&rsquo;s Get Local</Link>
           </Button>

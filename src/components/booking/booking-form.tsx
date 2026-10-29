@@ -2,12 +2,13 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CheckCircle2, Loader2 } from "lucide-react";
 import { submitBooking } from "@/app/actions/booking";
 import { Field, FormMessage } from "@/components/forms/field";
 import { Button } from "@/components/ui/button";
+import { DatePicker, formatDisplayDate } from "@/components/ui/date-picker";
 import { Input } from "@/components/ui/input";
 import { Select } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
@@ -27,7 +28,6 @@ export function BookingForm({ tours, defaultTourSlug }: BookingFormProps) {
   const [pending, startTransition] = React.useTransition();
   const [serverError, setServerError] = React.useState<string | null>(null);
   const [success, setSuccess] = React.useState<{ code: string; values: BookingValues } | null>(null);
-  const today = React.useMemo(() => new Date().toISOString().slice(0, 10), []);
 
   const form = useForm<BookingInput, unknown, BookingValues>({
     resolver: zodResolver(bookingSchema),
@@ -46,7 +46,7 @@ export function BookingForm({ tours, defaultTourSlug }: BookingFormProps) {
     },
   });
 
-  const { register, handleSubmit, formState, setError, watch } = form;
+  const { register, control, handleSubmit, formState, setError, watch } = form;
   const errors = formState.errors;
   const selectedTour = tours.find((t) => t.slug === watch("tourSlug"));
 
@@ -87,7 +87,7 @@ export function BookingForm({ tours, defaultTourSlug }: BookingFormProps) {
           </div>
           <div>
             <dt className="text-ink-soft">Preferred date</dt>
-            <dd className="font-semibold text-ink">{success.values.preferredDate}</dd>
+            <dd className="font-semibold text-ink">{formatDisplayDate(success.values.preferredDate)}</dd>
           </div>
           <div>
             <dt className="text-ink-soft">Guests</dt>
@@ -125,7 +125,13 @@ export function BookingForm({ tours, defaultTourSlug }: BookingFormProps) {
           </Select>
         </Field>
         <Field id="preferredDate" label="Preferred date" required error={errors.preferredDate?.message} hint="We appreciate 48 hours' notice.">
-          <Input id="preferredDate" type="date" min={today} aria-invalid={!!errors.preferredDate} {...register("preferredDate")} />
+          <Controller
+            control={control}
+            name="preferredDate"
+            render={({ field }) => (
+              <DatePicker id="preferredDate" value={field.value ?? ""} onChange={field.onChange} onBlur={field.onBlur} invalid={!!errors.preferredDate} />
+            )}
+          />
         </Field>
       </div>
 
@@ -164,7 +170,7 @@ export function BookingForm({ tours, defaultTourSlug }: BookingFormProps) {
         id="specialRequests"
         label="Special requests or comments"
         error={errors.specialRequests?.message}
-        hint="Dietary needs, mobility, children's ages, help with transportation or hotels, or a preferred Let's Get Local version (Rio Negro or Cabuya)."
+        hint="Dietary needs, mobility, children's ages, help with transportation or hotels, or a preferred Let's Get Local version (farm or Cabuya)."
       >
         <Textarea id="specialRequests" rows={4} aria-invalid={!!errors.specialRequests} {...register("specialRequests")} />
       </Field>
