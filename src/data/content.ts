@@ -22,13 +22,13 @@ export const about = {
     text: "Juan Carlos \"JC\" Aguirre was raised in San Carlos near Arenal Volcano and has lived in the southern Nicoya Peninsula for over 13 years. He is an experienced tour professional with a genuine love of nature, Costa Rica, and sharing his knowledge with people from all around the world. JC is fluent in English and Spanish (and can accommodate German and French speakers too with a little help and patience from the native speakers). With over 10 years of experience in the tourism industry, JC is a licensed* tour guide by ICT (Instituto Costarricense de Turismo) with first aid training and extensive knowledge of the Nicoya Peninsula as well as other areas throughout the country.",
     licenseNote: "*Lic. #1165 – Guia de Turismo Local",
     ictUrl: "https://www.visitcostarica.com/",
-    image: { src: "about/jc-guide.jpg", alt: "JC Aguirre guiding guests on a forest trail" },
+    image: { src: "about/jc-guide.jpg", alt: "JC Aguirre with guests on a forest trail, binoculars in hand" },
   },
   mission: {
     mission: "To share insight on local culture and nature with international visitors to Costa Rica by providing guided tours that are unique, friendly and entertaining.",
     vision: "To promote greater cultural understanding and environmental appreciation through enhanced tourist experiences.",
     values: "As individuals and tour providers we value environmental sustainability, diversity, community and never ending curiosity.",
-    image: { src: "about/coati.jpg", alt: "Coati crossing a trail in the Nicoya Peninsula" },
+    image: { src: "about/forest-giant.jpg", alt: "Looking up the trunk of a giant tree in the forest of the Nicoya Peninsula" },
   },
   opportunities:
     "We currently do not have any job opportunities available. However, if you are interested in volunteering with JC's Journeys in a particular capacity, please contact us at jcsjourneys@gmail.com with a resume and brief statement of interest. Thanks for considering joining our team!",
@@ -44,11 +44,10 @@ export const partners = {
   intro:
     "We partner with local individuals and small businesses to ensure that each tour is authentic, friendly and in support of the community and local economy. From transportation, to guides and families who share their homes, we value those whose contribution makes JC's Journeys what it is.",
   organicFarm: {
-    title: "Organic Farm Visit",
-    partner: "Finca Integral Didáctica – The Ovares Picado Family",
-    text: "The Ovares Picado Family has been working in agriculture for nearly 20 years. About 8 years ago, they decided to go organic to reduce use of chemicals and implement more sustainable farming practices. They established Finca Integral Didáctica in Rio Negro, Cobano which is now part of Costa Rica's Blue Flag Ecological Program. Manuel and Patricia are enthusiastic about the environmentally friendly farming methods they use to produce goods such as dairy products and sugar cane, and love being able to share information and demonstrations with visitors to their farm.",
-    blueFlagUrl: "https://banderaazulecologica.org/",
-    image: { src: "partners/finca-didactica-ovares-picado.jpg", alt: "Manuel and Patricia Ovares Picado at Finca Integral Didactica" },
+    title: "Family Farm Visit",
+    partner: "Finca Los Tres Higuerones",
+    text: "Let's Get Local visits Finca Los Tres Higuerones, a working family farm a short drive from Montezuma. The family keeps dairy cows, a team of oxen and a yard full of chickens and ducks, and they open their home to our small groups: coffee brewed the traditional way, a hand with the morning chores and a light meal prepared together. Visiting the farm supports a local family directly and keeps the rural traditions of the peninsula alive.",
+    image: { src: "partners/los-tres-higuerones.jpg", alt: "Yoked oxen under the shelter at Finca Los Tres Higuerones" },
     tourHref: "/tours/lets-get-local",
   },
 };
@@ -68,7 +67,7 @@ export const community = {
 export const hireAGuide = {
   intro:
     "Do you have your own transportation? Juan Carlos 'JC' Aguirre is available for hire as a freelance guide to Curu Refuge, Cabo Blanco, Tambor, Montezuma, Santa Teresa and as a private guide for customized tours outside the area. If you are interested in hiring JC, please complete the form below, or contact us directly at jcsjourneys@gmail.com with details of the trip and we will reply as soon as possible with a list of rates.",
-  image: { src: "hire-a-guide/jc-portrait.jpg", alt: "JC Aguirre with binoculars" },
+  image: { src: "hire-a-guide/jc-portrait.jpg", alt: "JC Aguirre guiding guests across a hanging bridge in the cloud forest" },
 };
 
 export const booking = {

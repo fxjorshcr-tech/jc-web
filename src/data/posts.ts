@@ -27,7 +27,7 @@ export const posts: BlogPost[] = [
     "title": "Planning Your Trip to Costa Rica: 5 Tips to Reduce Your Planning Stress",
     "date": "2015-10-19",
     "excerpt": "Let’s face it, vacation planning can be stressful if you’re going to another country, especially if it’s your first visit. Here are 5 tips to help you make your way to the Nicoya Peninsula in…",
-    "cover": "blog/planning-your-trip-to-costa-rica-5-tips-to-reduce-your-planning-stress/cover-beach_puravida.jpg",
+    "cover": "blog/planning-your-trip-to-costa-rica-5-tips-to-reduce-your-planning-stress/cover-beach-sunset.jpg",
     "coverAlt": "Planning Your Trip to Costa Rica: 5 Tips to Reduce Your Planning Stress",
     "blocks": [
       {
@@ -146,7 +146,7 @@ export const posts: BlogPost[] = [
     "title": "Birding in Montezuma, Costa Rica",
     "date": "2014-10-25",
     "excerpt": "When the sound of singing tropical birds awakens you at sunrise on your vacation, what better thing to do than wake up with them and do a little bird watching? Here are a few reasons we think bird…",
-    "cover": "blog/birding_in_montezuma/cover-img_6071.jpg",
+    "cover": "blog/birding_in_montezuma/cover-birders.jpg",
     "coverAlt": "Birding in Montezuma, Costa Rica",
     "blocks": [
       {
@@ -468,7 +468,7 @@ export const posts: BlogPost[] = [
     "title": "Costa Rica for the Second Time Visitor (And 3rd and 4th…)",
     "date": "2014-07-28",
     "excerpt": "You’ve been to Costa Rica once, and when you got there you hit the ground running. You find yourself wanting to return but are wondering what to do this time. Here are a few of our suggestions for…",
-    "cover": "blog/costa-rica-for-the-second-time-visitor-and-3rd-and-4th/cover-malpais.jpg",
+    "cover": "blog/costa-rica-for-the-second-time-visitor-and-3rd-and-4th/cover-sunset.jpg",
     "coverAlt": "Costa Rica for the Second Time Visitor (And 3rd and 4th…)",
     "blocks": [
       {
@@ -589,7 +589,7 @@ export const posts: BlogPost[] = [
     "title": "Southern Nicoya Peninsula for Baby Boomers: 10 Tips to Help Older Travelers Prepare for the Trip",
     "date": "2014-06-13",
     "excerpt": "Whether you’re looking for the health aspects of the “Blue Zone” or just looking to get away for a bit, here are 10 tips to help older travelers prepare for a healthy and safe trip to the Nicoya…",
-    "cover": "blog/southern-nicoya-peninsula-for-baby-boomers/cover-group_post.jpg",
+    "cover": "blog/southern-nicoya-peninsula-for-baby-boomers/cover-group.jpg",
     "coverAlt": "Southern Nicoya Peninsula for Baby Boomers: 10 Tips to Help Older Travelers Prepare for the Trip",
     "blocks": [
       {
@@ -866,7 +866,7 @@ export const posts: BlogPost[] = [
     "title": "5 Reasons We Love Low Season in Costa Rica",
     "date": "2014-05-01",
     "excerpt": "While the mad rush of tourism may be slowing down, ‘low season’ may actually be the best time to visit. Here are 5 reasons we love the low season in CR and think you might enjoy it too…",
-    "cover": "blog/5-reasons-we-love-low-season-in-costa-rica/cover-img_1864.jpg",
+    "cover": "blog/5-reasons-we-love-low-season-in-costa-rica/cover-green-river.jpg",
     "coverAlt": "5 Reasons We Love Low Season in Costa Rica",
     "blocks": [
       {
@@ -905,7 +905,7 @@ export const posts: BlogPost[] = [
     "title": "Enjoying Nature in Curu Wildlife Refuge",
     "date": "2014-04-22",
     "excerpt": "One of our favorite things to do in the Southern Nicoya Peninsula is visit Curu Wildlife Refuge. We recently spent a day there and found even more to love about Curu…",
-    "cover": "blog/enjoying-nature-in-curu-wildlife-refuge/cover-curu_bridge2.jpg",
+    "cover": "blog/enjoying-nature-in-curu-wildlife-refuge/cover-mangrove-bridge.jpg",
     "coverAlt": "Enjoying Nature in Curu Wildlife Refuge",
     "blocks": [
       {
@@ -949,7 +949,7 @@ export const posts: BlogPost[] = [
     "title": "2 Nights in Southern Nicoya Peninsula: Sunrise to Sunset",
     "date": "2014-03-25",
     "excerpt": "If you’re short on time, but have heard that you just have to experience nature in Southern Nicoya, here is a quick itinerary to work it into your vacation and get the best of both sides of the…",
-    "cover": "blog/2-nights-in-southern-nicoya-peninsula-sunrise-to-sunset/cover-sunset22.png",
+    "cover": "blog/2-nights-in-southern-nicoya-peninsula-sunrise-to-sunset/cover-sunset.jpg",
     "coverAlt": "2 Nights in Southern Nicoya Peninsula: Sunrise to Sunset",
     "blocks": [
       {
@@ -1283,7 +1283,7 @@ export const posts: BlogPost[] = [
     "title": "Should we go aaaaall the way to Montezuma?!",
     "date": "2013-12-03",
     "excerpt": "Visiting Costa Rica is exciting and different from neighboring countries for many reasons, including the sense of remoteness one gets as soon as they get just a few minutes outside busy San Jose.…",
-    "cover": "blog/should-we-go-aaaaall-the-way-to-montezuma/cover-img_0023_3.jpg",
+    "cover": "blog/should-we-go-aaaaall-the-way-to-montezuma/cover-country-road.jpg",
     "coverAlt": "Should we go aaaaall the way to Montezuma?!",
     "blocks": [
       {
@@ -1401,7 +1401,7 @@ export const posts: BlogPost[] = [
     "title": "Montezuma for Families",
     "date": "2013-11-01",
     "excerpt": "There are many great activities for families visiting Montezuma, even those with young children. From beach days, to nature walks here’s a few ideas to keep the family vacation fun for everyone…",
-    "cover": "blog/montezuma-for-families/cover-piedracolorada.jpg",
+    "cover": "tours/lets-get-local/02.jpg",
     "coverAlt": "Montezuma for Families",
     "blocks": [
       {
@@ -1478,7 +1478,7 @@ export const posts: BlogPost[] = [
     "title": "Keeping it Clean",
     "date": "2013-10-28",
     "excerpt": "Volunteers recently got together to make sure the beaches in Montezuma stay clean, healthy and ready for everyone to enjoy. Cleaning up isn’t all there is to it though…",
-    "cover": "blog/keeping-it-clean/cover-beach2.jpg",
+    "cover": "blog/keeping-it-clean/cover-coastline.jpg",
     "coverAlt": "Keeping it Clean",
     "blocks": [
       {
@@ -1517,7 +1517,7 @@ export const posts: BlogPost[] = [
     "title": "What “Green” Really Means",
     "date": "2013-10-25",
     "excerpt": "It’s ‘green season’ in Costa Rica. What it really means though, is a beautiful lush green countryside, sprinkled with periodic showers that cool the humid tropical air…",
-    "cover": "blog/what-green-really-means/cover-greenseason.jpg",
+    "cover": "blog/what-green-really-means/cover-green-trail.jpg",
     "coverAlt": "What “Green” Really Means",
     "blocks": [
       {
@@ -1574,7 +1574,7 @@ export const posts: BlogPost[] = [
     "title": "So… How do I get to Montezuma?",
     "date": "2013-10-12",
     "excerpt": "Coordinating travel isn’t always easy, but we know you’ve got things to do and planes to catch and a tight schedule for all of it. So we’ve collected a few bits of useful information regarding…",
-    "cover": "blog/getting-to-montezuma/cover-aerial_plane.jpg",
+    "cover": "blog/getting-to-montezuma/cover-road.jpg",
     "coverAlt": "So… How do I get to Montezuma?",
     "blocks": [
       {

@@ -54,12 +54,12 @@ Hero = 2000 × 1250 landscape; gallery = any orientation, 2000 px on the long ed
 | `tours/curu-nature-escape/beach.jpg` | 1600 × 1200 | Quiet beach at the end of the Curu trail |
 | `tours/curu-nature-escape/halloween-crab.jpg` | 1600 × 1200 | Halloween crab on the forest floor in Curu |
 | `tours/curu-nature-escape/fishing-village.jpg` | 1600 × 1200 | Fishing boats in the village near Curu |
-| `tours/lets-get-local/hero.jpg` | 2000 × 1250 (landscape) | Fresh produce and sugar cane at Finca Integral Didactica in Rio Negro |
-| `tours/lets-get-local/finca-ovares-picado.jpg` | 1600 × 1200 | The Ovares Picado family farm in Rio Negro |
+| `tours/lets-get-local/hero.jpg` | 2000 × 1250 (landscape) | Breakfast with guests at Finca Los Tres Higuerones |
+| `tours/lets-get-local/farm.jpg` | 1600 × 1200 | Finca Los Tres Higuerones |
 | `tours/lets-get-local/trapiche.jpg` | 1600 × 1200 | Manual sugar cane press (trapiche) at the organic farm |
-| `tours/lets-get-local/traditional-cooking.jpg` | 1600 × 1200 | Patricia leading a traditional cooking demonstration |
+| `tours/lets-get-local/traditional-cooking.jpg` | 1600 × 1200 | Traditional cooking demonstration at the farm |
 | `tours/lets-get-local/guest.jpg` | 1600 × 1200 | Guest extracting sugar cane juice on the Let's Get Local tour |
-| `tours/lets-get-local/fresh-produce.jpg` | 1600 × 1200 | Fresh organic produce harvested in Rio Negro |
+| `tours/lets-get-local/fresh-produce.jpg` | 1600 × 1200 | Fresh produce from the farm |
 | `tours/lets-get-local/cabuya-cemetery-island.jpg` | 1600 × 1200 | Cemetery island off the coast of Cabuya |
 | `tours/finca-el-paraiso-atv/hero.jpg` | 2000 × 1250 (landscape) | ATV on a dirt road leading to Finca El Paraíso |
 | `tours/finca-el-paraiso-atv/gallery-1.jpg` | 1600 × 1200 | Guests on ATVs at the start of the journey |
@@ -75,9 +75,9 @@ Photos from the current site that fit these slots: Nocturno gallery = `nocturno_
 | --- | --- | --- |
 | `about/hero.jpg` | 1600 × 1280 | About page opener |
 | `about/jc-guide.jpg` | 1200 × 1500 (portrait) | JC Aguirre guiding guests on a forest trail |
-| `about/coati.jpg` | 1600 × 1200 | Coati crossing a trail in the Nicoya Peninsula |
+| `about/forest-giant.jpg` | 1600 × 1200 | Giant tree in the forest (mission block) |
 | `guests/header.jpg` | 1600 × 1280 | Happy guests at the end of a JC's Journeys tour |
-| `partners/finca-didactica-ovares-picado.jpg` | 1600 × 1200 | Manuel and Patricia Ovares Picado at Finca Integral Didactica |
+| `partners/los-tres-higuerones.jpg` | 1600 × 1200 | Finca Los Tres Higuerones (oxen, cows, the family) |
 | `community/montezuma-school-birding-1.jpg` | 1600 × 1200 | Students from Montezuma School looking through binoculars |
 | `community/montezuma-school-birding-2.jpg` | 1600 × 1200 | JC teaching kids about local birds on the beach |
 | `community/reusable-bags.jpg` | 1600 × 1200 | JC's Journeys reusable bags and souvenirs |

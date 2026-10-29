@@ -53,7 +53,7 @@ export default function HomePage() {
 
       {/* Hero */}
       <section className="relative isolate flex min-h-[86svh] items-end overflow-hidden bg-moss text-cream">
-        <Photo src="home/hero.jpg" alt="Sunrise over the Nicoya Gulf seen from the coast near Montezuma" priority sizes="100vw" align="top" />
+        <Photo src="home/hero.jpg" alt="Turquoise coastline and forested hills of the southern Nicoya Peninsula" priority sizes="100vw" align="top" />
         <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/35 to-ink/10" />
         <div className="container-site relative pb-16 pt-40 sm:pb-24">
           <p className="eyebrow !text-gold-300">Southern Nicoya Peninsula · Est. 2013</p>
@@ -128,7 +128,7 @@ export default function HomePage() {
       <section className="border-y border-border/70 bg-cream-deep/50">
         <div className="container-site grid gap-12 py-20 lg:grid-cols-12 lg:items-center sm:py-28">
           <div className="relative aspect-[4/5] overflow-hidden rounded-xl lg:col-span-5">
-            <Photo src="home/why-tour.jpg" alt="JC sharing coffee with a local family on a tour" sizes="(min-width: 1024px) 40vw, 100vw" />
+            <Photo src="home/why-tour.jpg" alt="Guests looking for birds on a forest trail with JC's Journeys" sizes="(min-width: 1024px) 40vw, 100vw" />
           </div>
           <div className="lg:col-span-6 lg:col-start-7">
             <SectionHeading eyebrow="Our approach" title={whyTour.title} />

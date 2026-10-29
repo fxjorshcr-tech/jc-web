@@ -27,7 +27,7 @@ export default function AboutPage() {
           </>
         }
         intro={<p>{about.story}</p>}
-        image={{ src: "about/hero.jpg", alt: "Trail through the dry forest of the southern Nicoya Peninsula" }}
+        image={{ src: "about/hero.jpg", alt: "Green forest trail in the southern Nicoya Peninsula" }}
       />
 
       <section id="guide" className="container-site grid gap-12 py-20 lg:grid-cols-12 lg:items-start sm:py-28">

@@ -1,12 +1,13 @@
 "use client";
 
 import * as React from "react";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CheckCircle2, Loader2 } from "lucide-react";
 import { submitHireRequest } from "@/app/actions/hire";
 import { Field, FormMessage } from "@/components/forms/field";
 import { Button } from "@/components/ui/button";
+import { DateRangePicker } from "@/components/ui/date-picker";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { hireSchema, type HireInput, type HireValues } from "@/lib/validations/hire";
@@ -16,7 +17,7 @@ export function HireForm() {
   const [serverError, setServerError] = React.useState<string | null>(null);
   const [done, setDone] = React.useState(false);
 
-  const { register, handleSubmit, formState, setError } = useForm<HireInput, unknown, HireValues>({
+  const { register, control, handleSubmit, formState, setError } = useForm<HireInput, unknown, HireValues>({
     resolver: zodResolver(hireSchema),
     defaultValues: {
       contactName: "",
@@ -82,8 +83,14 @@ export function HireForm() {
         <Textarea id="tourDescription" rows={3} aria-invalid={!!errors.tourDescription} {...register("tourDescription")} />
       </Field>
       <div className="grid gap-6 sm:grid-cols-2">
-        <Field id="tourDates" label="Tour dates" required error={errors.tourDates?.message} hint="dd/mm/yy, or a range.">
-          <Input id="tourDates" aria-invalid={!!errors.tourDates} {...register("tourDates")} />
+        <Field id="tourDates" label="Tour dates" required error={errors.tourDates?.message} hint="Pick one day or a range.">
+          <Controller
+            control={control}
+            name="tourDates"
+            render={({ field }) => (
+              <DateRangePicker id="tourDates" value={field.value ?? ""} onChange={field.onChange} onBlur={field.onBlur} invalid={!!errors.tourDates} />
+            )}
+          />
         </Field>
         <Field id="numberOfPeople" label="Number of people" error={errors.numberOfPeople?.message}>
           <Input id="numberOfPeople" inputMode="numeric" aria-invalid={!!errors.numberOfPeople} {...register("numberOfPeople")} />
