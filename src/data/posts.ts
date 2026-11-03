@@ -479,7 +479,7 @@ export const posts: BlogPost[] = [
     excerpt:
       "Red-eyed tree frogs, geckos, tarantulas, sleeping birds and glowing scorpions: what a guided night hike near Montezuma is really like, who it suits and what to bring.",
     category: "Tours",
-    cover: "tours/nocturno-night-journey/03.jpg",
+    cover: "tours/nocturno-night-journey/hero.jpg",
     coverAlt: "Red-eyed tree frog with bright red eyes and orange feet sitting on a large green leaf at night",
     quickAnswer:
       "On a guided night hike near Montezuma you walk a forest trail for about two hours after sunset with headlamps and a guide who knows where to look. Typical sightings include red-eyed tree frogs, banded geckos, tarantulas, scorpions glowing under UV light, walking sticks, sleeping birds, kinkajous and armadillos. The pace is slow and the distance short, but the trail is uneven, so it is our only tour not recommended for small children.",

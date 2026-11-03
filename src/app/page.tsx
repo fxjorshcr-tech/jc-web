@@ -64,27 +64,42 @@ export default function HomePage() {
     <>
       <JsonLd data={localBusiness} />
 
-      {/* Hero */}
-      <section className="relative isolate flex min-h-[86svh] items-end overflow-hidden bg-moss text-cream">
-        <Photo src="home/hero.jpg" alt="Turquoise coastline and forested hills of the southern Nicoya Peninsula" priority sizes="100vw" align="top" />
-        <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/35 to-ink/10" />
-        <div className="container-site relative pb-16 pt-40 sm:pb-24">
-          <p className="eyebrow !text-gold-300">Southern Nicoya Peninsula · Est. 2013</p>
-          <TripadvisorBadge light className="mt-4" />
-          <h1 className="mt-4 max-w-3xl text-5xl font-medium leading-[1.02] text-cream sm:text-6xl lg:text-7xl">
-            {home.heroTagline.split(" – ")[0]}
-            <span className="block font-normal text-gold-300">Montezuma, Costa Rica</span>
-          </h1>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-cream/85 sm:text-lg">{home.heroIntro}</p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button asChild size="lg" variant="light">
-              <Link href="/tours">
-                See the five tours <ArrowRight />
-              </Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="border-cream/40 text-cream hover:border-cream hover:bg-cream/10">
-              <Link href="/about">Meet your guide</Link>
-            </Button>
+      {/* Hero: JC first, the place second */}
+      <section className="relative isolate overflow-hidden bg-moss text-cream">
+        <div aria-hidden className="absolute -top-40 -left-40 size-[32rem] rounded-full bg-olive-500/20 blur-3xl" />
+        <div aria-hidden className="absolute -right-32 bottom-0 size-[28rem] rounded-full bg-teal-500/20 blur-3xl" />
+        <div className="container-site relative grid gap-10 pb-16 pt-10 sm:pt-14 lg:min-h-[86svh] lg:grid-cols-12 lg:items-center lg:gap-12 lg:py-20">
+          <div className="lg:col-span-6">
+            <p className="eyebrow !text-gold-300">Southern Nicoya Peninsula · Est. 2013</p>
+            <h1 className="mt-5 max-w-2xl text-5xl font-medium leading-[1.02] text-cream sm:text-6xl lg:text-[4.25rem]">
+              {home.heroTagline.split(" – ")[0]}
+              <span className="block font-normal text-gold-300">Montezuma, Costa Rica</span>
+            </h1>
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-cream/85 sm:text-lg">{home.heroIntro}</p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Button asChild size="lg" variant="light">
+                <Link href="/tours">
+                  See the five tours <ArrowRight />
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="border-cream/40 text-cream hover:border-cream hover:bg-cream/10">
+                <Link href="/about#guide">Meet your guide</Link>
+              </Button>
+            </div>
+            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-cream/80">
+              <TripadvisorBadge light />
+              <span>
+                Guided by <span className="font-semibold text-cream">{site.guide.shortName}</span>, {site.guide.license.split(" – ")[0]}
+              </span>
+            </div>
+          </div>
+          <div className="relative order-first lg:order-none lg:col-span-6">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-2xl shadow-ink/40 lg:aspect-[5/4]">
+              <Photo src="photos/waterfall-hike.jpg" alt="JC Aguirre smiling with two guests in front of the Montezuma waterfall" priority sizes="(min-width: 1024px) 50vw, 100vw" />
+            </div>
+            <p className="mt-3 text-xs text-cream/60 lg:absolute lg:bottom-4 lg:left-4 lg:mt-0 lg:rounded-full lg:bg-ink/50 lg:px-3 lg:py-1.5 lg:text-cream/90 lg:backdrop-blur">
+              JC with guests at the Montezuma waterfall
+            </p>
           </div>
         </div>
       </section>

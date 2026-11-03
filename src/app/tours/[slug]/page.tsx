@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Baby, CalendarDays, Check, MapPin, Package, StickyNote } from "lucide-react";
+import { Baby, CalendarDays, Check, Clock, MapPin } from "lucide-react";
 import { BookingForm } from "@/components/booking/booking-form";
 import { Photo } from "@/components/photo";
 import { Button } from "@/components/ui/button";
 import { Gallery } from "@/components/site/gallery";
 import { JsonLd } from "@/components/site/json-ld";
 import { TripadvisorBadge } from "@/components/site/tripadvisor-badge";
+import { WhatsAppIcon } from "@/components/site/whatsapp-icon";
 import { booking } from "@/data/content";
 import { site } from "@/data/site";
 import { whatsappUrl } from "@/lib/whatsapp";
 import { commonTourNotes, getTour, tours } from "@/data/tours";
 import { getTourGallery } from "@/lib/tour-photos";
+import { cn } from "@/lib/utils";
 
 interface Params {
   slug: string;
@@ -41,15 +43,15 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   };
 }
 
-function FactBlock({ icon: Icon, title, children }: { icon: React.ElementType; title: string; children: React.ReactNode }) {
-  return (
-    <div className="border-t border-border/70 py-5 first:border-t-0 first:pt-0">
-      <h3 className="flex items-center gap-2 font-sans text-xs font-semibold uppercase tracking-[0.16em] text-olive-700">
-        <Icon className="size-4" strokeWidth={1.75} /> {title}
-      </h3>
-      <div className="mt-2.5 text-[0.95rem] leading-relaxed text-ink">{children}</div>
-    </div>
-  );
+/** "PT5H30M" -> "About 5½ hours". */
+function formatDuration(iso: string) {
+  const m = /PT(?:(\d+)H)?(?:(\d+)M)?/.exec(iso);
+  if (!m) return iso;
+  const h = Number(m[1] ?? 0);
+  const min = Number(m[2] ?? 0);
+  if (h === 0) return `About ${min} minutes`;
+  const half = min >= 30 ? "½" : "";
+  return `About ${h}${half} hour${h > 1 || half ? "s" : ""}`;
 }
 
 export default async function TourPage({ params }: { params: Promise<Params> }) {
@@ -59,6 +61,12 @@ export default async function TourPage({ params }: { params: Promise<Params> }) 
   const index = tours.findIndex((t) => t.slug === tour.slug);
   const notes = [...tour.notes, ...commonTourNotes];
   const { photos } = getTourGallery(tour);
+  const glance = [
+    { icon: CalendarDays, label: "When", value: tour.when },
+    { icon: MapPin, label: "Where", value: tour.where },
+    { icon: Clock, label: "Duration", value: tour.duration ? formatDuration(tour.duration) : "Ask us" },
+    { icon: Baby, label: "Children", value: tour.suitableForSmallChildren ? "Suitable for all ages" : "Not for small children" },
+  ];
 
   const touristTrip = {
     "@context": "https://schema.org",
@@ -141,57 +149,81 @@ export default async function TourPage({ params }: { params: Promise<Params> }) 
         </div>
 
         <aside className="lg:col-span-5 lg:col-start-8">
-          <div className="rounded-xl border border-border/70 bg-card p-6 sm:p-8 lg:sticky lg:top-24">
-            <FactBlock icon={CalendarDays} title="When">
-              {tour.when}
-            </FactBlock>
-            <FactBlock icon={MapPin} title="Where">
-              {tour.where}
-            </FactBlock>
-            <FactBlock icon={Check} title="What's included">
-              <ul className="grid grid-cols-1 gap-1.5 sm:grid-cols-2">
-                {tour.whatsIncluded.map((item) => (
-                  <li key={item} className="flex gap-2">
-                    <Check className="mt-1 size-3.5 shrink-0 text-olive-600" />
-                    <span>{item}</span>
-                  </li>
+          <div className="lg:sticky lg:top-24">
+            <div className="overflow-hidden rounded-xl border border-border/70 bg-card">
+              {/* At a glance */}
+              <dl className="grid grid-cols-2">
+                {glance.map((g, i) => (
+                  <div key={g.label} className={cn("border-b border-border/70 p-5", i % 2 === 0 && "border-r")}>
+                    <dt className="flex items-center gap-1.5 font-sans text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-olive-700">
+                      <g.icon className="size-3.5" strokeWidth={1.75} /> {g.label}
+                    </dt>
+                    <dd className="mt-1.5 text-[0.92rem] leading-snug text-ink">{g.value}</dd>
+                  </div>
                 ))}
-              </ul>
-            </FactBlock>
-            <FactBlock icon={Package} title="What to bring">
-              <ul className="flex flex-wrap gap-2">
-                {tour.whatToBring.map((item) => (
-                  <li key={item} className="rounded-full border border-border bg-cream px-3 py-1 text-sm">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </FactBlock>
-            <FactBlock icon={Baby} title="Children">
-              {tour.suitableForSmallChildren
-                ? "Suitable for all ages, with easy walking."
-                : "Not recommended for small children. See the notes below."}
-            </FactBlock>
-            <FactBlock icon={StickyNote} title="Notes">
-              <ul className="space-y-2 text-sm text-ink-soft">
-                {notes.map((n) => (
-                  <li key={n} className="flex gap-2">
-                    <span className="text-olive-600">*</span>
-                    <span>{n}</span>
-                  </li>
-                ))}
-              </ul>
-            </FactBlock>
-            <div className="mt-6 rounded-lg bg-olive-100 p-5">
-              <p className="eyebrow">Price</p>
-              <p className="mt-1 font-serif text-2xl text-ink">Request a quote</p>
-              <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-                We reply within 24 hours with availability and your price. A secure payment link follows once your date is confirmed.
-              </p>
-              <Button asChild size="lg" className="mt-4 w-full">
-                <a href="#book">Request this tour</a>
-              </Button>
-              <TripadvisorBadge variant="inline" className="mt-4" />
+              </dl>
+
+              <div className="space-y-7 border-t border-border/70 p-6 sm:p-7">
+                <div>
+                  <h3 className="font-sans text-xs font-semibold uppercase tracking-[0.16em] text-olive-700">What&rsquo;s included</h3>
+                  <ul className="mt-3 grid grid-cols-1 gap-x-6 gap-y-2 sm:grid-cols-2">
+                    {tour.whatsIncluded.map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-[0.95rem] text-ink">
+                        <Check className="mt-1 size-4 shrink-0 text-olive-600" strokeWidth={2.25} />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-sans text-xs font-semibold uppercase tracking-[0.16em] text-olive-700">What to bring</h3>
+                  <ul className="mt-3 flex flex-wrap gap-2">
+                    {tour.whatToBring.map((item) => (
+                      <li key={item} className="rounded-full border border-border bg-cream px-3 py-1 text-sm text-ink">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                {notes.length > 0 && (
+                  <div>
+                    <h3 className="font-sans text-xs font-semibold uppercase tracking-[0.16em] text-olive-700">Good to know</h3>
+                    <ul className="mt-3 space-y-2.5">
+                      {notes.map((n) => (
+                        <li key={n} className="flex gap-2.5 text-sm leading-relaxed text-ink-soft">
+                          <span aria-hidden className="mt-[0.45rem] size-1.5 shrink-0 rounded-full bg-olive-400" />
+                          <span>{n}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+
+              {/* Price / CTA */}
+              <div className="border-t border-border/70 bg-olive-100 p-6 sm:p-7">
+                <div className="flex items-baseline justify-between gap-4">
+                  <p className="eyebrow">Price</p>
+                  <p className="font-serif text-xl text-ink">On request</p>
+                </div>
+                <p className="mt-2 text-sm leading-relaxed text-ink-soft">
+                  Quotes depend on pickup location and group size. We reply within 24 hours with availability and your price; a secure payment link follows once your date is confirmed.
+                </p>
+                <Button asChild size="lg" className="mt-4 w-full">
+                  <a href="#book">Request this tour</a>
+                </Button>
+                <a
+                  href={whatsappUrl(`Hi JC, I'd like to request the ${tour.name}.`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-md border border-ink/15 bg-white px-5 py-2.5 text-sm font-semibold text-ink hover:border-ink/40"
+                >
+                  <WhatsAppIcon className="size-4 text-[#25D366]" /> Ask on WhatsApp
+                </a>
+                <div className="mt-4 flex justify-center">
+                  <TripadvisorBadge variant="inline" />
+                </div>
+              </div>
             </div>
           </div>
         </aside>
