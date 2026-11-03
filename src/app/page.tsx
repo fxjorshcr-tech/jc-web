@@ -21,6 +21,12 @@ const facts = [
   { icon: Leaf, title: "Considerate by design", text: "Local families, small businesses and reusable bottles instead of plastic. Tours that give back to the places they visit." },
 ];
 
+const heroPhoto = {
+  src: "photos/waterfall-hike.jpg",
+  alt: "JC Aguirre smiling with two guests in front of the Montezuma waterfall",
+  caption: "JC with guests at the Montezuma waterfall",
+};
+
 export default function HomePage() {
   const localBusiness = {
     "@context": "https://schema.org",
@@ -64,18 +70,27 @@ export default function HomePage() {
     <>
       <JsonLd data={localBusiness} />
 
-      {/* Hero: JC first, the place second */}
+      {/* Hero: full-bleed photo of JC, text on a left-side fade */}
       <section className="relative isolate overflow-hidden bg-moss text-cream">
-        <div aria-hidden className="absolute -top-40 -left-40 size-[32rem] rounded-full bg-olive-500/20 blur-3xl" />
-        <div aria-hidden className="absolute -right-32 bottom-0 size-[28rem] rounded-full bg-teal-500/20 blur-3xl" />
-        <div className="container-site relative grid gap-10 pb-16 pt-10 sm:pt-14 lg:min-h-[86svh] lg:grid-cols-12 lg:items-center lg:gap-12 lg:py-20">
-          <div className="lg:col-span-6">
+        {/* Phones: the whole photo, uncropped, then the text below */}
+        <div className="relative aspect-[4/3] lg:hidden">
+          <Photo src={heroPhoto.src} alt={heroPhoto.alt} priority sizes="100vw" />
+        </div>
+        {/* Desktop: the whole photo, uncropped, anchored right; the moss background fades into its left edge */}
+        <div aria-hidden className="absolute inset-y-0 right-0 hidden aspect-[4/3] lg:block">
+          <Photo src={heroPhoto.src} alt="" priority sizes="(min-width: 1024px) 70vw, 100vw" />
+          <div className="absolute inset-0 bg-gradient-to-r from-moss from-8% via-moss/55 via-32% to-moss/0 to-58%" />
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-moss/60 to-transparent" />
+          <p className="absolute bottom-5 right-6 rounded-full bg-ink/45 px-3 py-1.5 text-xs text-cream/90 backdrop-blur">{heroPhoto.caption}</p>
+        </div>
+        <div className="container-site relative flex items-center pb-14 pt-10 lg:min-h-[88svh] lg:py-24">
+          <div className="max-w-xl lg:max-w-[32rem] xl:max-w-[36rem]">
             <p className="eyebrow !text-gold-300">Southern Nicoya Peninsula · Est. 2013</p>
-            <h1 className="mt-5 max-w-2xl text-5xl font-medium leading-[1.02] text-cream sm:text-6xl lg:text-[4.25rem]">
+            <h1 className="mt-5 text-5xl font-medium leading-[1.02] text-cream sm:text-6xl lg:text-[4.25rem] [text-shadow:0_2px_24px_rgba(0,0,0,0.35)]">
               {home.heroTagline.split(" – ")[0]}
               <span className="block font-normal text-gold-300">Montezuma, Costa Rica</span>
             </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-cream/85 sm:text-lg">{home.heroIntro}</p>
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-cream/90 sm:text-lg [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">{home.heroIntro}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg" variant="light">
                 <Link href="/tours">
@@ -86,20 +101,13 @@ export default function HomePage() {
                 <Link href="/about#guide">Meet your guide</Link>
               </Button>
             </div>
-            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-cream/80">
+            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-cream/85">
               <TripadvisorBadge light />
               <span>
                 Guided by <span className="font-semibold text-cream">{site.guide.shortName}</span>, {site.guide.license.split(" – ")[0]}
               </span>
             </div>
-          </div>
-          <div className="relative order-first lg:order-none lg:col-span-6">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-2xl shadow-ink/40 lg:aspect-[5/4]">
-              <Photo src="photos/waterfall-hike.jpg" alt="JC Aguirre smiling with two guests in front of the Montezuma waterfall" priority sizes="(min-width: 1024px) 50vw, 100vw" />
-            </div>
-            <p className="mt-3 text-xs text-cream/60 lg:absolute lg:bottom-4 lg:left-4 lg:mt-0 lg:rounded-full lg:bg-ink/50 lg:px-3 lg:py-1.5 lg:text-cream/90 lg:backdrop-blur">
-              JC with guests at the Montezuma waterfall
-            </p>
+            <p className="mt-4 text-xs text-cream/60 lg:hidden">{heroPhoto.caption}</p>
           </div>
         </div>
       </section>
