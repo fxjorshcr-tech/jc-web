@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Mail } from "lucide-react";
 import { Logo } from "@/components/site/logo";
 import { Photo } from "@/components/photo";
+import { TripadvisorBadge } from "@/components/site/tripadvisor-badge";
 import { WhatsAppLink } from "@/components/site/whatsapp-button";
 import { nav, secondaryNav, site } from "@/data/site";
 import { tours } from "@/data/tours";
@@ -20,13 +21,15 @@ export function Footer() {
         <div className="md:col-span-4">
           <Logo light full />
           <p className="mt-6 max-w-xs text-sm leading-relaxed text-olive-100/80">{site.tagline}</p>
-          <a
-            href={`mailto:${site.email}`}
-            className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-cream underline-offset-4 hover:underline"
-          >
-            <Mail className="size-4" /> {site.email}
-          </a>
-          <WhatsAppLink className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-cream underline-offset-4 hover:underline" />
+          <div className="mt-6 flex flex-col items-start gap-2">
+            <a href={`mailto:${site.email}`} className="inline-flex items-center gap-2 text-sm font-semibold text-cream underline-offset-4 hover:underline">
+              <Mail className="size-4" /> {site.email}
+            </a>
+            <WhatsAppLink className="inline-flex items-center gap-2 text-sm font-semibold text-cream underline-offset-4 hover:underline" />
+          </div>
+          <div className="mt-5">
+            <TripadvisorBadge variant="inline" light />
+          </div>
           <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-xs font-semibold uppercase tracking-[0.16em] text-olive-200">
             {socials.map((s) => (
               <li key={s.label}>

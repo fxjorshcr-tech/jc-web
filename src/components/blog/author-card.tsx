@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Photo } from "@/components/photo";
+import { TripadvisorBadge } from "@/components/site/tripadvisor-badge";
 import { about } from "@/data/content";
 import { site } from "@/data/site";
 
@@ -17,9 +18,12 @@ export function AuthorCard({ updated }: { updated: string }) {
           Licensed local guide ({site.guide.license}, {site.guide.licenseBody}), founder of {site.name} and resident of the southern Nicoya Peninsula for more than a
           decade. Every post is based on tours we actually run and reviewed on {new Date(updated + "T00:00:00Z").toLocaleDateString("en-US", { month: "long", year: "numeric", timeZone: "UTC" })}.
         </p>
-        <Link href="/about#guide" className="mt-2 inline-block text-sm font-semibold text-olive-800 underline-offset-4 hover:underline">
-          More about JC
-        </Link>
+        <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2">
+          <TripadvisorBadge variant="inline" />
+          <Link href="/about#guide" className="text-sm font-semibold text-olive-800 underline-offset-4 hover:underline">
+            More about JC
+          </Link>
+        </div>
       </div>
     </aside>
   );

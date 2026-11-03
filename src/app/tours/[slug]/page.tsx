@@ -7,6 +7,7 @@ import { Photo } from "@/components/photo";
 import { Button } from "@/components/ui/button";
 import { Gallery } from "@/components/site/gallery";
 import { JsonLd } from "@/components/site/json-ld";
+import { TripadvisorBadge } from "@/components/site/tripadvisor-badge";
 import { booking } from "@/data/content";
 import { site } from "@/data/site";
 import { whatsappUrl } from "@/lib/whatsapp";
@@ -190,6 +191,7 @@ export default async function TourPage({ params }: { params: Promise<Params> }) 
               <Button asChild size="lg" className="mt-4 w-full">
                 <a href="#book">Request this tour</a>
               </Button>
+              <TripadvisorBadge variant="inline" className="mt-4" />
             </div>
           </div>
         </aside>

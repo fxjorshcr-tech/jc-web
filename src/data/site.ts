@@ -33,6 +33,13 @@ export const site = {
     tripadvisor:
       "https://www.tripadvisor.com/Attraction_Review-g309278-d6132502-Reviews-JC_s_Journeys_Day_Tours-Montezuma_Province_of_Puntarenas.html",
   },
+  /** Public review profile shown as a badge across the site. Update count/rating by hand when it changes. */
+  reviews: {
+    platform: "Tripadvisor",
+    rating: 5.0,
+    count: 56,
+    url: "https://www.tripadvisor.com/Attraction_Review-g309278-d6132502-Reviews-JC_s_Journeys_Day_Tours-Montezuma_Province_of_Puntarenas.html",
+  },
   travelersAgainstPlastic: {
     name: "Travelers Against Plastic",
     url: "https://www.travelersagainstplastic.org/",

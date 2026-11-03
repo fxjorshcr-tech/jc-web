@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { TripadvisorBadge } from "@/components/site/tripadvisor-badge";
 import { WhatsAppIcon } from "@/components/site/whatsapp-icon";
 import { site } from "@/data/site";
 import { whatsappUrl } from "@/lib/whatsapp";
@@ -26,6 +27,7 @@ export function CtaBand({
             <p className="eyebrow !text-gold-300">Book a tour</p>
             <h2 className="mt-3 text-3xl text-cream sm:text-4xl lg:text-5xl">{title}</h2>
             <p className="mt-4 max-w-xl text-base leading-relaxed text-teal-100/90">{text}</p>
+            <TripadvisorBadge variant="inline" light className="mt-5" />
           </div>
           <div className="flex flex-col gap-3 sm:flex-row lg:col-span-4 lg:justify-end">
             <Button asChild size="lg" variant="light">

@@ -7,6 +7,7 @@ import { JsonLd } from "@/components/site/json-ld";
 import { SectionHeading } from "@/components/site/section-heading";
 import { TestimonialCard } from "@/components/site/testimonial-card";
 import { TourCard } from "@/components/site/tour-card";
+import { TripadvisorBadge } from "@/components/site/tripadvisor-badge";
 import { home, whyTour } from "@/data/content";
 import { sustainabilityMeasures } from "@/data/faq";
 import { site } from "@/data/site";
@@ -69,6 +70,7 @@ export default function HomePage() {
         <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/35 to-ink/10" />
         <div className="container-site relative pb-16 pt-40 sm:pb-24">
           <p className="eyebrow !text-gold-300">Southern Nicoya Peninsula · Est. 2013</p>
+          <TripadvisorBadge light className="mt-4" />
           <h1 className="mt-4 max-w-3xl text-5xl font-medium leading-[1.02] text-cream sm:text-6xl lg:text-7xl">
             {home.heroTagline.split(" – ")[0]}
             <span className="block font-normal text-gold-300">Montezuma, Costa Rica</span>
@@ -168,13 +170,11 @@ export default function HomePage() {
             <TestimonialCard key={t.name} testimonial={t} />
           ))}
         </div>
-        <div className="mt-10 flex flex-col items-center gap-3 text-sm sm:flex-row sm:justify-center sm:gap-8">
-          <Link href="/guests" className="font-semibold text-olive-800 underline-offset-4 hover:underline">
+        <div className="mt-10 flex flex-col items-center gap-5 sm:flex-row sm:justify-center sm:gap-8">
+          <TripadvisorBadge variant="card" className="w-full max-w-sm" />
+          <Link href="/guests" className="text-sm font-semibold text-olive-800 underline-offset-4 hover:underline">
             Read more guest stories
           </Link>
-          <a href={site.social.tripadvisor} target="_blank" rel="noopener noreferrer" className="text-ink-soft underline-offset-4 hover:underline">
-            Reviews on TripAdvisor
-          </a>
         </div>
       </section>
 

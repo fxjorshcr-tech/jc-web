@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/site/page-hero";
 import { TestimonialCard } from "@/components/site/testimonial-card";
+import { TripadvisorBadge } from "@/components/site/tripadvisor-badge";
 import { CtaBand } from "@/components/site/cta-band";
 import { guests } from "@/data/content";
 import { site } from "@/data/site";
@@ -25,7 +26,9 @@ export default function GuestsPage() {
         }
         intro={<p>{guests.intro}</p>}
         image={guests.image}
-      />
+      >
+        <TripadvisorBadge variant="card" className="max-w-sm" />
+      </PageHero>
       <section className="container-site py-16 sm:py-24">
         <div className="columns-1 gap-6 md:columns-2 xl:columns-3 [&>*]:mb-6 [&>*]:break-inside-avoid">
           {testimonials.map((t) => (
