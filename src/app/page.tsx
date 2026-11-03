@@ -12,6 +12,7 @@ import { sustainabilityMeasures } from "@/data/faq";
 import { site } from "@/data/site";
 import { featuredTestimonials } from "@/data/testimonials";
 import { tours } from "@/data/tours";
+import { whatsappUrl } from "@/lib/whatsapp";
 
 const facts = [
   { icon: ShieldCheck, title: "Licensed local guide", text: `JC Aguirre, ${site.guide.license}, with first aid training and more than a decade guiding the peninsula.` },
@@ -28,6 +29,17 @@ export default function HomePage() {
     description: site.description,
     url: site.url,
     email: site.email,
+    telephone: site.whatsapp.international,
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        contactType: "reservations",
+        telephone: site.whatsapp.international,
+        email: site.email,
+        availableLanguage: ["English", "Spanish"],
+        url: whatsappUrl(),
+      },
+    ],
     image: `${site.url}/images/${site.ogImage}`,
     slogan: site.tagline,
     priceRange: "$$",

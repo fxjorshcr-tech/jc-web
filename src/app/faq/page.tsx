@@ -7,6 +7,7 @@ import { JsonLd } from "@/components/site/json-ld";
 import { PageHero } from "@/components/site/page-hero";
 import { faq } from "@/data/faq";
 import { site } from "@/data/site";
+import { whatsappUrl } from "@/lib/whatsapp";
 
 export const metadata: Metadata = {
   title: "FAQ",
@@ -37,8 +38,11 @@ export default function FaqPage() {
         }
         intro={
           <p>
-            Everything we are usually asked before a tour. Anything else? Email{" "}
-            <a href={`mailto:${site.email}`}>{site.email}</a>.
+            Everything we are usually asked before a tour. Anything else? WhatsApp{" "}
+            <a href={whatsappUrl("Hi JC, I have a question about your tours.")} target="_blank" rel="noopener noreferrer">
+              {site.whatsapp.display}
+            </a>{" "}
+            or email <a href={`mailto:${site.email}`}>{site.email}</a>.
           </p>
         }
       />
@@ -77,8 +81,8 @@ export default function FaqPage() {
                 </Link>
               </li>
               <li>
-                <Link href="/recommendations" className="hover:text-olive-800">
-                  Hotels we recommend
+                <Link href="/blog" className="hover:text-olive-800">
+                  Read the blog
                 </Link>
               </li>
             </ul>

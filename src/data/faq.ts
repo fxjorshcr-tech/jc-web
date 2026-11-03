@@ -10,7 +10,7 @@ export const faq: FaqItem[] = [
     id: "office",
     question: "Do you have an office?",
     answer:
-      "We currently do not have a physical office. However, many tour operators, hotels and vendors in the area sell our tours. You can inquire with your hotel, or just as easily you can reserve your tour directly through our website.",
+      "We currently do not have a physical office. However, many tour operators, hotels and vendors in the area sell our tours. You can inquire with your hotel, or just as easily you can reserve your tour directly through our website or by WhatsApp at [+506 8975 8832](https://wa.me/50689758832).",
   },
   {
     id: "payment",
@@ -34,7 +34,7 @@ export const faq: FaqItem[] = [
     id: "changes",
     question: "What if we need to change or cancel our reservation?",
     answer:
-      "We appreciate a minimum of 24 hour notice for change requests or cancellation. Please email us at [jcsjourneys@gmail.com](mailto:jcsjourneys@gmail.com) for requests. We do our best to accommodate changes to date, times, or number of guests. Please keep in mind some tours can only take place at the times indicated on our [tours page](/tours).",
+      "We appreciate a minimum of 24 hour notice for change requests or cancellation. Please WhatsApp us at [+506 8975 8832](https://wa.me/50689758832) or email [jcsjourneys@gmail.com](mailto:jcsjourneys@gmail.com) for requests. We do our best to accommodate changes to date, times, or number of guests. Please keep in mind some tours can only take place at the times indicated on our [tours page](/tours).",
   },
   {
     id: "kids",

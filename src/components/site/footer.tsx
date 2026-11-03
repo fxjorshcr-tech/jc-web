@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Mail } from "lucide-react";
 import { Logo } from "@/components/site/logo";
 import { Photo } from "@/components/photo";
+import { WhatsAppLink } from "@/components/site/whatsapp-button";
 import { nav, secondaryNav, site } from "@/data/site";
 import { tours } from "@/data/tours";
 
@@ -25,6 +26,7 @@ export function Footer() {
           >
             <Mail className="size-4" /> {site.email}
           </a>
+          <WhatsAppLink className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-cream underline-offset-4 hover:underline" />
           <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-xs font-semibold uppercase tracking-[0.16em] text-olive-200">
             {socials.map((s) => (
               <li key={s.label}>

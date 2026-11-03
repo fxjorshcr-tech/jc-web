@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Header } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
+import { WhatsAppFloating } from "@/components/site/whatsapp-button";
 import { site } from "@/data/site";
 import "./globals.css";
 
@@ -74,6 +75,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           {children}
         </main>
         <Footer />
+        <WhatsAppFloating />
       </body>
     </html>
   );

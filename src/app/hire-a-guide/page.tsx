@@ -4,6 +4,7 @@ import { HireForm } from "@/components/forms/hire-form";
 import { PageHero } from "@/components/site/page-hero";
 import { hireAGuide } from "@/data/content";
 import { site } from "@/data/site";
+import { whatsappUrl } from "@/lib/whatsapp";
 
 export const metadata: Metadata = {
   title: "Hire a Guide",
@@ -40,6 +41,13 @@ export default function HireAGuidePage() {
           <p className="prose-site mt-4">
             Dates, places and the size of your group are enough to start. We reply with availability and a list of rates. For itineraries outside the
             peninsula, the earlier you write the better.
+          </p>
+          <p className="mt-4 text-sm text-ink-soft">
+            In a hurry? WhatsApp{" "}
+            <a href={whatsappUrl("Hi JC, I'd like to hire you as a private guide.")} target="_blank" rel="noopener noreferrer" className="font-semibold text-olive-800 underline-offset-4 hover:underline">
+              {site.whatsapp.display}
+            </a>
+            .
           </p>
         </div>
         <div className="rounded-xl border border-border/70 bg-card p-6 sm:p-8 lg:col-span-8">

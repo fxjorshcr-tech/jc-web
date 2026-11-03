@@ -17,8 +17,8 @@ npm run dev
 | Path | What |
 | --- | --- |
 | `src/app` | Routes (one folder per page), `sitemap.ts`, `robots.ts`, server actions in `src/app/actions` |
-| `src/components` | UI (`ui/`), site chrome (`site/`), forms, booking, blog |
-| `src/data` | All content: `tours.ts`, `posts.ts`, `testimonials.ts`, `faq.ts`, `recommendations.ts`, `photos.ts`, `content.ts`, `site.ts` |
+| `src/components` | UI (`ui/`), site chrome (`site/`), forms, booking, blog (`blog/`: body, card, FAQ, author box) |
+| `src/data` | All content: `tours.ts`, `posts.ts`, `testimonials.ts`, `faq.ts`, `photos.ts`, `content.ts`, `site.ts` |
 | `src/lib` | Validation schemas, Supabase admin client, mailer, email templates, booking code generator |
 | `supabase/schema.sql` | Database schema (run once in the Supabase SQL editor) |
 | `public/images` | Photos. See `public/images/README.md` for the full list of expected files |
@@ -27,6 +27,17 @@ npm run dev
 ## Photos
 
 Every image on the site is rendered through the `Photo` component. While a file is missing it shows a labelled placeholder with the expected path; drop the file into `public/images/<path>` and redeploy, no code change needed.
+
+## Blog
+
+Posts live in `src/data/posts.ts`. Each post has a `quickAnswer` (shown first and marked speakable), `keyFacts`, body `blocks`
+(paragraphs, headings, lists, tables, callouts, images) and an `faq` list. The page emits BlogPosting, FAQPage and BreadcrumbList
+JSON-LD from that data, so new posts only need content. Update `updated` when you revise a post.
+
+## Contact
+
+Email and WhatsApp live in `src/data/site.ts` (`site.email`, `site.whatsapp`). The floating WhatsApp button, footer, CTA bands,
+FAQ, tour pages and structured data all read from there.
 
 ## Booking flow
 

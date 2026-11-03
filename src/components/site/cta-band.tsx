@@ -1,13 +1,18 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { WhatsAppIcon } from "@/components/site/whatsapp-icon";
 import { site } from "@/data/site";
+import { whatsappUrl } from "@/lib/whatsapp";
 
 export function CtaBand({
   title = "Ready to plan your journey?",
   text = "Tell us the tour, your date and the size of your group. We reply within 24 hours with availability and a quote.",
+  whatsappMessage,
 }: {
   title?: string;
   text?: string;
+  /** Pre-filled WhatsApp message, e.g. naming the tour the reader was looking at. */
+  whatsappMessage?: string;
 }) {
   return (
     <section className="container-site">
@@ -25,6 +30,11 @@ export function CtaBand({
           <div className="flex flex-col gap-3 sm:flex-row lg:col-span-4 lg:justify-end">
             <Button asChild size="lg" variant="light">
               <Link href="/tours">Choose a tour</Link>
+            </Button>
+            <Button asChild size="lg" className="bg-[#25D366] text-white hover:bg-[#1ebe5b]">
+              <a href={whatsappUrl(whatsappMessage)} target="_blank" rel="noopener noreferrer">
+                <WhatsAppIcon /> WhatsApp
+              </a>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-cream/40 text-cream hover:border-cream hover:bg-cream/10">
               <a href={`mailto:${site.email}`}>Email us</a>
