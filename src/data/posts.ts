@@ -54,6 +54,154 @@ const WHATSAPP = "https://wa.me/50689758832";
 export const posts: BlogPost[] = [
   // ---------------------------------------------------------------------------------------------
   {
+    slug: "things-to-do-in-santa-teresa-beyond-surfing",
+    title: "Things to Do in Santa Teresa and Malpaís Beyond Surfing: A Local Guide's List",
+    seoTitle: "Things to Do in Santa Teresa & Malpaís Beyond Surfing (Local Guide)",
+    date: "2026-11-03",
+    updated: "2026-11-03",
+    excerpt:
+      "Santa Teresa is famous for waves, but the hills, reserves and villages behind the beach are the best of the peninsula. Cabo Blanco, Montezuma waterfall, Curu, birding, farm visits and night hikes, all within an hour.",
+    category: "Planning",
+    cover: "photos/sunset-low-tide.jpg",
+    coverAlt: "Orange sunset over the Pacific at low tide on a Santa Teresa beach, with surfers and swimmers in the shallows",
+    quickAnswer:
+      "Beyond the surf, Santa Teresa and Malpaís sit at the door of the wildest corner of the Nicoya Peninsula. Within an hour you can hike Cabo Blanco, Costa Rica's first nature reserve, swim under the Montezuma waterfall, watch monkeys and macaws in Curu Wildlife Refuge, bird the sunrise at Cabuya, spend a morning on a working family farm, ride an ATV to a hidden waterfall, or walk the forest at night with a headlamp. A licensed local guide picks you up at your hotel.",
+    keyFacts: [
+      { label: "Santa Teresa → Montezuma", value: "≈17 km · 30–45 min by road" },
+      { label: "Santa Teresa → Cabo Blanco", value: "≈30 min via Malpaís or Cabuya" },
+      { label: "Santa Teresa → Curu Refuge", value: "≈1 h 30 min" },
+      { label: "Best start", value: "Early: wildlife is active 5:30–9 am" },
+      { label: "Pickup", value: "Santa Teresa and Malpaís hotels on request" },
+    ],
+    keywords: ["things to do in Santa Teresa Costa Rica", "Santa Teresa non surf activities", "Malpais things to do", "Cabo Blanco reserve from Santa Teresa", "Santa Teresa wildlife tour", "Santa Teresa day trips"],
+    relatedTours: ["curu-nature-escape", "bird-lovers-morning", "nocturno-night-journey"],
+    blocks: [
+      {
+        type: "p",
+        html: "Santa Teresa earned its reputation on the water: a long, consistent beach break, sunsets that stop traffic on the one dirt road, and a town that wakes up for the dawn session. But most visitors spend a week here and never turn around to look at the hills. Behind the beach is the oldest protected forest in Costa Rica, a waterfall you can swim under, a wildlife refuge where monkeys walk the trail with you, and farms where families still press sugar cane by hand. This is the list we give our own guests when they ask what to do on a flat day, a rainy afternoon or a rest day for sore shoulders.",
+      },
+      { type: "h2", html: "1. Hike Cabo Blanco, Costa Rica's first nature reserve" },
+      {
+        type: "p",
+        html: "At the very tip of the peninsula, 30 minutes from Santa Teresa, <strong>Cabo Blanco Absolute Nature Reserve</strong> was created in 1963 and is the oldest protected area in the country. The main trail from the Cabuya entrance climbs through forest to a wild, empty beach at the point: about 4.5 km each way and a good half day. From the Malpaís side there are shorter trails. Howler and white-faced monkeys, coatis, agoutis and dozens of bird species live here; the forest you walk through is what the whole coast looked like before the roads arrived. The reserve is closed on Mondays and Tuesdays, so plan around it. JC guides private hikes here; see <a href=\"/hire-a-guide\">Hire a Guide</a>.",
+      },
+      {
+        type: "image",
+        src: "photos/coastline.jpg",
+        alt: "Turquoise sea breaking on rocks below a forested headland on the southern Nicoya coast",
+        caption: "The coast around the Cabo Blanco point: forest to the waterline.",
+      },
+      { type: "h2", html: "2. Swim under the Montezuma waterfall" },
+      {
+        type: "p",
+        html: "Forty minutes east, the village of <strong>Montezuma</strong> has a three-tier waterfall a 20-minute walk from town. The lower fall drops into a deep pool you can swim in; the upper tiers have smaller pools and a rope swing. Go early or late to have it to yourself, wear shoes with grip for the river rocks, and skip the cliff jumps the locals do, every year someone gets hurt. Combine it with lunch in Montezuma, which has a slower, older feel than Santa Teresa.",
+      },
+      {
+        type: "image",
+        src: "photos/montezuma-waterfall.jpg",
+        alt: "Montezuma waterfall pouring over a rock face into a green pool surrounded by forest",
+        caption: "The lower Montezuma waterfall, 20 minutes on foot from the village.",
+      },
+      { type: "h2", html: "3. See monkeys, deer and macaws in Curu Wildlife Refuge" },
+      {
+        type: "p",
+        html: "If you want to see animals rather than hope for them, <strong>Curu</strong> is the place. A privately protected refuge near Paquera, about an hour and a half from Santa Teresa, it is one of the easiest places in Costa Rica to see white-faced capuchins, howler monkeys, white-tailed deer, coatis and Scarlet Macaws on flat, shaded trails that end at a calm beach. Our <a href=\"/tours/curu-nature-escape\">Curu Nature Escape</a> is a half day with guide, entrance, scope, swim and a typical Costa Rican lunch. Read the full <a href=\"/blog/curu-wildlife-refuge-guide\">Curu guide</a>.",
+      },
+      { type: "h2", html: "4. Watch the sunrise with the birds" },
+      {
+        type: "p",
+        html: "Santa Teresa faces west, so you get the sunsets. For the sunrise you cross to Cabuya on the gulf side, where the sun comes up over the water and the shore birds are already fishing. A three-hour <a href=\"/tours/bird-lovers-morning\">Bird Lover's Morning</a> typically turns up 40 to 60 species: motmots, trogons, parakeets, herons, kingfishers, hummingbirds and increasingly Scarlet Macaws. We bring the binoculars and the scope, and breakfast is included. It is the best thing we know for a non-surfing partner, and surfers tell us it is a good way to rest the shoulders. More in our <a href=\"/blog/birdwatching-montezuma-cabuya\">birding guide</a>.",
+      },
+      {
+        type: "image",
+        src: "photos/golden-hour-beach.jpg",
+        alt: "Sun setting behind the hills across the Gulf of Nicoya with swimmers in the calm water",
+        caption: "The gulf side is calm and faces east: sunrise country.",
+      },
+      { type: "h2", html: "5. Spend a morning on a working family farm" },
+      {
+        type: "p",
+        html: "Ten minutes inland the peninsula turns rural fast. On <a href=\"/tours/lets-get-local\">Let's Get Local</a> you spend a morning with a family at Finca Los Tres Higuerones: coffee brewed through a cloth filter, sugar cane pressed by hand, oxen and chickens, and a light meal you help cook. Three hours, almost no walking, and the morning kids and grandparents talk about afterwards. Here is <a href=\"/blog/lets-get-local-family-farm\">what it is really like</a>.",
+      },
+      { type: "h2", html: "6. Ride an ATV to a hidden waterfall and a ridge-top view" },
+      {
+        type: "p",
+        html: "Everybody in Santa Teresa rents an ATV to get around town. Fewer people point one uphill. Our <a href=\"/tours/finca-el-paraiso-atv\">Finca El Paraíso ATV journey</a> climbs the back roads to a ridge where the whole Pacific coast opens up below you, stops at a waterfall with a swimming pool, and ends with a home-cooked meal at a hill farm. Private departures only, so the pace is yours.",
+      },
+      { type: "h2", html: "7. Walk the forest at night" },
+      {
+        type: "p",
+        html: "After sunset the forest changes crew. Red-eyed tree frogs, banded geckos, tarantulas, scorpions that glow under UV light, sleeping birds and the occasional kinkajou: the <a href=\"/tours/nocturno-night-journey\">Nocturno Night Journey</a> is two slow hours on a trail near Montezuma with headlamps and a guide who knows where to look. It fits neatly after a beach day. Read <a href=\"/blog/night-hike-montezuma-nocturno\">what you will see</a>.",
+      },
+      {
+        type: "image",
+        src: "tours/nocturno-night-journey/06.jpg",
+        alt: "Three guests on a night hike pointing phones and lights at an animal in a tree",
+        caption: "Night shift on the Nocturno trail.",
+      },
+      { type: "h2", html: "8. Low tide at Playa Hermosa and the tide pools of Malpaís" },
+      {
+        type: "p",
+        html: "Check the tide table. At low tide, <strong>Playa Hermosa</strong> north of Santa Teresa becomes a kilometer of hard flat sand perfect for walking and running, and the rocky points at <strong>Malpaís</strong> open up tide pools full of crabs, urchins and small fish. Go an hour before the lowest tide, wear sandals you can get wet, and leave everything where you found it. Free, and one of the best hours of the day.",
+      },
+      { type: "h2", html: "9. Cabuya's island cemetery, reached on foot at low tide" },
+      {
+        type: "p",
+        html: "South of Montezuma, the fishing village of <strong>Cabuya</strong> buries its dead on a small island that you can walk to across the reef at low tide. It is quiet, strange and beautiful, and the village around it is the least touristy place on this coast. The Cabuya version of Let's Get Local visits it along with a fishing beach and a local marmalade maker.",
+      },
+      {
+        type: "image",
+        src: "photos/road-to-montezuma.jpg",
+        alt: "Paved road winding through flowering yellow and pink roadside trees between Cóbano and Montezuma",
+        caption: "The road between Santa Teresa and Montezuma in March, when the cortez trees flower.",
+      },
+      { type: "h2", html: "How to plan it from Santa Teresa or Malpaís" },
+      {
+        type: "list",
+        ordered: false,
+        items: [
+          "<strong>Pickups:</strong> our tours start from Montezuma hotels, and we arrange pickups in Santa Teresa and Malpaís on request. The transfer adds roughly 40 minutes each way, so starts are a little earlier and the quote reflects the drive. Tell us where you are staying.",
+          "<strong>Go early:</strong> wildlife is most active from first light to about 9 am, and the heat builds by late morning. A dawn tour still leaves you the whole afternoon for the beach.",
+          "<strong>Combine:</strong> Bird Lover's Morning or Let's Get Local in the morning and Nocturno after dinner make a full nature day without a single surfboard.",
+          "<strong>Season:</strong> the dry season (December to April) is best for dusty roads and easy wildlife viewing; the green season (May to November) brings full waterfalls, frogs and empty trails. Our <a href=\"/blog/best-time-to-visit-montezuma\">month-by-month guide</a> covers both.",
+          "<strong>Book ahead:</strong> small-group tours run on set days and fill up between December and March. We reply within 24 hours by <a href=\"" + WHATSAPP + "\">WhatsApp</a> or email.",
+        ],
+      },
+      {
+        type: "callout",
+        title: "A local, not a desk",
+        html: "JC has lived on this peninsula for more than a decade and guides every tour himself. If you want something that is not on this list, a private day in Cabo Blanco, a birding morning built around a target species, a farm visit for a big family, write to us and we will plan it with you.",
+      },
+    ],
+    faq: [
+      {
+        question: "What is there to do in Santa Teresa if you don't surf?",
+        answer:
+          "Plenty. Hike Cabo Blanco reserve, swim at the Montezuma waterfall, visit Curu Wildlife Refuge for monkeys and macaws, go birdwatching at sunrise, spend a morning on a family farm, ride an ATV into the hills or walk the forest at night with a guide. All are within an hour or so of Santa Teresa.",
+      },
+      {
+        question: "How far is Montezuma from Santa Teresa?",
+        answer: "About 17 km, which takes 30 to 45 minutes by road via Cóbano. Taxis, shuttles and rented ATVs all make the trip; our tours can pick you up in Santa Teresa on request.",
+      },
+      {
+        question: "Can I visit Cabo Blanco from Santa Teresa?",
+        answer:
+          "Yes. The main entrance is in Cabuya, about 30 minutes away, with a 4.5 km trail each way to the beach at the point; shorter trails start on the Malpaís side. The reserve is closed on Mondays and Tuesdays. JC guides private hikes there.",
+      },
+      {
+        question: "Do your tours pick up in Santa Teresa and Malpaís?",
+        answer: "Yes, on request. The transfer adds roughly 40 minutes each way compared with Montezuma, so the tour starts a little earlier and the quote includes the longer drive.",
+      },
+      {
+        question: "What is the best wildlife tour near Santa Teresa?",
+        answer:
+          "For guaranteed sightings, the half-day Curu Nature Escape: monkeys, deer, coatis and Scarlet Macaws on easy trails, with lunch and a swim. For birds, the Bird Lover's Morning at sunrise. For something different, the Nocturno night hike.",
+      },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------------------------
+  {
     slug: "getting-to-montezuma",
     title: "How to Get to Montezuma, Costa Rica: Ferry, Shuttle, Flight or Bus?",
     seoTitle: "How to Get to Montezuma, Costa Rica (Ferry, Shuttle, Flight, Bus)",

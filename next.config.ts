@@ -29,7 +29,7 @@ const nextConfig: NextConfig = {
         permanent: true,
       })),
       // Any other retired post lands on the blog index.
-      { source: "/blog/:slug((?!getting-to-montezuma|birdwatching-montezuma-cabuya|curu-wildlife-refuge-guide|night-hike-montezuma-nocturno|best-time-to-visit-montezuma|lets-get-local-family-farm).*)", destination: "/blog", permanent: false },
+      { source: "/blog/:slug((?!things-to-do-in-santa-teresa-beyond-surfing|getting-to-montezuma|birdwatching-montezuma-cabuya|curu-wildlife-refuge-guide|night-hike-montezuma-nocturno|best-time-to-visit-montezuma|lets-get-local-family-farm).*)", destination: "/blog", permanent: false },
     ];
   },
 };

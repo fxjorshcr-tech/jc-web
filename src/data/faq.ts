@@ -16,7 +16,7 @@ export const faq: FaqItem[] = [
     id: "santa-teresa",
     question: "Do you pick up in Santa Teresa and Malpaís?",
     answer:
-      "Yes. Our tours start from hotels in downtown Montezuma, and we arrange pickups in Santa Teresa, Malpaís and Cabuya on request. The drive from Santa Teresa adds roughly 40 minutes each way, so the quote reflects the longer transfer and the earlier start. Tell us where you are staying when you request a tour.",
+      "Yes. Our tours start from hotels in downtown Montezuma, and we arrange pickups in Santa Teresa, Malpaís and Cabuya on request. The drive from Santa Teresa adds roughly 40 minutes each way, so the quote reflects the longer transfer and the earlier start. Tell us where you are staying when you request a tour. See our list of [things to do in Santa Teresa beyond surfing](/blog/things-to-do-in-santa-teresa-beyond-surfing).",
   },
   {
     id: "payment",
