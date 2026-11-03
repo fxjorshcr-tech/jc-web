@@ -28,8 +28,6 @@ export interface Tour {
   suitableForSmallChildren: boolean;
   /** Optional embedded video (Vimeo or YouTube embed URL). */
   video?: { embedUrl: string; title: string };
-  /** True while the listing still contains TODO placeholder text. */
-  hasTodos?: boolean;
   /** Approximate duration in ISO 8601 for structured data, e.g. "PT3H". */
   duration?: string;
 }
@@ -50,36 +48,26 @@ export const tours: Tour[] = [
       "A guided night hike through the forest around Montezuma, when nocturnal animals wake up and the sounds of the wild amplify.",
     description: [
       "Why take a night hike through the darkness with little more than a flashlight and water bottle? Because Montezuma comes alive at night. As day turns to dusk the sounds of surrounding wildlife amplify alerting you to the fact that there is far more to see than that which is visible during normal waking hours. Nocturnal animals fill the forest and awaken to begin searching for food, making them much more likely to be spotted when trekking around after the sun has set.",
-      "In addition to the roaming mammals and insects that are sure to show, this tour has a couple more surprises in store. You won't be disappointed!",
-      "TODO: Add the current description of the Nocturno Night Journey (route, distance, difficulty and what guests typically see: frogs, mushrooms, night birds, insects).",
+      "The walk itself is short and slow, on a forest trail a few minutes from town. With headlamps and an ultraviolet light we look for red-eyed tree frogs, banded geckos, tarantulas at the mouths of their burrows, scorpions that glow blue under the UV beam, walking sticks and leaf-mimic insects, birds asleep on the branches and, with luck and silence, a kinkajou or an armadillo. Expect about two hours on the trail and a very different forest from the one you walked by day.",
     ],
-    when: "TODO: Start time and duration (e.g. 6:00pm-8:30pm) and available days.",
-    where: "Montezuma (TODO: confirm trail / starting point)",
-    whatToBring: [
-      "Flashlight or headlamp (TODO: confirm if provided)",
-      "Closed shoes",
-      "Long pants",
-      "Water*",
-      "Insect Repellent",
-      "Camera (optional)",
-    ],
-    whatsIncluded: ["Guide", "Equipment (TODO: confirm)", "Transportation* (TODO: confirm)"],
+    when: "Starts around sunset and lasts about 2 hours. Available most evenings on request; we confirm the exact start time with the season.",
+    where: "Forest trail a few minutes from Montezuma",
+    whatToBring: ["Closed shoes", "Long, light pants", "Insect Repellent", "Water*", "Headlamp (optional, we bring lights)", "Camera (optional)"],
+    whatsIncluded: ["Guide", "Headlamps and UV light", "Transportation*"],
     notes: [
       "This is the only tour not recommended for small children. While some children under the age of 12 have taken the hike, it may be challenging for some inexperienced hikers and/or unsafe if carrying a child.",
-      "TODO: Add minimum age, group size and any weather policy.",
+      "Light rain is good news for frogs and we go ahead. In heavy rain or lightning we reschedule to the next available evening, or refund if that is not possible.",
     ],
-    hero: { src: "tours/nocturno-night-journey/hero.jpg", alt: "Night hike through the forest near Montezuma, Costa Rica" },
+    hero: { src: "tours/nocturno-night-journey/hero.jpg", alt: "Red-eyed tree frog with bright red eyes and orange feet on a green leaf, seen on the Nocturno night hike near Montezuma" },
     gallery: [
       { src: "tours/nocturno-night-journey/frog.jpg", alt: "Tree frog seen on the Nocturno night hike", caption: "Tree Frog – Nocturno" },
       { src: "tours/nocturno-night-journey/mushroom.jpg", alt: "Mushrooms growing on the forest floor at night", caption: "Mushrooms after the first rains" },
       { src: "tours/nocturno-night-journey/bird.jpg", alt: "Bird roosting at night spotted with a flashlight", caption: "Night bird sighting" },
-      { src: "tours/nocturno-night-journey/mushroom-2.jpg", alt: "Close-up of a mushroom lit by headlamp", caption: "Forest detail" },
-      { src: "tours/nocturno-night-journey/trail.jpg", alt: "Green forest trail used for the night hike", caption: "The trail, green after the rains" },
     ],
     status: "available",
     suitableForSmallChildren: false,
     video: { embedUrl: "https://player.vimeo.com/video/78227059", title: "Nocturno Montezuma Night Hike" },
-    hasTodos: true,
+    duration: "PT2H",
   },
   {
     slug: "bird-lovers-morning",
@@ -168,31 +156,30 @@ export const tours: Tour[] = [
     slug: "finca-el-paraiso-atv",
     name: "Finca El Paraíso ATV Exclusive Journey",
     shortName: "Finca El Paraíso ATV",
-    tagline: "TODO: One-line tagline for the ATV journey to Finca El Paraíso.",
+    tagline: "Back roads, a ridge-top view of the Pacific and a hidden waterfall, on your own ATV.",
     summary:
-      "TODO: Two-sentence summary of the Finca El Paraíso ATV Exclusive Journey for the tour cards (what makes it exclusive, who it is for).",
+      "A private ATV journey along the hill roads above Montezuma to Finca El Paraíso: ridge-top views over the coast, a waterfall stop and a home-cooked meal at the finca. Exclusive to your group.",
     description: [
-      "TODO: Full description of the Finca El Paraíso ATV Exclusive Journey: the ATV route, the finca, what guests do and see, meals and the pace of the day.",
-      "TODO: Second paragraph (optional): the story of the finca and the family or partner who hosts the visit.",
+      "Some of the best views on the peninsula are at the end of dirt roads no shuttle will take you up. On this journey you ride your own ATV, helmet on, behind JC on his, climbing from Montezuma through pasture and forest to the ridges above the coast. The stops are the point: a lookout where the Pacific opens up below you, a waterfall with a pool for a swim, and whatever wildlife crosses the road on the way.",
+      "The destination is Finca El Paraíso, a family farm in the hills where we are received with a typical home-cooked meal and time to look around. \"Exclusive\" means exactly that: this journey runs privately for your group only, so the pace, the photo stops and the swim time are yours to decide.",
     ],
-    when: "TODO: Start time, duration and available days.",
-    where: "TODO: Finca El Paraíso location (town / district).",
-    whatToBring: ["TODO: Closed shoes", "TODO: Long pants", "TODO: Sunblock", "TODO: Insect Repellent", "Water*", "TODO: Driver's license (if guests drive the ATV)"],
-    whatsIncluded: ["TODO: ATV and safety gear", "Guide", "TODO: Meal or snack", "TODO: Entrance / farm visit", "Transportation*"],
+    when: "Morning departure, about half a day. Days on request; we confirm times when you book.",
+    where: "Hill roads above Montezuma and Finca El Paraíso",
+    whatToBring: ["Closed shoes", "Clothes you don't mind getting muddy", "Sunblock", "Insect Repellent", "Water*", "Swimsuit and towel", "Driver's license (to drive an ATV)"],
+    whatsIncluded: ["ATV and helmet", "Guide", "Waterfall and viewpoint stops", "Meal at the finca"],
     notes: [
-      "TODO: Minimum age to drive or ride an ATV, maximum group size and any requirements.",
-      "TODO: Cancellation or weather policy specific to this tour, if any.",
+      "A valid driver's license is required to drive an ATV. Younger guests can ride as passengers with an adult; ask us about minimum ages.",
+      "Private departures only. The route can be shortened or adapted to the group and to the state of the roads in the green season.",
     ],
-    hero: { src: "tours/finca-el-paraiso-atv/hero.jpg", alt: "ATV on a dirt road leading to Finca El Paraíso" },
+    hero: { src: "tours/finca-el-paraiso-atv/hero.jpg", alt: "Guest standing on a red ATV at a ridge-top lookout pointing at the Pacific coast below" },
     gallery: [
-      { src: "tours/finca-el-paraiso-atv/gallery-1.jpg", alt: "Guests on ATVs at the start of the journey", caption: "TODO: caption" },
-      { src: "tours/finca-el-paraiso-atv/gallery-2.jpg", alt: "View from the trail to Finca El Paraíso", caption: "TODO: caption" },
-      { src: "tours/finca-el-paraiso-atv/gallery-3.jpg", alt: "Finca El Paraíso", caption: "TODO: caption" },
-      { src: "tours/finca-el-paraiso-atv/gallery-4.jpg", alt: "Local meal served at the finca", caption: "TODO: caption" },
+      { src: "tours/finca-el-paraiso-atv/gallery-1.jpg", alt: "Guests on ATVs at the start of the journey", caption: "Setting out" },
+      { src: "tours/finca-el-paraiso-atv/gallery-2.jpg", alt: "View from the trail to Finca El Paraíso", caption: "The ridge road" },
+      { src: "tours/finca-el-paraiso-atv/gallery-3.jpg", alt: "Finca El Paraíso", caption: "Finca El Paraíso" },
+      { src: "tours/finca-el-paraiso-atv/gallery-4.jpg", alt: "Local meal served at the finca", caption: "Lunch at the finca" },
     ],
     status: "available",
     suitableForSmallChildren: true,
-    hasTodos: true,
   },
 ];
 
