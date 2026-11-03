@@ -173,7 +173,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
         </div>
 
         <div className="container-site grid gap-12 py-12 lg:grid-cols-12 sm:py-16">
-          <div className="lg:col-span-8">
+          <div className="min-w-0 lg:col-span-8">
             {/* Direct answer first: what people and answer engines are looking for */}
             <section id="quick-answer" aria-labelledby="quick-answer-heading" className="rounded-xl bg-olive-100 p-6 sm:p-8">
               <p id="quick-answer-heading" className="eyebrow">
@@ -204,7 +204,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
             </div>
           </div>
 
-          <aside className="lg:col-span-3 lg:col-start-10">
+          <aside className="min-w-0 lg:col-span-3 lg:col-start-10">
             <div className="lg:sticky lg:top-24">
               <nav aria-label="On this page" className="rounded-xl border border-border/70 bg-card p-5">
                 <p className="eyebrow">On this page</p>

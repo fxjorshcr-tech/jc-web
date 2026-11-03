@@ -31,7 +31,7 @@ export function PostBody({ blocks }: { blocks: PostBlock[] }) {
           case "table":
             return (
               <figure key={i} className="my-8 overflow-x-auto rounded-lg border border-border/70">
-                <table className="w-full min-w-[32rem] border-collapse text-left text-sm">
+                <table className="w-full min-w-[28rem] border-collapse text-left text-sm">
                   {block.caption && <caption className="bg-cream-deep/60 px-4 py-2.5 text-left font-sans text-xs font-semibold uppercase tracking-[0.14em] text-olive-700">{block.caption}</caption>}
                   <thead>
                     <tr className="bg-olive-100/70">
