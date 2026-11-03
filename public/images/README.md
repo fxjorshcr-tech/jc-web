@@ -116,9 +116,9 @@ Each post has a 16:9 cover plus a few inline photos (3:2). Current posts and the
 
 | Post | Cover | Inline photos |
 | --- | --- | --- |
-| Things to do in Santa Teresa beyond surfing | `photos/sunset-low-tide.jpg` | `photos/coastline.jpg`, `photos/montezuma-waterfall.jpg`, `photos/golden-hour-beach.jpg`, `tours/nocturno-night-journey/06.jpg`, `photos/road-to-montezuma.jpg` |
+| Things to do in Santa Teresa beyond surfing | `photos/sunset-boat.jpg` | `photos/river-mouth.jpg`, `photos/montezuma-waterfall.jpg`, `tours/curu-nature-escape/05.jpg`, `tours/bird-lovers-morning/02.jpg`, `tours/nocturno-night-journey/06.jpg`, `photos/beach-lagoon.jpg` |
 | How to Get to Montezuma | `blog/getting-to-montezuma/cover-road.jpg` | `cattle-on-a-country-road.jpg`, `gravel-road-to-the-finca.jpg` |
-| Birdwatching in Montezuma and Cabuya | `blog/birdwatching-montezuma-cabuya/cover-birders.jpg` | `tours/bird-lovers-morning/hero.jpg`, `photos/bird-lovers-morning-01.jpg` |
+| Birdwatching in Montezuma and Cabuya | `blog/birdwatching-montezuma-cabuya/cover-birders.jpg` | `tours/bird-lovers-morning/hero.jpg`, `tours/bird-lovers-morning/01.jpg` |
 | Curu Wildlife Refuge guide | `blog/curu-wildlife-refuge-guide/cover-mangrove-bridge.jpg` | `tours/curu-nature-escape/hero.jpg`, `group-on-the-trail.jpg`, `estuary-mouth.jpg` |
 | Night hike (Nocturno) | `tours/nocturno-night-journey/hero.jpg` | `tours/nocturno-night-journey/01.jpg`, `02.jpg`, `blog/night-hike-montezuma-nocturno/dusk-over-the-pacific.jpg` |
 | Best time to visit Montezuma | `blog/best-time-to-visit-montezuma/cover-beach-sunset.jpg` | `dry-season-coastline.jpg`, `green-season-river.jpg`, `forest-trail.jpg`, `gulf-sunset-swim.jpg` |

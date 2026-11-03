@@ -38,6 +38,8 @@ export interface BlogPost {
   /** Cover image path relative to /public/images (16:9 works best). */
   cover: string;
   coverAlt: string;
+  /** Optional object-position class for the 16:9 crop of a portrait cover, e.g. "object-[50%_62%]". */
+  coverPosition?: string;
   /** Direct 40-60 word answer to the question in the title. Shown first and marked speakable. */
   quickAnswer: string;
   /** Short label/value pairs rendered as a facts box. */
@@ -62,8 +64,9 @@ export const posts: BlogPost[] = [
     excerpt:
       "Santa Teresa is famous for waves, but the hills, reserves and villages behind the beach are the best of the peninsula. Cabo Blanco, Montezuma waterfall, Curu, birding, farm visits and night hikes, all within an hour.",
     category: "Planning",
-    cover: "photos/sunset-low-tide.jpg",
-    coverAlt: "Orange sunset over the Pacific at low tide on a Santa Teresa beach, with surfers and swimmers in the shallows",
+    cover: "photos/sunset-boat.jpg",
+    coverAlt: "Small boat crossing in front of a huge orange sun setting into the Pacific off the Nicoya Peninsula",
+    coverPosition: "object-[50%_62%]",
     quickAnswer:
       "Beyond the surf, Santa Teresa and Malpaís sit at the door of the wildest corner of the Nicoya Peninsula. Within an hour you can hike Cabo Blanco, Costa Rica's first nature reserve, swim under the Montezuma waterfall, watch monkeys and macaws in Curu Wildlife Refuge, bird the sunrise at Cabuya, spend a morning on a working family farm, ride an ATV to a hidden waterfall, or walk the forest at night with a headlamp. A licensed local guide picks you up at your hotel.",
     keyFacts: [
@@ -87,9 +90,9 @@ export const posts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "photos/coastline.jpg",
-        alt: "Turquoise sea breaking on rocks below a forested headland on the southern Nicoya coast",
-        caption: "The coast around the Cabo Blanco point: forest to the waterline.",
+        src: "photos/river-mouth.jpg",
+        alt: "Forest river flowing between dense trees out to the sea under a blue sky on the southern Nicoya coast",
+        caption: "Forest to the waterline: the southern coast as Cabo Blanco has kept it.",
       },
       { type: "h2", html: "2. Swim under the Montezuma waterfall" },
       {
@@ -107,6 +110,12 @@ export const posts: BlogPost[] = [
         type: "p",
         html: "If you want to see animals rather than hope for them, <strong>Curu</strong> is the place. A privately protected refuge near Paquera, about an hour and a half from Santa Teresa, it is one of the easiest places in Costa Rica to see white-faced capuchins, howler monkeys, white-tailed deer, coatis and Scarlet Macaws on flat, shaded trails that end at a calm beach. Our <a href=\"/tours/curu-nature-escape\">Curu Nature Escape</a> is a half day with guide, entrance, scope, swim and a typical Costa Rican lunch. Read the full <a href=\"/blog/curu-wildlife-refuge-guide\">Curu guide</a>.",
       },
+      {
+        type: "image",
+        src: "tours/curu-nature-escape/05.jpg",
+        alt: "Calm estuary lined with palms and mangroves opening onto the bay at Curu Wildlife Refuge",
+        caption: "The estuary at Curú, where the trail meets the bay.",
+      },
       { type: "h2", html: "4. Watch the sunrise with the birds" },
       {
         type: "p",
@@ -114,9 +123,9 @@ export const posts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "photos/golden-hour-beach.jpg",
-        alt: "Sun setting behind the hills across the Gulf of Nicoya with swimmers in the calm water",
-        caption: "The gulf side is calm and faces east: sunrise country.",
+        src: "tours/bird-lovers-morning/02.jpg",
+        alt: "Silhouette of a bird calling from a dead branch against the orange sunrise, seen through a spotting scope",
+        caption: "Sunrise through the scope at Cabuya, on the gulf side.",
       },
       { type: "h2", html: "5. Spend a morning on a working family farm" },
       {
@@ -144,16 +153,16 @@ export const posts: BlogPost[] = [
         type: "p",
         html: "Check the tide table. At low tide, <strong>Playa Hermosa</strong> north of Santa Teresa becomes a kilometer of hard flat sand perfect for walking and running, and the rocky points at <strong>Malpaís</strong> open up tide pools full of crabs, urchins and small fish. Go an hour before the lowest tide, wear sandals you can get wet, and leave everything where you found it. Free, and one of the best hours of the day.",
       },
+      {
+        type: "image",
+        src: "photos/beach-lagoon.jpg",
+        alt: "Quiet lagoon behind the beach shaded by a large spreading tree",
+        caption: "Behind the beach: a lagoon under the trees, the kind of corner you only find on foot.",
+      },
       { type: "h2", html: "9. Cabuya's island cemetery, reached on foot at low tide" },
       {
         type: "p",
         html: "South of Montezuma, the fishing village of <strong>Cabuya</strong> buries its dead on a small island that you can walk to across the reef at low tide. It is quiet, strange and beautiful, and the village around it is the least touristy place on this coast. The Cabuya version of Let's Get Local visits it along with a fishing beach and a local marmalade maker.",
-      },
-      {
-        type: "image",
-        src: "photos/road-to-montezuma.jpg",
-        alt: "Paved road winding through flowering yellow and pink roadside trees between Cóbano and Montezuma",
-        caption: "The road between Santa Teresa and Montezuma in March, when the cortez trees flower.",
       },
       { type: "h2", html: "How to plan it from Santa Teresa or Malpaís" },
       {
@@ -428,9 +437,9 @@ export const posts: BlogPost[] = [
       },
       {
         type: "image",
-        src: "photos/bird-lovers-morning-01.jpg",
-        alt: "Guests scanning the treetops with a spotting scope and binoculars during a Bird Lover's Morning near Montezuma",
-        caption: "JC brings a scope so everyone gets the close-up, even without their own gear.",
+        src: "tours/bird-lovers-morning/01.jpg",
+        alt: "Scarlet Macaw with red, yellow and blue plumage perched against a tree trunk",
+        caption: "Scarlet Macaw through the scope. JC brings one so everyone gets the close-up, even without their own gear.",
       },
       { type: "h2", html: "What to bring (and what we bring)" },
       {

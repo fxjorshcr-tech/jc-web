@@ -168,7 +168,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
 
         <div className="container-site max-w-4xl">
           <div className="relative aspect-[16/9] overflow-hidden rounded-xl sm:-mt-10">
-            <Photo src={post.cover} alt={post.coverAlt} priority sizes="(min-width: 1024px) 896px, 100vw" />
+            <Photo src={post.cover} alt={post.coverAlt} priority sizes="(min-width: 1024px) 896px, 100vw" className={post.coverPosition} />
           </div>
         </div>
 
