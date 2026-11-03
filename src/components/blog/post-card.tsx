@@ -19,7 +19,7 @@ export function PostCard({ post, featured = false }: { post: BlogPost; featured?
           sizes={featured ? "(min-width: 1024px) 58vw, 100vw" : "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"}
           priority={featured}
           compact
-          className="transition-transform duration-700 group-hover:scale-[1.03]"
+          className={cn("transition-transform duration-700 group-hover:scale-[1.03]", post.coverPosition)}
         />
       </Link>
       <div className={cn(featured && "lg:col-span-5")}>

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description:
     "The story of JC's Journeys and its founder, licensed ICT guide Juan Carlos 'JC' Aguirre (Lic. #1165). Why tour with us, and our mission, vision and values.",
   alternates: { canonical: "/about" },
-  openGraph: { title: "About JC's Journeys", description: "Meet JC Aguirre, licensed local guide in Montezuma, Costa Rica.", url: "/about" },
+  openGraph: { title: "About JC's Journeys", description: "Meet JC Aguirre, licensed local guide for Montezuma, Santa Teresa and Malpaís on the southern Nicoya Peninsula.", url: "/about" },
 };
 
 export default function AboutPage() {

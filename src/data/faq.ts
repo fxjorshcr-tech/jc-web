@@ -13,6 +13,12 @@ export const faq: FaqItem[] = [
       "We currently do not have a physical office. However, many tour operators, hotels and vendors in the area sell our tours. You can inquire with your hotel, or just as easily you can reserve your tour directly through our website or by WhatsApp at [+506 8975 8832](https://wa.me/50689758832).",
   },
   {
+    id: "santa-teresa",
+    question: "Do you pick up in Santa Teresa and Malpaís?",
+    answer:
+      "Yes. Our tours start from hotels in downtown Montezuma, and we arrange pickups in Santa Teresa, Malpaís and Cabuya on request. The drive from Santa Teresa adds roughly 40 minutes each way, so the quote reflects the longer transfer and the earlier start. Tell us where you are staying when you request a tour. See our list of [things to do in Santa Teresa beyond surfing](/blog/things-to-do-in-santa-teresa-beyond-surfing).",
+  },
+  {
     id: "payment",
     question: "How do we pay for our tour?",
     answer:

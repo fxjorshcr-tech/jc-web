@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { site } from "@/data/site";
 import { cn } from "@/lib/utils";
 
 interface LogoProps {
@@ -32,7 +33,7 @@ export function Logo({ className, light = false, full = false }: LogoProps) {
           JC&rsquo;s Journeys
         </span>
         <span className={cn("mt-1 text-[0.6rem] font-bold uppercase tracking-[0.22em]", light ? "text-olive-300" : "text-teal-600")}>
-          Montezuma · Costa Rica
+          {site.taglineShort}
         </span>
       </span>
     </Link>
