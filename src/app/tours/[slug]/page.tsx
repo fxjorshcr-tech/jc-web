@@ -7,8 +7,10 @@ import { Photo } from "@/components/photo";
 import { Button } from "@/components/ui/button";
 import { Gallery } from "@/components/site/gallery";
 import { JsonLd } from "@/components/site/json-ld";
+import { TripadvisorBadge } from "@/components/site/tripadvisor-badge";
 import { booking } from "@/data/content";
 import { site } from "@/data/site";
+import { whatsappUrl } from "@/lib/whatsapp";
 import { commonTourNotes, getTour, tours } from "@/data/tours";
 import { getTourGallery } from "@/lib/tour-photos";
 
@@ -70,7 +72,14 @@ export default async function TourPage({ params }: { params: Promise<Params> }) 
       "@type": "ItemList",
       itemListElement: [{ "@type": "ListItem", position: 1, item: { "@type": "TouristDestination", name: tour.where } }],
     },
-    provider: { "@id": `${site.url}/#business`, "@type": ["LocalBusiness", "TravelAgency"], name: site.name, url: site.url, email: site.email },
+    provider: {
+      "@id": `${site.url}/#business`,
+      "@type": ["LocalBusiness", "TravelAgency"],
+      name: site.name,
+      url: site.url,
+      email: site.email,
+      telephone: site.whatsapp.international,
+    },
     offers: {
       "@type": "Offer",
       url: `${site.url}/tours/${tour.slug}#book`,
@@ -182,6 +191,7 @@ export default async function TourPage({ params }: { params: Promise<Params> }) 
               <Button asChild size="lg" className="mt-4 w-full">
                 <a href="#book">Request this tour</a>
               </Button>
+              <TripadvisorBadge variant="inline" className="mt-4" />
             </div>
           </div>
         </aside>
@@ -195,7 +205,16 @@ export default async function TourPage({ params }: { params: Promise<Params> }) 
             <h2 className="mt-3 text-3xl text-ink sm:text-4xl">Request {tour.shortName}</h2>
             <p className="prose-site mt-5">{booking.intro}</p>
             <p className="mt-6 text-sm text-ink-soft">
-              Prefer email? Write to{" "}
+              Prefer to chat? WhatsApp{" "}
+              <a
+                href={whatsappUrl(`Hi JC, I'd like to request the ${tour.name}.`)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-olive-800 underline-offset-4 hover:underline"
+              >
+                {site.whatsapp.display}
+              </a>{" "}
+              or email{" "}
               <a href={`mailto:${site.email}`} className="font-semibold text-olive-800 underline-offset-4 hover:underline">
                 {site.email}
               </a>

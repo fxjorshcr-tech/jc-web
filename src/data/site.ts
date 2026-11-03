@@ -5,6 +5,12 @@ export const site = {
     "Small-group nature and culture tours in Montezuma, Costa Rica, led by licensed local guide JC Aguirre. Birding, Curu Wildlife Refuge, organic farm visits and night hikes on the southern Nicoya Peninsula.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://jcsjourneys.com",
   email: "jcsjourneys@gmail.com",
+  whatsapp: {
+    /** E.164 digits only, used for wa.me links and structured data. */
+    number: "50689758832",
+    display: "+506 8975 8832",
+    international: "+50689758832",
+  },
   location: {
     locality: "Montezuma",
     region: "Puntarenas",
@@ -27,6 +33,13 @@ export const site = {
     tripadvisor:
       "https://www.tripadvisor.com/Attraction_Review-g309278-d6132502-Reviews-JC_s_Journeys_Day_Tours-Montezuma_Province_of_Puntarenas.html",
   },
+  /** Public review profile shown as a badge across the site. Update count/rating by hand when it changes. */
+  reviews: {
+    platform: "Tripadvisor",
+    rating: 5.0,
+    count: 56,
+    url: "https://www.tripadvisor.com/Attraction_Review-g309278-d6132502-Reviews-JC_s_Journeys_Day_Tours-Montezuma_Province_of_Puntarenas.html",
+  },
   travelersAgainstPlastic: {
     name: "Travelers Against Plastic",
     url: "https://www.travelersagainstplastic.org/",
@@ -38,8 +51,7 @@ export const nav = [
   { href: "/tours", label: "Tours" },
   { href: "/about", label: "About" },
   { href: "/guests", label: "Guests" },
-  { href: "/blog", label: "Journal" },
-  { href: "/recommendations", label: "Recommendations" },
+  { href: "/blog", label: "Blog" },
   { href: "/faq", label: "FAQ" },
   { href: "/hire-a-guide", label: "Hire a Guide" },
 ] as const;

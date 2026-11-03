@@ -55,8 +55,8 @@ export const partners = {
 export const community = {
   title: "Community Building",
   text: "We are working hard to contribute more to the communities in which we operate. One of our goals is to create a youth birding group in the Montezuma/Cabuya area to get kids interested in nature and environmental protection. To do this, we're planning to raise enough money to buy 10 pairs of kids' binoculars to be used for this group. You can ask about buying one of our reusable bags or other souvenirs to contribute to this effort when you take one of our tours, or purchase items online.",
-  blogCta: { label: "Montezuma School Goes Bird Watching", href: "/blog/montezuma-school-goes-bird-watching" },
-  blogLead: "Read our blog to see more from our first trip with the Montezuma School.",
+  blogCta: { label: "Birdwatching in Montezuma", href: "/blog/birdwatching-montezuma-cabuya" },
+  blogLead: "Read our guide to birdwatching in Montezuma and Cabuya, the same birds the kids learn to spot.",
   images: [
     { src: "community/montezuma-school-birding-1.jpg", alt: "Students from Montezuma School looking through binoculars" },
     { src: "community/montezuma-school-birding-2.jpg", alt: "JC teaching kids about local birds on the beach" },
