@@ -2,9 +2,9 @@
 
 export const home = {
   heroTitle: "JC's Journeys",
-  heroTagline: "Nature and Culture Tours – Montezuma, Costa Rica",
+  heroTagline: "Nature and Culture Tours – Southern Nicoya Peninsula, Costa Rica",
   heroIntro:
-    "Small-group journeys on the southern Nicoya Peninsula with a licensed local guide: birds at sunrise, wildlife in Curu, a morning on an organic family farm and the forest after dark.",
+    "Small-group journeys across the southern Nicoya Peninsula, from Montezuma to Santa Teresa and Malpaís, with a licensed local guide who has lived here for over a decade: birds at sunrise, wildlife in Curu, a morning on a family farm and the forest after dark.",
   toursIntro:
     "All tours can be customized or arranged for private groups. Contact us with any special requests or for more information.",
 };

@@ -33,6 +33,11 @@ export const metadata: Metadata = {
   applicationName: site.name,
   keywords: [
     "Montezuma tours",
+    "Santa Teresa tours",
+    "Malpais tours",
+    "things to do in Santa Teresa Costa Rica",
+    "Santa Teresa birdwatching",
+    "Nicoya Peninsula tour guide",
     "Costa Rica nature tours",
     "birdwatching Montezuma",
     "Curu Wildlife Refuge tour",

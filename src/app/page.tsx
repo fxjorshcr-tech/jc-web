@@ -17,7 +17,7 @@ import { whatsappUrl } from "@/lib/whatsapp";
 
 const facts = [
   { icon: ShieldCheck, title: "Licensed local guide", text: `JC Aguirre, ${site.guide.license}, with first aid training and more than a decade guiding the peninsula.` },
-  { icon: MapPinned, title: "Small groups, hotel pickup", text: "Flexible, friendly tours that start at your hotel in Montezuma and can be customized for private groups." },
+  { icon: MapPinned, title: "Small groups, hotel pickup", text: "Flexible, friendly tours that start at your hotel in Montezuma, with pickups in Santa Teresa and Malpaís on request, and can be customized for private groups." },
   { icon: Leaf, title: "Considerate by design", text: "Local families, small businesses and reusable bottles instead of plastic. Tours that give back to the places they visit." },
 ];
 
@@ -57,7 +57,7 @@ export default function HomePage() {
       addressCountry: site.location.country,
     },
     geo: { "@type": "GeoCoordinates", latitude: site.location.lat, longitude: site.location.lng },
-    areaServed: ["Montezuma", "Cabuya", "Tambor", "Santa Teresa", "Curu Wildlife Refuge", "Cabo Blanco"],
+    areaServed: site.location.served.map((name) => ({ "@type": "Place", name })),
     founder: { "@type": "Person", name: site.guide.name, jobTitle: "Licensed tour guide" },
     sameAs: Object.values(site.social),
     makesOffer: tours.map((t) => ({
@@ -85,10 +85,17 @@ export default function HomePage() {
         </div>
         <div className="container-site relative flex items-center pb-14 pt-10 lg:min-h-[88svh] lg:py-24">
           <div className="max-w-xl lg:max-w-[32rem] xl:max-w-[36rem]">
-            <p className="eyebrow !text-gold-300">Southern Nicoya Peninsula · Est. 2013</p>
+            <p className="eyebrow !text-gold-300">Southern Nicoya Peninsula, Costa Rica · Est. 2013</p>
             <h1 className="mt-5 text-5xl font-medium leading-[1.02] text-cream sm:text-6xl lg:text-[4.25rem] [text-shadow:0_2px_24px_rgba(0,0,0,0.35)]">
               {home.heroTagline.split(" – ")[0]}
-              <span className="block font-normal text-gold-300">Montezuma, Costa Rica</span>
+              <span className="mt-2 block text-[0.56em] font-normal leading-tight text-gold-300">
+                {site.towns.map((town, i) => (
+                  <span key={town} className="whitespace-nowrap">
+                    {i > 0 && <span aria-hidden className="mx-2 text-gold-300/60">·</span>}
+                    {town}
+                  </span>
+                ))}
+              </span>
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-cream/90 sm:text-lg [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">{home.heroIntro}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -104,7 +111,7 @@ export default function HomePage() {
             <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-cream/85">
               <TripadvisorBadge light />
               <span>
-                Guided by <span className="font-semibold text-cream">{site.guide.shortName}</span>, {site.guide.license.split(" – ")[0]}
+                Guided by <span className="font-semibold text-cream">{site.guide.shortName}</span>, {site.guide.license.split(" – ")[0]} · based in Montezuma, guiding the whole peninsula
               </span>
             </div>
             <p className="mt-4 text-xs text-cream/60 lg:hidden">{heroPhoto.caption}</p>
