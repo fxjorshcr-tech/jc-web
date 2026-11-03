@@ -8,9 +8,9 @@ import { PageHero } from "@/components/site/page-hero";
 import { sortedPosts } from "@/data/posts";
 import { site } from "@/data/site";
 
-const title = "Montezuma Travel Blog: Local Answers from a Licensed Guide";
+const title = "Nicoya Peninsula Travel Blog: Local Answers from a Licensed Guide";
 const description =
-  "Practical, local answers about Montezuma and the southern Nicoya Peninsula: how to get here, the best time to visit, birdwatching, Curu Wildlife Refuge, night hikes and farm visits.";
+  "Practical, local answers about Montezuma, Santa Teresa, Malpaís and the southern Nicoya Peninsula: how to get here, the best time to visit, things to do beyond surfing, birdwatching, Curu Wildlife Refuge, night hikes and farm visits.";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -61,13 +61,13 @@ export default function BlogPage() {
         eyebrow="Blog"
         title={
           <>
-            Straight answers about <em className="font-light">Montezuma</em>
+            Straight answers about <em className="font-light">the peninsula</em>
           </>
         }
         intro={
           <p>
-            The questions our guests ask before and during their trip, answered by the guide who lives here: how to get to Montezuma, when to come, what you will
-            see in Curu, on a night hike or at sunrise with the birds, and what a morning on a family farm is really like.
+            The questions our guests ask before and during their trip, answered by the guide who lives here: how to get to Montezuma, what to do in Santa Teresa and Malpaís beyond
+            the surf, when to come, what you will see in Curu, on a night hike or at sunrise with the birds, and what a morning on a family farm is really like.
           </p>
         }
       />
