@@ -15,8 +15,8 @@ export function AuthorCard({ updated }: { updated: string }) {
         <p className="eyebrow">Written by</p>
         <p className="mt-1 font-serif text-lg text-ink">{site.guide.name}</p>
         <p className="mt-1 text-sm leading-relaxed text-ink-soft">
-          Licensed local guide ({site.guide.license}, {site.guide.licenseBody}), founder of {site.name} and resident of the southern Nicoya Peninsula for more than a
-          decade. Every post is based on tours we actually run and reviewed on {new Date(updated + "T00:00:00Z").toLocaleDateString("en-US", { month: "long", year: "numeric", timeZone: "UTC" })}.
+          Licensed local guide ({site.guide.license}, {site.guide.licenseBody}), founder of {site.name} and resident of the southern Nicoya Peninsula for more than two
+          decades. Every post is based on tours we actually run and reviewed on {new Date(updated + "T00:00:00Z").toLocaleDateString("en-US", { month: "long", year: "numeric", timeZone: "UTC" })}.
         </p>
         <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2">
           <TripadvisorBadge variant="inline" />

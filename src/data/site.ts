@@ -1,12 +1,12 @@
 export const site = {
   name: "JC's Journeys",
-  tagline: "Nature and Culture Tours – Southern Nicoya Peninsula, Costa Rica",
+  tagline: "Natural and Cultural Journeys – Southern Nicoya Peninsula, Costa Rica",
   /** Short form for tight spaces (logo subline). */
   taglineShort: "Nicoya Peninsula · Costa Rica",
   /** The towns we work from and pick up in, in the order we lead with. */
   towns: ["Montezuma", "Santa Teresa", "Malpaís"],
   description:
-    "Small-group nature and culture tours across the southern Nicoya Peninsula, from Montezuma to Santa Teresa and Malpaís, led by licensed local guide JC Aguirre. Birding, Curu Wildlife Refuge, family farm visits and night hikes.",
+    "Small-group natural and cultural journeys across the southern Nicoya Peninsula, from Montezuma to Santa Teresa and Malpaís, led by licensed local guide JC Aguirre. Birding, Curu Wildlife Refuge, family farm visits and night hikes.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://jcsjourneys.com",
   email: "jcsjourneys@gmail.com",
   whatsapp: {

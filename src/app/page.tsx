@@ -16,7 +16,7 @@ import { tours } from "@/data/tours";
 import { whatsappUrl } from "@/lib/whatsapp";
 
 const facts = [
-  { icon: ShieldCheck, title: "Licensed local guide", text: `JC Aguirre, ${site.guide.license}, with first aid training and more than a decade guiding the peninsula.` },
+  { icon: ShieldCheck, title: "Licensed local guide", text: `JC Aguirre, ${site.guide.license}, with first aid training and more than two decades guiding the peninsula.` },
   { icon: MapPinned, title: "Small groups, hotel pickup", text: "Flexible, friendly tours that start at your hotel in Montezuma, with pickups in Santa Teresa and Malpaís on request, and can be customized for private groups." },
   { icon: Leaf, title: "Considerate by design", text: "Local families, small businesses and reusable bottles instead of plastic. Tours that give back to the places they visit." },
 ];
