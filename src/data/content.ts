@@ -2,9 +2,9 @@
 
 export const home = {
   heroTitle: "JC's Journeys",
-  heroTagline: "Nature and Culture Tours – Southern Nicoya Peninsula, Costa Rica",
+  heroTagline: "Natural and Cultural Journeys – Southern Nicoya Peninsula, Costa Rica",
   heroIntro:
-    "Small-group journeys across the southern Nicoya Peninsula, from Montezuma to Santa Teresa and Malpaís, with a licensed local guide who has lived here for over a decade: birds at sunrise, wildlife in Curu, a morning on a family farm and the forest after dark.",
+    "Small-group journeys across the southern Nicoya Peninsula, from Montezuma to Santa Teresa and Malpaís, with a licensed local guide who has lived here for over two decades: birds at sunrise, wildlife in Curu, a morning on a family farm and the forest after dark.",
   toursIntro:
     "All tours can be customized or arranged for private groups. Contact us with any special requests or for more information.",
 };
@@ -19,7 +19,7 @@ export const about = {
     "Created by Juan Carlos Aguirre, JC's Journeys started as an idea to offer journeys in the Southern area of the Peninsula de Nicoya that could share more with travelers about Costa Rican culture and nature than a typical adventure activity may offer. Our goal is to provide environmentally and socially responsible tours that leave visitors with an enriched understanding of local culture and a greater appreciation for the biodiversity that makes the country so unique. We do our best to help visitors feel they have truly experienced Costa Rica, and have done so in a manner that is positive for both the environment and communities they visit.",
   meetTheGuide: {
     title: "Meet the Guide",
-    text: "Juan Carlos \"JC\" Aguirre was raised in San Carlos near Arenal Volcano and has lived in the southern Nicoya Peninsula for over 13 years. He is an experienced tour professional with a genuine love of nature, Costa Rica, and sharing his knowledge with people from all around the world. JC is fluent in English and Spanish (and can accommodate German and French speakers too with a little help and patience from the native speakers). With over 10 years of experience in the tourism industry, JC is a licensed* tour guide by ICT (Instituto Costarricense de Turismo) with first aid training and extensive knowledge of the Nicoya Peninsula as well as other areas throughout the country.",
+    text: "Juan Carlos \"JC\" Aguirre was raised in San Carlos near Arenal Volcano and has lived in the southern Nicoya Peninsula for over two decades. He is an experienced tour professional with a genuine love of nature, Costa Rica, and sharing his knowledge with people from all around the world. JC is fluent in English and Spanish (and can accommodate German and French speakers too with a little help and patience from the native speakers). With over 10 years of experience in the tourism industry, JC is a licensed* tour guide by ICT (Instituto Costarricense de Turismo) with first aid training and extensive knowledge of the Nicoya Peninsula as well as other areas throughout the country.",
     licenseNote: "*Lic. #1165 – Guia de Turismo Local",
     ictUrl: "https://www.visitcostarica.com/",
     image: { src: "about/jc-guide.jpg", alt: "JC Aguirre with guests on a forest trail, binoculars in hand" },

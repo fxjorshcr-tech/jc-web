@@ -179,7 +179,7 @@ export const posts: BlogPost[] = [
       {
         type: "callout",
         title: "A local, not a desk",
-        html: "JC has lived on this peninsula for more than a decade and guides every tour himself. If you want something that is not on this list, a private day in Cabo Blanco, a birding morning built around a target species, a farm visit for a big family, write to us and we will plan it with you.",
+        html: "JC has lived on this peninsula for more than two decades and guides every tour himself. If you want something that is not on this list, a private day in Cabo Blanco, a birding morning built around a target species, a farm visit for a big family, write to us and we will plan it with you.",
       },
     ],
     faq: [

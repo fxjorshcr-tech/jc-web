@@ -95,7 +95,7 @@ export function Footer() {
           <p>
             © {new Date().getFullYear()} {site.name}. {site.location.locality}, {site.location.area}, {site.location.countryName}.
           </p>
-          <p>Nature and culture tours since 2013.</p>
+          <p>Natural and cultural journeys since 2013.</p>
         </div>
       </div>
     </footer>

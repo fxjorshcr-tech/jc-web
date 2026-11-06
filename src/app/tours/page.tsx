@@ -12,9 +12,9 @@ import { cn } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Tours",
   description:
-    "Five nature and culture tours from Montezuma, Santa Teresa and Malpaís, Costa Rica: Nocturno night journey, Bird Lover's Morning, Curu Nature Escape, Let's Get Local organic farm visit and the Finca El Paraíso ATV journey. Request a quote.",
+    "Five natural and cultural journeys from Montezuma, Santa Teresa and Malpaís, Costa Rica: Nocturno night journey, Bird Lover's Morning, Curu Nature Escape, Let's Get Local organic farm visit and the Finca El Paraíso ATV journey. Request a quote.",
   alternates: { canonical: "/tours" },
-  openGraph: { title: "Tours | JC's Journeys", description: "Five nature and culture tours on the southern Nicoya Peninsula: Montezuma, Santa Teresa and Malpaís.", url: "/tours" },
+  openGraph: { title: "Tours | JC's Journeys", description: "Five natural and cultural journeys on the southern Nicoya Peninsula: Montezuma, Santa Teresa and Malpaís.", url: "/tours" },
 };
 
 export default function ToursPage() {
