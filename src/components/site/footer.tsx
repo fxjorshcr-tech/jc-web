@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Mail } from "lucide-react";
 import { Logo } from "@/components/site/logo";
+import PoweredByMaxDigital from "@/components/site/powered-by-maxdigital";
 import { Photo } from "@/components/photo";
 import { TripadvisorBadge } from "@/components/site/tripadvisor-badge";
 import { WhatsAppLink } from "@/components/site/whatsapp-button";
@@ -98,6 +99,7 @@ export function Footer() {
           <p>Natural and cultural journeys since 2013.</p>
         </div>
       </div>
+      <PoweredByMaxDigital className="container-site pt-2 pb-8" />
     </footer>
   );
 }
