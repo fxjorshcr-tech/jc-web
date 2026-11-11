@@ -7,6 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { CheckCircle2, Loader2 } from "lucide-react";
 import { submitBooking } from "@/app/actions/booking";
 import { Field, FormMessage } from "@/components/forms/field";
+import { SentDialog } from "@/components/forms/sent-dialog";
 import { Button } from "@/components/ui/button";
 import { DatePicker, formatDisplayDate } from "@/components/ui/date-picker";
 import { Input } from "@/components/ui/input";
@@ -27,7 +28,14 @@ interface BookingFormProps {
 export function BookingForm({ tours, defaultTourSlug }: BookingFormProps) {
   const [pending, startTransition] = React.useTransition();
   const [serverError, setServerError] = React.useState<string | null>(null);
-  const [success, setSuccess] = React.useState<{ code: string; values: BookingValues } | null>(null);
+  const [success, setSuccess] = React.useState<{ code: string; values: BookingValues; confirmationSent: boolean } | null>(null);
+  const [dialogOpen, setDialogOpen] = React.useState(false);
+  const panelRef = React.useRef<HTMLDivElement>(null);
+
+  // The confirmation is much shorter than the form, so bring it back into view once it replaces it.
+  React.useEffect(() => {
+    if (success) panelRef.current?.scrollIntoView({ block: "center" });
+  }, [success]);
 
   const form = useForm<BookingInput, unknown, BookingValues>({
     resolver: zodResolver(bookingSchema),
@@ -55,7 +63,8 @@ export function BookingForm({ tours, defaultTourSlug }: BookingFormProps) {
     startTransition(async () => {
       const result = await submitBooking(values);
       if (result.ok) {
-        setSuccess({ code: result.code, values });
+        setSuccess({ code: result.code, values, confirmationSent: result.confirmationSent });
+        setDialogOpen(true);
         return;
       }
       setServerError(result.message);
@@ -68,45 +77,64 @@ export function BookingForm({ tours, defaultTourSlug }: BookingFormProps) {
   });
 
   if (success) {
+    const firstName = success.values.name.split(" ")[0];
     return (
-      <div className="rounded-xl border border-olive-300 bg-olive-50 p-6 sm:p-10" aria-live="polite">
-        <CheckCircle2 className="size-9 text-olive-700" strokeWidth={1.5} />
-        <h3 className="mt-4 text-2xl text-ink sm:text-3xl">Thank you, {success.values.name.split(" ")[0]}. We received your request.</h3>
-        <p className="mt-3 text-ink-soft">
-          We will confirm availability within 24 hours and send a secure payment link to{" "}
-          <strong className="text-ink">{success.values.email}</strong>. Nothing is charged until you receive that link.
-        </p>
-        <div className="mt-6 inline-flex flex-col rounded-lg border border-olive-300 bg-white px-5 py-4">
-          <span className="eyebrow">Your booking code</span>
-          <span className="mt-1 font-mono text-2xl font-semibold tracking-widest text-ink">{success.code}</span>
+      <>
+        <div ref={panelRef} className="rounded-xl border border-olive-300 bg-olive-50 p-6 sm:p-10" aria-live="polite">
+          <CheckCircle2 className="size-9 text-olive-700" strokeWidth={1.5} />
+          <h3 className="mt-4 text-2xl text-ink sm:text-3xl">Thank you, {firstName}. We received your request.</h3>
+          <p className="mt-3 text-ink-soft">
+            We will confirm availability within 24 hours and send a secure payment link to{" "}
+            <strong className="text-ink">{success.values.email}</strong>. Nothing is charged until you receive that link.
+          </p>
+          <div className="mt-6 inline-flex flex-col rounded-lg border border-olive-300 bg-white px-5 py-4">
+            <span className="eyebrow">Your booking code</span>
+            <span className="mt-1 font-mono text-2xl font-semibold tracking-widest text-ink">{success.code}</span>
+          </div>
+          <dl className="mt-6 grid gap-x-8 gap-y-2 text-sm sm:grid-cols-2">
+            <div>
+              <dt className="text-ink-soft">Tour</dt>
+              <dd className="font-semibold text-ink">{selectedTour?.name ?? success.values.tourSlug}</dd>
+            </div>
+            <div>
+              <dt className="text-ink-soft">Preferred date</dt>
+              <dd className="font-semibold text-ink">{formatDisplayDate(success.values.preferredDate)}</dd>
+            </div>
+            <div>
+              <dt className="text-ink-soft">Guests</dt>
+              <dd className="font-semibold text-ink">
+                {success.values.adults} adult{success.values.adults === 1 ? "" : "s"}
+                {success.values.children ? `, ${success.values.children} child${success.values.children === 1 ? "" : "ren"} under 12` : ""}
+              </dd>
+            </div>
+          </dl>
+          <p className="mt-6 text-sm text-ink-soft">
+            {success.confirmationSent ? "A copy of this confirmation is on its way to your inbox. " : ""}Questions in the meantime?{" "}
+            <a href="mailto:jcsjourneys@gmail.com" className="font-semibold text-olive-800 underline underline-offset-4">
+              jcsjourneys@gmail.com
+            </a>
+          </p>
+          <Button asChild variant="outline" className="mt-6">
+            <Link href="/tours">Back to all tours</Link>
+          </Button>
         </div>
-        <dl className="mt-6 grid gap-x-8 gap-y-2 text-sm sm:grid-cols-2">
-          <div>
-            <dt className="text-ink-soft">Tour</dt>
-            <dd className="font-semibold text-ink">{selectedTour?.name ?? success.values.tourSlug}</dd>
+        <SentDialog
+          open={dialogOpen}
+          onOpenChange={setDialogOpen}
+          title={`Thank you, ${firstName}. Your request is with JC.`}
+          description={
+            <>
+              We will confirm availability within 24 hours and send a secure payment link to{" "}
+              <strong className="font-semibold text-ink">{success.values.email}</strong>. Nothing is charged until then.
+            </>
+          }
+        >
+          <div className="mt-6 rounded-lg border border-olive-300 bg-olive-50 px-5 py-4">
+            <span className="eyebrow">Your booking code</span>
+            <span className="mt-1 block font-mono text-2xl font-semibold tracking-widest text-ink">{success.code}</span>
           </div>
-          <div>
-            <dt className="text-ink-soft">Preferred date</dt>
-            <dd className="font-semibold text-ink">{formatDisplayDate(success.values.preferredDate)}</dd>
-          </div>
-          <div>
-            <dt className="text-ink-soft">Guests</dt>
-            <dd className="font-semibold text-ink">
-              {success.values.adults} adult{success.values.adults === 1 ? "" : "s"}
-              {success.values.children ? `, ${success.values.children} child${success.values.children === 1 ? "" : "ren"} under 12` : ""}
-            </dd>
-          </div>
-        </dl>
-        <p className="mt-6 text-sm text-ink-soft">
-          A copy of this confirmation is on its way to your inbox. Questions in the meantime?{" "}
-          <a href="mailto:jcsjourneys@gmail.com" className="font-semibold text-olive-800 underline underline-offset-4">
-            jcsjourneys@gmail.com
-          </a>
-        </p>
-        <Button asChild variant="outline" className="mt-6">
-          <Link href="/tours">Back to all tours</Link>
-        </Button>
-      </div>
+        </SentDialog>
+      </>
     );
   }
 

@@ -4,7 +4,7 @@ import { z } from "zod";
 import { getTour } from "@/data/tours";
 import { generateBookingCode } from "@/lib/booking-code";
 import { bookingCustomerEmail, bookingNotifyEmail } from "@/lib/emails";
-import { notifyEmail, sendMail } from "@/lib/mailer";
+import { sendConfirmation, sendNotification } from "@/lib/mailer";
 import { getSupabaseAdmin, type BookingRow } from "@/lib/supabase-admin";
 import { bookingSchema, type BookingResult } from "@/lib/validations/booking";
 
@@ -18,19 +18,12 @@ export async function submitBooking(input: unknown): Promise<BookingResult> {
   const data = parsed.data;
 
   // Honeypot filled in: pretend success without doing anything.
-  if (data.website) return { ok: true, code: generateBookingCode() };
+  if (data.website) return { ok: true, code: generateBookingCode(), confirmationSent: true };
 
   const tour = getTour(data.tourSlug);
   if (!tour) return { ok: false, message: "Unknown tour. Please choose a tour from the list." };
 
-  let supabase;
-  try {
-    supabase = getSupabaseAdmin();
-  } catch (err) {
-    console.error("[booking] configuration error", err);
-    return { ok: false, message: GENERIC_ERROR };
-  }
-
+  // Store the request. Email is the source of truth, so a storage problem must not lose the booking.
   const row: Omit<BookingRow, "code"> = {
     status: "pending",
     tour_slug: tour.slug,
@@ -47,29 +40,33 @@ export async function submitBooking(input: unknown): Promise<BookingResult> {
   };
 
   // Insert with a server-generated code; retry on the (very unlikely) unique collision.
-  let code = "";
-  let inserted = false;
-  for (let attempt = 0; attempt < 5 && !inserted; attempt++) {
-    code = generateBookingCode();
-    const { error } = await supabase.from("bookings").insert({ ...row, code });
-    if (!error) {
-      inserted = true;
-    } else if (error.code !== "23505") {
-      console.error("[booking] insert failed", error);
-      return { ok: false, message: GENERIC_ERROR };
+  let code = generateBookingCode();
+  let stored = false;
+  try {
+    const supabase = getSupabaseAdmin();
+    for (let attempt = 0; attempt < 5 && !stored; attempt++) {
+      if (attempt > 0) code = generateBookingCode();
+      const { error } = await supabase.from("bookings").insert({ ...row, code });
+      if (!error) {
+        stored = true;
+      } else if (error.code !== "23505") {
+        console.error("[booking] insert failed", error);
+        break;
+      }
     }
+  } catch (err) {
+    console.error("[booking] storage unavailable", err);
   }
-  if (!inserted) return { ok: false, message: GENERIC_ERROR };
 
-  const customer = bookingCustomerEmail(data, tour.name, code);
-  const notify = bookingNotifyEmail(data, tour.name, code);
-  const results = await Promise.allSettled([
-    sendMail({ to: data.email, ...customer }),
-    sendMail({ to: notifyEmail(), replyTo: data.email, ...notify }),
+  const [confirmation, notification] = await Promise.allSettled([
+    sendConfirmation(bookingCustomerEmail(data, tour.name, code), data.email),
+    sendNotification(bookingNotifyEmail(data, tour.name, code), data.email),
   ]);
-  results.forEach((r, i) => {
-    if (r.status === "rejected") console.error(`[booking] email ${i === 0 ? "customer" : "notify"} failed for ${code}`, r.reason);
-  });
+  if (confirmation.status === "rejected") console.error(`[booking] customer email failed for ${code}`, confirmation.reason);
+  if (notification.status === "rejected") console.error(`[booking] notify email failed for ${code}`, notification.reason);
 
-  return { ok: true, code };
+  // The request has to reach us one way or the other: in the database or in the inbox.
+  if (!stored && notification.status === "rejected") return { ok: false, message: GENERIC_ERROR };
+
+  return { ok: true, code, confirmationSent: confirmation.status === "fulfilled" };
 }

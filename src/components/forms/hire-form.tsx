@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { CheckCircle2, Loader2 } from "lucide-react";
 import { submitHireRequest } from "@/app/actions/hire";
 import { Field, FormMessage } from "@/components/forms/field";
+import { SentDialog } from "@/components/forms/sent-dialog";
 import { Button } from "@/components/ui/button";
 import { DateRangePicker } from "@/components/ui/date-picker";
 import { Input } from "@/components/ui/input";
@@ -15,7 +16,14 @@ import { hireSchema, type HireInput, type HireValues } from "@/lib/validations/h
 export function HireForm() {
   const [pending, startTransition] = React.useTransition();
   const [serverError, setServerError] = React.useState<string | null>(null);
-  const [done, setDone] = React.useState(false);
+  const [sent, setSent] = React.useState<{ name: string; email: string; confirmationSent: boolean } | null>(null);
+  const [dialogOpen, setDialogOpen] = React.useState(false);
+  const panelRef = React.useRef<HTMLDivElement>(null);
+
+  // The confirmation is much shorter than the form, so bring it back into view once it replaces it.
+  React.useEffect(() => {
+    if (sent) panelRef.current?.scrollIntoView({ block: "center" });
+  }, [sent]);
 
   const { register, control, handleSubmit, formState, setError } = useForm<HireInput, unknown, HireValues>({
     resolver: zodResolver(hireSchema),
@@ -38,7 +46,8 @@ export function HireForm() {
     startTransition(async () => {
       const result = await submitHireRequest(values);
       if (result.ok) {
-        setDone(true);
+        setSent({ name: values.contactName, email: values.email, confirmationSent: result.confirmationSent });
+        setDialogOpen(true);
         return;
       }
       setServerError(result.message);
@@ -50,13 +59,30 @@ export function HireForm() {
     });
   });
 
-  if (done) {
+  if (sent) {
+    const copyNote = sent.confirmationSent ? (
+      <>
+        A copy is on its way to <strong className="font-semibold text-ink">{sent.email}</strong>.
+      </>
+    ) : (
+      <>
+        We will write to you at <strong className="font-semibold text-ink">{sent.email}</strong>.
+      </>
+    );
     return (
-      <div className="rounded-xl border border-olive-300 bg-olive-50 p-6 sm:p-10" aria-live="polite">
-        <CheckCircle2 className="size-9 text-olive-700" strokeWidth={1.5} />
-        <h3 className="mt-4 text-2xl text-ink">Thank you. We received your request.</h3>
-        <p className="mt-3 text-ink-soft">We will reply as soon as possible with availability and a list of rates. A copy has been sent to your email.</p>
-      </div>
+      <>
+        <div ref={panelRef} className="rounded-xl border border-olive-300 bg-olive-50 p-6 sm:p-10" aria-live="polite">
+          <CheckCircle2 className="size-9 text-olive-700" strokeWidth={1.5} />
+          <h3 className="mt-4 text-2xl text-ink">Thank you. We received your request.</h3>
+          <p className="mt-3 text-ink-soft">We will reply as soon as possible with availability and a list of rates. {copyNote}</p>
+        </div>
+        <SentDialog
+          open={dialogOpen}
+          onOpenChange={setDialogOpen}
+          title="Thank you. Your request is with JC."
+          description={<>We will reply as soon as possible with availability and a list of rates. {copyNote}</>}
+        />
+      </>
     );
   }
 
