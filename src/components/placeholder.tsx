@@ -26,13 +26,15 @@ export interface PlaceholderProps {
   compact?: boolean;
   /** Where to put the label. Use "top" when text is overlaid on the lower part of the image (heroes). */
   align?: "center" | "top";
+  /** Show the expected file name. Off on the live site, where visitors must never see a file path. */
+  label?: boolean;
 }
 
 /**
  * Visual stand-in for a photo that has not been added yet.
  * Shows the expected file name so the photos can be dropped in later without touching code.
  */
-export function Placeholder({ src, alt, className, fill, compact, align = "center" }: PlaceholderProps) {
+export function Placeholder({ src, alt, className, fill, compact, align = "center", label = true }: PlaceholderProps) {
   return (
     <div
       role="img"
@@ -48,24 +50,26 @@ export function Placeholder({ src, alt, className, fill, compact, align = "cente
         aria-hidden
         className="absolute inset-0 opacity-20 [background-image:radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] [background-size:18px_18px]"
       />
-      <div
-        className={cn(
-          "absolute inset-0 flex flex-col items-center gap-2 text-center",
-          align === "top" ? "justify-start pt-24 sm:pt-28" : "justify-center",
-          compact ? "p-2" : "p-4",
-        )}
-      >
-        <ImageIcon className={cn("opacity-80", compact ? "size-4" : "size-6")} strokeWidth={1.5} />
-        <span
+      {label && (
+        <div
           className={cn(
-            "max-w-full break-all rounded bg-ink/40 px-2 py-1 font-mono leading-tight backdrop-blur-sm",
-            compact ? "text-[0.6rem]" : "text-xs",
+            "absolute inset-0 flex flex-col items-center gap-2 text-center",
+            align === "top" ? "justify-start pt-24 sm:pt-28" : "justify-center",
+            compact ? "p-2" : "p-4",
           )}
         >
-          images/{src}
-        </span>
-        {!compact && <span className="max-w-xs text-xs leading-snug opacity-80">{alt}</span>}
-      </div>
+          <ImageIcon className={cn("opacity-80", compact ? "size-4" : "size-6")} strokeWidth={1.5} />
+          <span
+            className={cn(
+              "max-w-full break-all rounded bg-ink/40 px-2 py-1 font-mono leading-tight backdrop-blur-sm",
+              compact ? "text-[0.6rem]" : "text-xs",
+            )}
+          >
+            images/{src}
+          </span>
+          {!compact && <span className="max-w-xs text-xs leading-snug opacity-80">{alt}</span>}
+        </div>
+      )}
     </div>
   );
 }

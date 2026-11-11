@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Leaf, MapPinned, ShieldCheck } from "lucide-react";
 import { Photo } from "@/components/photo";
+import { TapBadge } from "@/components/site/tap-badge";
 import { Button } from "@/components/ui/button";
 import { CtaBand } from "@/components/site/cta-band";
 import { JsonLd } from "@/components/site/json-ld";
@@ -84,15 +85,16 @@ export default function HomePage() {
           <p className="absolute bottom-5 right-6 rounded-full bg-ink/45 px-3 py-1.5 text-xs text-cream/90 backdrop-blur">{heroPhoto.caption}</p>
         </div>
         <div className="container-site relative flex items-center pb-14 pt-10 lg:min-h-[88svh] lg:py-24">
-          <div className="max-w-xl lg:max-w-[32rem] xl:max-w-[36rem]">
+          <div className="min-w-0 max-w-xl lg:max-w-[32rem] xl:max-w-[36rem]">
             <p className="eyebrow !text-gold-300">Southern Nicoya Peninsula, Costa Rica · Est. 2013</p>
             <h1 className="mt-5 text-5xl font-medium leading-[1.02] text-cream sm:text-6xl lg:text-[4.25rem] [text-shadow:0_2px_24px_rgba(0,0,0,0.35)]">
               {home.heroTagline.split(" – ")[0]}
-              <span className="mt-2 block text-[0.56em] font-normal leading-tight text-gold-300">
+              {/* Each town stays whole, but the line may break between towns on narrow phones. */}
+              <span className="mt-2 flex flex-wrap gap-x-[0.5em] text-[0.5em] font-normal leading-tight text-gold-300 sm:text-[0.56em]">
                 {site.towns.map((town, i) => (
                   <span key={town} className="whitespace-nowrap">
-                    {i > 0 && <span aria-hidden className="mx-2 text-gold-300/60">·</span>}
                     {town}
+                    {i < site.towns.length - 1 && <span aria-hidden className="ml-[0.5em] text-gold-300/60">·</span>}
                   </span>
                 ))}
               </span>
@@ -159,10 +161,10 @@ export default function HomePage() {
           <div className="flex flex-col justify-between rounded-xl bg-olive-100 p-6 sm:p-8">
             <div>
               <p className="eyebrow">Good to know</p>
-              <p className="mt-3 font-serif text-xl leading-snug text-ink">Prices depend on where we pick you up, so every tour is quoted individually.</p>
+              <p className="mt-3 font-serif text-xl leading-snug text-ink">Prices depend on where we pick you up, so we confirm yours when you book.</p>
             </div>
             <p className="mt-6 text-sm leading-relaxed text-ink-soft">
-              Request a quote on any tour page. We reply within 24 hours with availability, and we send a secure payment link once your date is confirmed.
+              Book on any tour page. We contact you as soon as possible with the price and payment details, and to confirm your hotel and pickup time.
             </p>
           </div>
         </div>
@@ -227,9 +229,7 @@ export default function HomePage() {
               rel="noopener noreferrer"
               className="mt-8 inline-flex items-center gap-4 rounded-lg border border-cream/15 bg-cream/5 p-4 transition-colors hover:bg-cream/10"
             >
-              <span className="relative block size-16 shrink-0 overflow-hidden rounded-md">
-                <Photo src="badges/travelers-against-plastic.png" alt="Travelers Against Plastic badge" sizes="64px" compact />
-              </span>
+              <TapBadge className="size-16" sizes="64px" />
               <span className="text-sm leading-snug">
                 <span className="block font-semibold">We support {site.travelersAgainstPlastic.name}</span>
                 <span className="text-olive-100/80">

@@ -26,7 +26,9 @@ npm run dev
 
 ## Photos
 
-Every image on the site is rendered through the `Photo` component. While a file is missing it shows a labelled placeholder with the expected path; drop the file into `public/images/<path>` and redeploy, no code change needed.
+Every image on the site is rendered through the `Photo` component. While a file is missing it shows a placeholder, labelled with the expected path in development only (visitors never see a file name); drop the file into `public/images/<path>` and redeploy, no code change needed.
+
+Still missing: `badges/travelers-against-plastic.png` (an icon stands in) and the three `community/*.jpg` photos (bird photos from our tours stand in; see `community.images` in `src/data/content.ts`).
 
 ## Blog
 
@@ -45,7 +47,7 @@ FAQ, tour pages and structured data all read from there.
 2. Server action validates with zod, generates a `JCJ-XXXXXX` code and inserts a `pending` row in `bookings`.
 3. Resend sends a confirmation to the guest and a notification to every address in `BOOKINGS_NOTIFY_EMAIL`.
 4. The guest sees a "Message sent" dialog with the booking code; the same confirmation stays on the page behind it.
-5. You confirm availability and send the payment link by hand. Update `status`, `quoted_price_usd` and `payment_link` in Supabase as you go.
+5. You contact the guest with the price and payment details and confirm the hotel pickup and time. Update `status`, `quoted_price_usd` and `payment_link` in Supabase as you go.
 
 The request counts as received when it is stored in Supabase **or** the notification email went out, so an outage of one never loses a booking. The Hire a Guide form works the same way, without a code.
 
@@ -54,6 +56,8 @@ The site never charges money.
 ## Email (Resend)
 
 All mail goes through `src/lib/mailer.ts`; the templates are in `src/lib/emails.ts`.
+
+The templates are table-based with inline styles, as email clients require. Their images are served by the site: the logo is `public/images/email/logo.png` and each tour's banner is `public/images/email/tours/<slug>.jpg` (1200x520, cropped from the tour's `hero.jpg`). A new tour gets a banner once its file is added there and its slug is listed in `EMAIL_BANNERS`; without one the email simply has no photo.
 
 | Variable | What |
 | --- | --- |

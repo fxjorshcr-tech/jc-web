@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Mail } from "lucide-react";
 import { Logo } from "@/components/site/logo";
-import { Photo } from "@/components/photo";
+import { TapBadge } from "@/components/site/tap-badge";
 import { TripadvisorBadge } from "@/components/site/tripadvisor-badge";
 import { WhatsAppLink } from "@/components/site/whatsapp-button";
 import { nav, secondaryNav, site } from "@/data/site";
@@ -22,10 +22,10 @@ export function Footer() {
           <Logo light full />
           <p className="mt-6 max-w-xs text-sm leading-relaxed text-olive-100/80">{site.tagline}</p>
           <div className="mt-6 flex flex-col items-start gap-2">
-            <a href={`mailto:${site.email}`} className="inline-flex items-center gap-2 text-sm font-semibold text-cream underline-offset-4 hover:underline">
+            <a href={`mailto:${site.email}`} className="-my-1.5 inline-flex items-center gap-2 py-1.5 text-sm font-semibold text-cream underline-offset-4 hover:underline">
               <Mail className="size-4" /> {site.email}
             </a>
-            <WhatsAppLink className="inline-flex items-center gap-2 text-sm font-semibold text-cream underline-offset-4 hover:underline" />
+            <WhatsAppLink className="-my-1.5 inline-flex items-center gap-2 py-1.5 text-sm font-semibold text-cream underline-offset-4 hover:underline" />
           </div>
           <div className="mt-5">
             <TripadvisorBadge variant="inline" light />
@@ -75,9 +75,7 @@ export function Footer() {
             rel="noopener noreferrer"
             className="mt-4 flex items-center gap-4 rounded-lg border border-cream/15 bg-cream/5 p-3 transition-colors hover:bg-cream/10"
           >
-            <span className="relative block size-14 shrink-0 overflow-hidden rounded-md">
-              <Photo src="badges/travelers-against-plastic.png" alt="Travelers Against Plastic badge" sizes="56px" compact />
-            </span>
+            <TapBadge className="size-14" sizes="56px" />
             <span className="text-sm leading-snug">
               <span className="block font-semibold">{site.travelersAgainstPlastic.name}</span>
               <span className="text-olive-100/80">We don&rsquo;t hand out bottled water. Bring a refillable bottle and we&rsquo;ll keep it full.</span>

@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const { slug } = await params;
   const tour = getTour(slug);
   if (!tour) return {};
-  const description = `${tour.summary} ${tour.when} Request a quote.`.slice(0, 300);
+  const description = `${tour.summary} ${tour.when} Book online.`.slice(0, 300);
   return {
     title: tour.name,
     description,
@@ -207,13 +207,13 @@ export default async function TourPage({ params }: { params: Promise<Params> }) 
                   <p className="font-serif text-xl text-ink">On request</p>
                 </div>
                 <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-                  Quotes depend on pickup location and group size. We reply within 24 hours with availability and your price; a secure payment link follows once your date is confirmed.
+                  The price depends on pickup location and group size. Book below and we contact you as soon as possible with the price and payment details, and to confirm your hotel and pickup time.
                 </p>
                 <Button asChild size="lg" className="mt-4 w-full">
-                  <a href="#book">Request this tour</a>
+                  <a href="#book">Book this tour</a>
                 </Button>
                 <a
-                  href={whatsappUrl(`Hi JC, I'd like to request the ${tour.name}.`)}
+                  href={whatsappUrl(`Hi JC, I'd like to book the ${tour.name}.`)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-md border border-ink/15 bg-white px-5 py-2.5 text-sm font-semibold text-ink hover:border-ink/40"
@@ -234,12 +234,12 @@ export default async function TourPage({ params }: { params: Promise<Params> }) 
         <div className="container-site grid gap-10 py-16 lg:grid-cols-12 sm:py-24">
           <div className="lg:col-span-4">
             <p className="eyebrow">Make a reservation</p>
-            <h2 className="mt-3 text-3xl text-ink sm:text-4xl">Request {tour.shortName}</h2>
+            <h2 className="mt-3 text-3xl text-ink sm:text-4xl">Book {tour.shortName}</h2>
             <p className="prose-site mt-5">{booking.intro}</p>
             <p className="mt-6 text-sm text-ink-soft">
               Prefer to chat? WhatsApp{" "}
               <a
-                href={whatsappUrl(`Hi JC, I'd like to request the ${tour.name}.`)}
+                href={whatsappUrl(`Hi JC, I'd like to book the ${tour.name}.`)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-olive-800 underline-offset-4 hover:underline"

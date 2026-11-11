@@ -7,7 +7,7 @@ import { whatsappUrl } from "@/lib/whatsapp";
 
 export function CtaBand({
   title = "Ready to plan your journey?",
-  text = "Tell us the tour, your date and the size of your group. We reply within 24 hours with availability and a quote.",
+  text = "Tell us the tour, your date and the size of your group. We contact you as soon as possible with the payment details and to confirm your hotel and pickup time.",
   whatsappMessage,
 }: {
   title?: string;
