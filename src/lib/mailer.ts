@@ -49,15 +49,21 @@ export interface Mail {
 
 export async function sendMail(mail: Mail) {
   const resend = getResend();
-  const { error } = await resend.emails.send({
+  const payload = {
     from: fromEmail(),
     to: mail.to,
     subject: mail.subject,
     html: mail.html,
     text: mail.text,
     replyTo: mail.replyTo,
-  });
-  if (error) throw new Error(`Resend error: ${error.message}`);
+  };
+  let { error } = await resend.emails.send(payload);
+  // Resend allows only a few requests per second: wait a moment and try once more.
+  if (error?.name === "rate_limit_exceeded") {
+    await new Promise((resolve) => setTimeout(resolve, 1100));
+    ({ error } = await resend.emails.send(payload));
+  }
+  if (error) throw new Error(`Resend error (${error.name}): ${error.message}`);
 }
 
 /** The internal copy of a request. Replying to it writes straight to the guest. */

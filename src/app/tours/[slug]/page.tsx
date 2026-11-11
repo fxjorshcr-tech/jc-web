@@ -258,7 +258,7 @@ export default async function TourPage({ params }: { params: Promise<Params> }) 
             </p>
           </div>
           <div className="rounded-xl border border-border/70 bg-card p-6 sm:p-8 lg:col-span-8">
-            <BookingForm tours={tours.map((t) => ({ slug: t.slug, name: t.name }))} defaultTourSlug={tour.slug} />
+            <BookingForm tour={{ slug: tour.slug, name: tour.name }} />
           </div>
         </div>
       </section>
