@@ -17,19 +17,48 @@ const legacyPostRedirects: Record<string, string> = {
   "montezuma-for-families": "/blog/lets-get-local-family-farm",
 };
 
+/** Posts that exist today. Anything else under /blog or an old dated URL falls back to the blog index. */
+const currentPostSlugs = [
+  "things-to-do-in-santa-teresa-beyond-surfing",
+  "getting-to-montezuma",
+  "birdwatching-montezuma-cabuya",
+  "curu-wildlife-refuge-guide",
+  "night-hike-montezuma-nocturno",
+  "best-time-to-visit-montezuma",
+  "lets-get-local-family-farm",
+];
+
+/** Pages of the previous WordPress site whose address changed. */
+const legacyPageRedirects: Record<string, string> = {
+  "/faqs": "/faq",
+  "/reservations": "/tours",
+  "/tour-schedule": "/tours",
+  "/contribute": "/community",
+  "/about/mission-vision-values": "/about#mission",
+  "/about/opportunities": "/about#opportunities",
+  "/home/recommendations": "/tours",
+};
+
+/** WordPress published posts as /2013/10/12/<slug>/. */
+const datedPost = "/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})";
+
 const nextConfig: NextConfig = {
   async redirects() {
     return [
       // The Recommendations page (other regions and hotels) was retired: the site only talks about our own journeys now.
       { source: "/recommendations", destination: "/tours", permanent: true },
       { source: "/recommendations/:path*", destination: "/tours", permanent: true },
-      ...Object.entries(legacyPostRedirects).map(([slug, destination]) => ({
-        source: `/blog/${slug}`,
-        destination,
-        permanent: true,
-      })),
-      // Any other retired post lands on the blog index.
-      { source: "/blog/:slug((?!things-to-do-in-santa-teresa-beyond-surfing|getting-to-montezuma|birdwatching-montezuma-cabuya|curu-wildlife-refuge-guide|night-hike-montezuma-nocturno|best-time-to-visit-montezuma|lets-get-local-family-farm).*)", destination: "/blog", permanent: false },
+      ...Object.entries(legacyPageRedirects).map(([source, destination]) => ({ source, destination, permanent: true })),
+      ...Object.entries(legacyPostRedirects).flatMap(([slug, destination]) => [
+        { source: `/blog/${slug}`, destination, permanent: true },
+        { source: `${datedPost}/${slug}`, destination, permanent: true },
+      ]),
+      { source: `${datedPost}/:slug(${currentPostSlugs.join("|")})`, destination: "/blog/:slug", permanent: true },
+      // Any other retired post lands on the blog index, as do WordPress archive pages.
+      { source: `${datedPost}/:slug`, destination: "/blog", permanent: false },
+      { source: `/blog/:slug((?!${currentPostSlugs.join("|")}).*)`, destination: "/blog", permanent: false },
+      { source: "/category/:path*", destination: "/blog", permanent: false },
+      { source: "/tag/:path*", destination: "/blog", permanent: false },
     ];
   },
 };
