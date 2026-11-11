@@ -75,10 +75,10 @@ export function BookingForm({ tour }: BookingFormProps) {
       <>
         <div ref={panelRef} className="rounded-xl border border-olive-300 bg-olive-50 p-6 sm:p-10" aria-live="polite">
           <CheckCircle2 className="size-9 text-olive-700" strokeWidth={1.5} />
-          <h3 className="mt-4 text-2xl text-ink sm:text-3xl">Thank you, {firstName}. We received your request.</h3>
+          <h3 className="mt-4 text-2xl text-ink sm:text-3xl">Thank you, {firstName}. We received your booking.</h3>
           <p className="mt-3 text-ink-soft">
-            We will confirm availability within 24 hours and send a secure payment link to{" "}
-            <strong className="text-ink">{success.values.email}</strong>. Nothing is charged until you receive that link.
+            We will contact you as soon as possible at <strong className="text-ink">{success.values.email}</strong> with the payment details and to
+            confirm your hotel and pickup time. No payment is taken on this website.
           </p>
           <div className="mt-6 inline-flex flex-col rounded-lg border border-olive-300 bg-white px-5 py-4">
             <span className="eyebrow">Your booking code</span>
@@ -114,11 +114,11 @@ export function BookingForm({ tour }: BookingFormProps) {
         <SentDialog
           open={dialogOpen}
           onOpenChange={setDialogOpen}
-          title={`Thank you, ${firstName}. Your request is with JC.`}
+          title={`Thank you, ${firstName}. Your booking is with JC.`}
           description={
             <>
-              We will confirm availability within 24 hours and send a secure payment link to{" "}
-              <strong className="font-semibold text-ink">{success.values.email}</strong>. Nothing is charged until then.
+              We will contact you as soon as possible at <strong className="font-semibold text-ink">{success.values.email}</strong> with the payment
+              details and to confirm your hotel and pickup time.
             </>
           }
         >
@@ -207,7 +207,7 @@ export function BookingForm({ tour }: BookingFormProps) {
 
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-xs leading-relaxed text-ink-soft sm:max-w-sm">
-          Prices depend on your pickup point, so we send a quote with the confirmation. No payment is taken on this website.
+          Prices depend on your pickup point, so we send yours with the payment details. No payment is taken on this website.
         </p>
         <Button type="submit" size="lg" disabled={pending} className="sm:min-w-56">
           {pending ? (
@@ -215,7 +215,7 @@ export function BookingForm({ tour }: BookingFormProps) {
               <Loader2 className="animate-spin" /> Sending…
             </>
           ) : (
-            "Request a quote"
+            "Book this tour"
           )}
         </Button>
       </div>

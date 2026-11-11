@@ -16,7 +16,8 @@ interface PhotoProps {
   align?: "center" | "top";
 }
 
-function exists(src: string) {
+/** True when the file is in /public/images. Server-only. */
+export function photoExists(src: string) {
   try {
     return fs.existsSync(path.join(process.cwd(), "public", "images", src));
   } catch {
@@ -26,10 +27,10 @@ function exists(src: string) {
 
 /**
  * Server component. Renders the real photo with next/image once the file exists in /public/images,
- * otherwise a labelled placeholder. The wrapping element must be `relative` with a fixed aspect ratio.
+ * otherwise a placeholder (labelled with the expected file name in development only). The wrapping element must be `relative` with a fixed aspect ratio.
  */
 export function Photo({ src, alt, className, sizes = "100vw", priority, compact, align }: PhotoProps) {
-  if (exists(src)) {
+  if (photoExists(src)) {
     return (
       <Image
         src={`/images/${src}`}
@@ -41,5 +42,5 @@ export function Photo({ src, alt, className, sizes = "100vw", priority, compact,
       />
     );
   }
-  return <Placeholder src={src} alt={alt} fill compact={compact} align={align} className={className} />;
+  return <Placeholder src={src} alt={alt} fill compact={compact} align={align} className={className} label={process.env.NODE_ENV !== "production"} />;
 }

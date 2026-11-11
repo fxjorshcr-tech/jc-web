@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Binoculars } from "lucide-react";
-import { Photo } from "@/components/photo";
+import { Photo, photoExists } from "@/components/photo";
 import { Button } from "@/components/ui/button";
 import { CtaBand } from "@/components/site/cta-band";
 import { PageHero } from "@/components/site/page-hero";
@@ -16,6 +16,7 @@ export const metadata: Metadata = {
 };
 
 export default function CommunityPage() {
+  const images = community.images.map(({ fallback, ...photo }) => (photoExists(photo.src) ? photo : fallback));
   return (
     <>
       <PageHero
@@ -26,7 +27,7 @@ export default function CommunityPage() {
           </>
         }
         intro={<p>{community.text}</p>}
-        image={community.images[0]}
+        image={images[0]}
       >
         <div className="flex flex-col gap-3 sm:flex-row">
           <Button asChild>
@@ -48,7 +49,7 @@ export default function CommunityPage() {
           <p className="mt-4 text-sm text-ink-soft">{community.blogLead}</p>
         </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:col-span-8">
-          {community.images.slice(1).map((img) => (
+          {images.slice(1).map((img) => (
             <div key={img.src} className="relative aspect-[4/3] overflow-hidden rounded-xl">
               <Photo src={img.src} alt={img.alt} sizes="(min-width: 1024px) 33vw, 50vw" />
             </div>

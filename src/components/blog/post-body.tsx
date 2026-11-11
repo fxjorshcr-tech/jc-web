@@ -30,30 +30,33 @@ export function PostBody({ blocks }: { blocks: PostBlock[] }) {
           }
           case "table":
             return (
-              <figure key={i} className="my-8 overflow-x-auto rounded-lg border border-border/70">
-                <table className="w-full min-w-[28rem] border-collapse text-left text-sm">
-                  {block.caption && <caption className="bg-cream-deep/60 px-4 py-2.5 text-left font-sans text-xs font-semibold uppercase tracking-[0.14em] text-olive-700">{block.caption}</caption>}
-                  <thead>
-                    <tr className="bg-olive-100/70">
-                      {block.head.map((h) => (
-                        <th key={h} scope="col" className="px-4 py-2.5 font-semibold text-ink">
-                          {h}
-                        </th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {block.rows.map((row, r) => (
-                      <tr key={r} className="border-t border-border/70 odd:bg-white even:bg-cream/60">
-                        {row.map((cell, c) => (
-                          <td key={c} className={c === 0 ? "px-4 py-2.5 font-semibold text-ink" : "px-4 py-2.5 text-ink-soft"}>
-                            {cell}
-                          </td>
+              <figure key={i} className="my-8">
+                <p className="mb-2 text-right text-xs text-ink-soft min-[31rem]:hidden">Swipe sideways to see the whole table →</p>
+                <div className="overflow-x-auto rounded-lg border border-border/70">
+                  <table className="w-full min-w-[28rem] border-collapse text-left text-sm">
+                    {block.caption && <caption className="bg-cream-deep/60 px-4 py-2.5 text-left font-sans text-xs font-semibold uppercase tracking-[0.14em] text-olive-700">{block.caption}</caption>}
+                    <thead>
+                      <tr className="bg-olive-100/70">
+                        {block.head.map((h) => (
+                          <th key={h} scope="col" className="px-4 py-2.5 font-semibold text-ink">
+                            {h}
+                          </th>
                         ))}
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody>
+                      {block.rows.map((row, r) => (
+                        <tr key={r} className="border-t border-border/70 odd:bg-white even:bg-cream/60">
+                          {row.map((cell, c) => (
+                            <td key={c} className={c === 0 ? "px-4 py-2.5 font-semibold text-ink" : "px-4 py-2.5 text-ink-soft"}>
+                              {cell}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               </figure>
             );
           case "callout":

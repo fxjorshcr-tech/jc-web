@@ -62,7 +62,7 @@ export default function ToursPage() {
                 </dl>
                 <div className="mt-7 flex flex-wrap items-center gap-4">
                   <Button asChild>
-                    <Link href={`/tours/${tour.slug}#book`}>Request a quote</Link>
+                    <Link href={`/tours/${tour.slug}#book`}>Book this tour</Link>
                   </Button>
                   <Link href={`/tours/${tour.slug}`} className="inline-flex items-center gap-1.5 text-sm font-semibold text-olive-800 underline-offset-4 hover:underline">
                     Tour details <ArrowRight className="size-4" />

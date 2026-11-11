@@ -53,7 +53,7 @@ export function TourCard({ tour, index, className, featured }: TourCardProps) {
           </div>
         </dl>
         <div className="mt-auto flex items-center justify-between pt-6">
-          <span className="text-xs font-semibold uppercase tracking-[0.16em] text-olive-700">Request a quote</span>
+          <span className="text-xs font-semibold uppercase tracking-[0.16em] text-olive-700">Book this tour</span>
           <ArrowUpRight className="size-5 text-ink transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
         </div>
       </div>

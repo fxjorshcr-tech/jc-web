@@ -173,7 +173,7 @@ export const posts: BlogPost[] = [
           "<strong>Go early:</strong> wildlife is most active from first light to about 9 am, and the heat builds by late morning. A dawn tour still leaves you the whole afternoon for the beach.",
           "<strong>Combine:</strong> Bird Lover's Morning or Let's Get Local in the morning and Nocturno after dinner make a full nature day without a single surfboard.",
           "<strong>Season:</strong> the dry season (December to April) is best for dusty roads and easy wildlife viewing; the green season (May to November) brings full waterfalls, frogs and empty trails. Our <a href=\"/blog/best-time-to-visit-montezuma\">month-by-month guide</a> covers both.",
-          "<strong>Book ahead:</strong> small-group tours run on set days and fill up between December and March. We reply within 24 hours by <a href=\"" + WHATSAPP + "\">WhatsApp</a> or email.",
+          "<strong>Book ahead:</strong> small-group tours run on set days and fill up between December and March. We reply as soon as possible by <a href=\"" + WHATSAPP + "\">WhatsApp</a> or email.",
         ],
       },
       {
@@ -303,7 +303,7 @@ export const posts: BlogPost[] = [
           "<strong>Cash:</strong> Montezuma has ATMs but they run dry on busy weekends. Cóbano, 7 km up the hill, has banks.",
           "<strong>Getting around:</strong> the village is walkable. Taxis, ATVs and bicycles cover Cabuya, Cabo Blanco and the waterfall. All of our tours include pickup at hotels in downtown Montezuma.",
           "<strong>Water:</strong> tap water in Montezuma is potable, so bring a refillable bottle. We keep it full on every tour.",
-          "<strong>Book tours before you arrive:</strong> small-group tours run on set days. Tell us your dates and we will reply within 24 hours, by <a href=\"" + WHATSAPP + "\">WhatsApp</a> or email.",
+          "<strong>Book tours before you arrive:</strong> small-group tours run on set days. Tell us your dates and we will reply as soon as possible, by <a href=\"" + WHATSAPP + "\">WhatsApp</a> or email.",
         ],
       },
       {

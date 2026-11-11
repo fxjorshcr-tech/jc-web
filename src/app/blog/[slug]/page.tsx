@@ -232,7 +232,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
               </nav>
               <div className="mt-4 rounded-xl bg-moss p-5 text-cream">
                 <p className="eyebrow !text-olive-300">Plan with a local</p>
-                <p className="mt-2 font-serif text-lg leading-snug">Tell us your dates and we reply within 24 hours.</p>
+                <p className="mt-2 font-serif text-lg leading-snug">Tell us your dates and we reply as soon as possible.</p>
                 <Link href="/tours" className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-gold-300 underline-offset-4 hover:underline">
                   See the tours <ArrowRight className="size-4" />
                 </Link>

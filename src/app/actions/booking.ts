@@ -59,8 +59,8 @@ export async function submitBooking(input: unknown): Promise<BookingResult> {
   }
 
   // One after the other, our copy first: two requests in the same instant can trip Resend's rate limit.
-  const [notification] = await Promise.allSettled([sendNotification(bookingNotifyEmail(data, tour.name, code), data.email)]);
-  const [confirmation] = await Promise.allSettled([sendConfirmation(bookingCustomerEmail(data, tour.name, code), data.email)]);
+  const [notification] = await Promise.allSettled([sendNotification(bookingNotifyEmail(data, tour, code), data.email)]);
+  const [confirmation] = await Promise.allSettled([sendConfirmation(bookingCustomerEmail(data, tour, code), data.email)]);
   if (notification.status === "rejected") console.error(`[booking] notify email failed for ${code}`, notification.reason);
   if (confirmation.status === "rejected") console.error(`[booking] customer email failed for ${code}`, confirmation.reason);
 

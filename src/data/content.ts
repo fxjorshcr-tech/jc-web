@@ -57,10 +57,23 @@ export const community = {
   text: "We are working hard to contribute more to the communities in which we operate. One of our goals is to create a youth birding group in the Montezuma/Cabuya area to get kids interested in nature and environmental protection. To do this, we're planning to raise enough money to buy 10 pairs of kids' binoculars to be used for this group. You can ask about buying one of our reusable bags or other souvenirs to contribute to this effort when you take one of our tours, or purchase items online.",
   blogCta: { label: "Birdwatching in Montezuma", href: "/blog/birdwatching-montezuma-cabuya" },
   blogLead: "Read our guide to birdwatching in Montezuma and Cabuya, the same birds the kids learn to spot.",
+  /** Each photo shows its `fallback` (a bird from our own tours) until the real file is added to /public/images/community. */
   images: [
-    { src: "community/montezuma-school-birding-1.jpg", alt: "Students from Montezuma School looking through binoculars" },
-    { src: "community/montezuma-school-birding-2.jpg", alt: "JC teaching kids about local birds on the beach" },
-    { src: "community/reusable-bags.jpg", alt: "JC's Journeys reusable bags and souvenirs" },
+    {
+      src: "community/montezuma-school-birding-1.jpg",
+      alt: "Students from Montezuma School looking through binoculars",
+      fallback: { src: "tours/bird-lovers-morning/13.jpg", alt: "Scarlet macaw on a tree trunk near Montezuma" },
+    },
+    {
+      src: "community/montezuma-school-birding-2.jpg",
+      alt: "JC teaching kids about local birds on the beach",
+      fallback: { src: "tours/bird-lovers-morning/10.jpg", alt: "Close-up of a motmot, one of the birds the kids learn to spot" },
+    },
+    {
+      src: "community/reusable-bags.jpg",
+      alt: "JC's Journeys reusable bags and souvenirs",
+      fallback: { src: "tours/bird-lovers-morning/hero.jpg", alt: "Hummingbird perched on a branch" },
+    },
   ],
 };
 
@@ -72,5 +85,5 @@ export const hireAGuide = {
 
 export const booking = {
   intro:
-    "If you're ready to make a reservation, please complete and submit this form. We will contact you within 24 hours. We can also help with your onward travel arrangements. If you would like assistance with transportation, hotel or other tours, please describe in the 'Special Requests' section of this form.",
+    "If you're ready to make a reservation, please complete and submit this form. We will contact you as soon as possible to send the payment details and confirm your hotel and pickup time. We can also help with your onward travel arrangements. If you would like assistance with transportation, hotel or other tours, please describe in the 'Special Requests' section of this form.",
 };
