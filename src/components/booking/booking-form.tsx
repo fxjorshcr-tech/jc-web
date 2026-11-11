@@ -11,21 +11,15 @@ import { SentDialog } from "@/components/forms/sent-dialog";
 import { Button } from "@/components/ui/button";
 import { DatePicker, formatDisplayDate } from "@/components/ui/date-picker";
 import { Input } from "@/components/ui/input";
-import { Select } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { bookingSchema, type BookingInput, type BookingValues } from "@/lib/validations/booking";
 
-interface TourOption {
-  slug: string;
-  name: string;
-}
-
 interface BookingFormProps {
-  tours: TourOption[];
-  defaultTourSlug: string;
+  /** The tour this form books. Each tour page books its own tour only. */
+  tour: { slug: string; name: string };
 }
 
-export function BookingForm({ tours, defaultTourSlug }: BookingFormProps) {
+export function BookingForm({ tour }: BookingFormProps) {
   const [pending, startTransition] = React.useTransition();
   const [serverError, setServerError] = React.useState<string | null>(null);
   const [success, setSuccess] = React.useState<{ code: string; values: BookingValues; confirmationSent: boolean } | null>(null);
@@ -40,7 +34,7 @@ export function BookingForm({ tours, defaultTourSlug }: BookingFormProps) {
   const form = useForm<BookingInput, unknown, BookingValues>({
     resolver: zodResolver(bookingSchema),
     defaultValues: {
-      tourSlug: defaultTourSlug,
+      tourSlug: tour.slug,
       preferredDate: "",
       name: "",
       email: "",
@@ -54,9 +48,8 @@ export function BookingForm({ tours, defaultTourSlug }: BookingFormProps) {
     },
   });
 
-  const { register, control, handleSubmit, formState, setError, watch } = form;
+  const { register, control, handleSubmit, formState, setError } = form;
   const errors = formState.errors;
-  const selectedTour = tours.find((t) => t.slug === watch("tourSlug"));
 
   const onSubmit = handleSubmit((values) => {
     setServerError(null);
@@ -94,7 +87,7 @@ export function BookingForm({ tours, defaultTourSlug }: BookingFormProps) {
           <dl className="mt-6 grid gap-x-8 gap-y-2 text-sm sm:grid-cols-2">
             <div>
               <dt className="text-ink-soft">Tour</dt>
-              <dd className="font-semibold text-ink">{selectedTour?.name ?? success.values.tourSlug}</dd>
+              <dd className="font-semibold text-ink">{tour.name}</dd>
             </div>
             <div>
               <dt className="text-ink-soft">Preferred date</dt>
@@ -143,15 +136,18 @@ export function BookingForm({ tours, defaultTourSlug }: BookingFormProps) {
       {serverError && <FormMessage tone="error">{serverError}</FormMessage>}
 
       <div className="grid gap-6 sm:grid-cols-2">
-        <Field id="tourSlug" label="Tour" required error={errors.tourSlug?.message}>
-          <Select id="tourSlug" aria-invalid={!!errors.tourSlug} {...register("tourSlug")}>
-            {tours.map((t) => (
-              <option key={t.slug} value={t.slug}>
-                {t.name}
-              </option>
-            ))}
-          </Select>
-        </Field>
+        <div className="flex flex-col gap-1.5">
+          <span className="text-sm font-semibold text-ink">Tour</span>
+          <p className="flex min-h-11 items-center rounded-md border border-olive-300 bg-olive-50 px-3 py-2 text-base font-semibold text-ink md:text-sm">
+            {tour.name}
+          </p>
+          <input type="hidden" {...register("tourSlug")} />
+          {errors.tourSlug?.message && (
+            <p role="alert" className="text-xs font-medium text-destructive">
+              {errors.tourSlug.message}
+            </p>
+          )}
+        </div>
         <Field id="preferredDate" label="Preferred date" required error={errors.preferredDate?.message} hint="We appreciate 48 hours' notice.">
           <Controller
             control={control}
