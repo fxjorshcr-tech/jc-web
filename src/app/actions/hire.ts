@@ -2,7 +2,7 @@
 
 import { z } from "zod";
 import { hireCustomerEmail, hireNotifyEmail } from "@/lib/emails";
-import { notifyEmail, sendMail } from "@/lib/mailer";
+import { sendConfirmation, sendNotification } from "@/lib/mailer";
 import { getSupabaseAdmin, type GuideRequestRow } from "@/lib/supabase-admin";
 import { hireSchema, type HireResult } from "@/lib/validations/hire";
 
@@ -14,7 +14,7 @@ export async function submitHireRequest(input: unknown): Promise<HireResult> {
     return { ok: false, message: "Please review the highlighted fields.", fieldErrors: z.flattenError(parsed.error).fieldErrors };
   }
   const data = parsed.data;
-  if (data.company) return { ok: true };
+  if (data.company) return { ok: true, confirmationSent: true };
 
   // Store a copy; a storage problem must not block the email.
   try {
@@ -35,18 +35,19 @@ export async function submitHireRequest(input: unknown): Promise<HireResult> {
   }
 
   try {
-    const notify = hireNotifyEmail(data);
-    await sendMail({ to: notifyEmail(), replyTo: data.email, ...notify });
+    await sendNotification(hireNotifyEmail(data), data.email);
   } catch (err) {
     console.error("[hire] notify email failed", err);
     return { ok: false, message: GENERIC_ERROR };
   }
 
+  let confirmationSent = true;
   try {
-    await sendMail({ to: data.email, ...hireCustomerEmail(data) });
+    await sendConfirmation(hireCustomerEmail(data), data.email);
   } catch (err) {
+    confirmationSent = false;
     console.error("[hire] customer email failed", err);
   }
 
-  return { ok: true };
+  return { ok: true, confirmationSent };
 }

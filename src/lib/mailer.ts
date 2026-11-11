@@ -12,8 +12,27 @@ function getResend() {
   return cached;
 }
 
-export function notifyEmail() {
-  return process.env.BOOKINGS_NOTIFY_EMAIL ?? site.email;
+/** "a@x.com, b@y.com" -> ["a@x.com", "b@y.com"]. Accepts commas, semicolons or whitespace between addresses. */
+function parseAddressList(value: string | undefined) {
+  return [...new Set((value ?? "").split(/[,;\s]+/).map((s) => s.trim()).filter(Boolean))];
+}
+
+/**
+ * The inboxes that receive every request made on the website.
+ * BOOKINGS_NOTIFY_EMAIL takes one address or several separated by commas.
+ */
+export function notifyEmails(): string[] {
+  const list = parseAddressList(process.env.BOOKINGS_NOTIFY_EMAIL);
+  return list.length ? list : [site.email];
+}
+
+/**
+ * Where a guest's reply to their confirmation lands. The from address is send-only,
+ * so replies go to BOOKINGS_REPLY_TO_EMAIL, or to the notification inboxes when it is unset.
+ */
+export function replyToEmails(): string[] {
+  const list = parseAddressList(process.env.BOOKINGS_REPLY_TO_EMAIL);
+  return list.length ? list : notifyEmails();
 }
 
 export function fromEmail() {
@@ -21,11 +40,11 @@ export function fromEmail() {
 }
 
 export interface Mail {
-  to: string;
+  to: string | string[];
   subject: string;
   html: string;
   text: string;
-  replyTo?: string;
+  replyTo?: string | string[];
 }
 
 export async function sendMail(mail: Mail) {
@@ -39,4 +58,14 @@ export async function sendMail(mail: Mail) {
     replyTo: mail.replyTo,
   });
   if (error) throw new Error(`Resend error: ${error.message}`);
+}
+
+/** The internal copy of a request. Replying to it writes straight to the guest. */
+export function sendNotification(mail: Omit<Mail, "to" | "replyTo">, guestEmail: string) {
+  return sendMail({ ...mail, to: notifyEmails(), replyTo: guestEmail });
+}
+
+/** The guest's own copy. Replying to it reaches the team, not the send-only from address. */
+export function sendConfirmation(mail: Omit<Mail, "to" | "replyTo">, guestEmail: string) {
+  return sendMail({ ...mail, to: guestEmail, replyTo: replyToEmails() });
 }

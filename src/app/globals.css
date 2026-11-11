@@ -76,6 +76,10 @@
   --animate-accordion-up: accordion-up 0.2s ease-out;
   --animate-popover-in: popover-in 0.16s ease-out;
   --animate-popover-out: popover-out 0.12s ease-in;
+  --animate-overlay-in: overlay-in 0.2s ease-out;
+  --animate-overlay-out: overlay-out 0.15s ease-in;
+  --animate-dialog-in: dialog-in 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-dialog-out: dialog-out 0.15s ease-in;
 
   @keyframes popover-in {
     from { opacity: 0; transform: translateY(-4px) scale(0.98); }
@@ -84,6 +88,23 @@
   @keyframes popover-out {
     from { opacity: 1; transform: translateY(0) scale(1); }
     to { opacity: 0; transform: translateY(-4px) scale(0.98); }
+  }
+
+  @keyframes overlay-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes overlay-out {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+  @keyframes dialog-in {
+    from { opacity: 0; transform: translateY(12px) scale(0.96); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  @keyframes dialog-out {
+    from { opacity: 1; transform: translateY(0) scale(1); }
+    to { opacity: 0; transform: translateY(8px) scale(0.98); }
   }
 
   @keyframes accordion-down {

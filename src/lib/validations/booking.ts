@@ -29,5 +29,5 @@ export type BookingInput = z.input<typeof bookingSchema>;
 export type BookingValues = z.output<typeof bookingSchema>;
 
 export type BookingResult =
-  | { ok: true; code: string }
+  | { ok: true; code: string; confirmationSent: boolean }
   | { ok: false; message: string; fieldErrors?: Record<string, string[] | undefined> };

@@ -18,4 +18,4 @@ export const hireSchema = z.object({
 export type HireInput = z.input<typeof hireSchema>;
 export type HireValues = z.output<typeof hireSchema>;
 
-export type HireResult = { ok: true } | { ok: false; message: string; fieldErrors?: Record<string, string[] | undefined> };
+export type HireResult = { ok: true; confirmationSent: boolean } | { ok: false; message: string; fieldErrors?: Record<string, string[] | undefined> };
