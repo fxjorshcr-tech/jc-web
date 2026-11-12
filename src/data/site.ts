@@ -50,6 +50,16 @@ export const site = {
     url: "https://www.travelersagainstplastic.org/",
   },
   ogImage: "og/og-default.jpg",
+  /**
+   * Google Analytics 4 and Search Console. Both values are public (they appear in the page source).
+   * Paste them here, or set the environment variables in Vercel, which take precedence.
+   */
+  analytics: {
+    /** GA4 measurement ID, e.g. "G-AB12CD34EF". Empty = Analytics off. */
+    gaId: process.env.NEXT_PUBLIC_GA_ID ?? "",
+    /** Search Console "HTML tag" verification code (the content="..." value only). Empty = no tag. */
+    googleSiteVerification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ?? "",
+  },
 } as const;
 
 export const nav = [

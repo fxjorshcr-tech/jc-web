@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { DatePicker, formatDisplayDate } from "@/components/ui/date-picker";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { track } from "@/lib/analytics";
 import { bookingSchema, type BookingInput, type BookingValues } from "@/lib/validations/booking";
 
 interface BookingFormProps {
@@ -56,6 +57,7 @@ export function BookingForm({ tour }: BookingFormProps) {
     startTransition(async () => {
       const result = await submitBooking(values);
       if (result.ok) {
+        track("generate_lead", { form: "booking", tour: tour.slug });
         setSuccess({ code: result.code, values, confirmationSent: result.confirmationSent });
         setDialogOpen(true);
         return;

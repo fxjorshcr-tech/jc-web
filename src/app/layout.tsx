@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Analytics } from "@/components/site/analytics";
 import { Header } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
 import { WhatsAppFloating } from "@/components/site/whatsapp-button";
@@ -63,6 +64,7 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   alternates: { canonical: "/" },
+  ...(site.analytics.googleSiteVerification ? { verification: { google: site.analytics.googleSiteVerification } } : {}),
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -81,6 +83,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         </main>
         <Footer />
         <WhatsAppFloating />
+        <Analytics />
       </body>
     </html>
   );
