@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "FAQ",
   description: "Answers about booking, payment, children, meals, getting to Montezuma, drinking water and what makes JC's Journeys tours sustainable.",
   alternates: { canonical: "/faq" },
-  openGraph: { title: "FAQ | JC's Journeys", description: "Frequently asked questions about our tours in Montezuma.", url: "/faq" },
+  openGraph: { title: "FAQ | JC's Journeys", description: "Frequently asked questions about our tours on the southern Nicoya Peninsula.", url: "/faq" },
 };
 
 export default function FaqPage() {

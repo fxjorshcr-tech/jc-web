@@ -11,10 +11,12 @@ export function TestimonialCard({ testimonial, className, large }: { testimonial
       </blockquote>
       <figcaption className="mt-6 border-t border-border/70 pt-4 text-sm">
         <span className="block font-semibold text-ink">{testimonial.name}</span>
-        <span className="text-ink-soft">
-          {testimonial.location}
-          {testimonial.year ? ` · ${testimonial.year}` : ""}
-        </span>
+        <span className="text-ink-soft">{[testimonial.location, testimonial.year].filter(Boolean).join(" · ")}</span>
+        {(testimonial.source || testimonial.translatedFrom) && (
+          <span className="mt-1 block text-xs text-ink-soft/80">
+            {[testimonial.source && `${testimonial.source} review`, testimonial.translatedFrom && `translated from ${testimonial.translatedFrom}`].filter(Boolean).join(" · ")}
+          </span>
+        )}
       </figcaption>
     </figure>
   );

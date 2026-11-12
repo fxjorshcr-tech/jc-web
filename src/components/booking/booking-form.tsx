@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { DatePicker, formatDisplayDate } from "@/components/ui/date-picker";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { track } from "@/lib/analytics";
 import { bookingSchema, type BookingInput, type BookingValues } from "@/lib/validations/booking";
 
 interface BookingFormProps {
@@ -56,6 +57,7 @@ export function BookingForm({ tour }: BookingFormProps) {
     startTransition(async () => {
       const result = await submitBooking(values);
       if (result.ok) {
+        track("generate_lead", { form: "booking", tour: tour.slug });
         setSuccess({ code: result.code, values, confirmationSent: result.confirmationSent });
         setDialogOpen(true);
         return;
@@ -172,7 +174,7 @@ export function BookingForm({ tour }: BookingFormProps) {
         <Field id="phone" label="Phone" error={errors.phone?.message} hint="Include your country code. WhatsApp is welcome.">
           <Input id="phone" type="tel" autoComplete="tel" inputMode="tel" aria-invalid={!!errors.phone} {...register("phone")} />
         </Field>
-        <Field id="hotel" label="Hotel name" error={errors.hotel?.message} hint="Where should we pick you up?">
+        <Field id="hotel" label="Hotel or Airbnb" error={errors.hotel?.message} hint="Where should we pick you up?">
           <Input id="hotel" autoComplete="organization" aria-invalid={!!errors.hotel} {...register("hotel")} />
         </Field>
       </div>
@@ -194,7 +196,7 @@ export function BookingForm({ tour }: BookingFormProps) {
         id="specialRequests"
         label="Special requests or comments"
         error={errors.specialRequests?.message}
-        hint="Dietary needs, mobility, children's ages, help with transportation or hotels, or a preferred Let's Get Local version (farm or Cabuya)."
+        hint="Dietary needs, mobility, children's ages, help with transportation or hotels."
       >
         <Textarea id="specialRequests" rows={4} aria-invalid={!!errors.specialRequests} {...register("specialRequests")} />
       </Field>

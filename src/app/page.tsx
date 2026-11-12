@@ -18,7 +18,7 @@ import { whatsappUrl } from "@/lib/whatsapp";
 
 const facts = [
   { icon: ShieldCheck, title: "Licensed local guide", text: `JC Aguirre, ${site.guide.license}, with first aid training and more than two decades guiding the peninsula.` },
-  { icon: MapPinned, title: "Small groups, hotel pickup", text: "Flexible, friendly tours that start at your hotel in Montezuma, with pickups in Santa Teresa and Malpaís on request, and can be customized for private groups." },
+  { icon: MapPinned, title: "Small groups, pickup where you stay", text: "Flexible, friendly journeys that start at your hotel or Airbnb, whether you are staying in Santa Teresa, Malpaís, Montezuma or elsewhere on the peninsula, and can be customized for private groups." },
   { icon: Leaf, title: "Considerate by design", text: "Local families, small businesses and reusable bottles instead of plastic. Tours that give back to the places they visit." },
 ];
 
@@ -113,7 +113,7 @@ export default function HomePage() {
             <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-cream/85">
               <TripadvisorBadge light />
               <span>
-                Guided by <span className="font-semibold text-cream">{site.guide.shortName}</span>, {site.guide.license.split(" – ")[0]} · based in Montezuma, guiding the whole peninsula
+                Guided by <span className="font-semibold text-cream">{site.guide.shortName}</span>, {site.guide.license.split(" – ")[0]} · guiding the whole southern peninsula
               </span>
             </div>
             <p className="mt-4 text-xs text-cream/60 lg:hidden">{heroPhoto.caption}</p>
@@ -193,7 +193,7 @@ export default function HomePage() {
           align="center"
           title={
             <>
-              &ldquo;He turned out to be the <em className="font-light">highlight</em> of our trip.&rdquo;
+              &ldquo;Get to know Costa Rica with someone who <em className="font-light">loves what he does</em>.&rdquo;
             </>
           }
         />
@@ -233,7 +233,7 @@ export default function HomePage() {
               <span className="text-sm leading-snug">
                 <span className="block font-semibold">We support {site.travelersAgainstPlastic.name}</span>
                 <span className="text-olive-100/80">
-                  Montezuma&rsquo;s water is potable, so we don&rsquo;t provide bottled drinks on tours. Bring a refillable bottle.
+                  The water in the southern peninsula is potable, so we don&rsquo;t provide bottled drinks on tours. Bring a refillable bottle.
                 </span>
               </span>
             </a>

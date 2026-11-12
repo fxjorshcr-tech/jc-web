@@ -1,20 +1,44 @@
 export interface Testimonial {
   quote: string;
   name: string;
-  location: string;
+  /** Where the guest is from, when known. */
+  location?: string;
   /** Year of the visit or review, when known. */
   year?: number;
+  /** Where the review was published, e.g. "Tripadvisor". */
+  source?: string;
+  /** Original language, when the quote is our translation. */
+  translatedFrom?: string;
   featured?: boolean;
 }
 
-/** Guest words collected on the current site ("Our Guests" page and its comments). */
+/** Most recent first. The three featured ones are shown on the home page. */
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "We stayed in Montezuma in February 2013 and our time there was amazing. The beauty of Costa Rica cannot be compared. We were fortunate to have met JC and I can tell you that he turned out to be the highlight of our trip. Our excursions were stunning and we got so much more than we expected. His eye for nature and wildlife was incredible. Seriously a must do for a wonderful Costa Rica adventure.",
-    name: "Mel & Robyn Golden",
-    location: "Lake, Ontario, Canada",
-    year: 2013,
+      "We want to highly recommend JC, our tour guide, who took us to discover the beauty of the Curú reserve. His knowledge, experience and passion for the wildlife and plants of the area made this visit an enriching and special experience. […] Thank you, Juan Carlos, for your attention, your kindness and for sharing a little piece of your beautiful land with us. Without a doubt, 100% recommended for anyone who wants to get to know Costa Rica with someone who loves what he does.",
+    name: "Tania & Manuel",
+    location: "Lázaro Cárdenas, Mexico",
+    year: 2026,
+    source: "Tripadvisor",
+    translatedFrom: "Spanish",
+    featured: true,
+  },
+  {
+    quote:
+      "My wife and I did a Night Walk with Alex (property owner) and JC. It was a great experience! Being out in the forest exploring nature was tremendous. Both Alex and JC were very knowledgeable and guided us for almost three hours through the property. We found many different kinds of animals and we both felt it was a very special experience in their natural habitat. We got great photos and videos during the walk, and would recommend it to anyone looking for a real wildlife adventure. Many thanks to you both, Alex and JC.",
+    name: "Tripadvisor guest",
+    location: "Sugar Land, Texas, USA",
+    year: 2026,
+    source: "Tripadvisor",
+    featured: true,
+  },
+  {
+    quote:
+      "JC was born to do tours! He is so kind and funny and knows so much about the local area. I highly recommend the local farm tour. We met an incredible family who taught us how to make cheese, milk cows and process sugar cane, and we got to swim in a beautiful river. We were met with smiles, chickens, ducks, turkeys and sweet farm dogs.",
+    name: "Molo M.",
+    year: 2024,
+    source: "Tripadvisor",
     featured: true,
   },
   {
@@ -23,48 +47,12 @@ export const testimonials: Testimonial[] = [
     name: "John, Nancy and Nathan Williams",
     location: "United States",
     year: 2018,
-    featured: true,
   },
   {
     quote:
-      "Last week JC led me on a walking and birding tour of the Tambor area. I contacted JC at the last minute, and, fortunately for me, he was available. We started promptly at 7:00 am and birded for five hours. He was energetic, friendly, and very enthusiastic about finding birds. We saw 72 species of which 61 were new to me. It was a thoroughly enjoyable time and one of the highlights of my time in Costa Rica. I recommend him highly.",
-    name: "Richard Cripe",
-    location: "Coeur d'Alene, Idaho, USA",
-    year: 2014,
-    featured: true,
-  },
-  {
-    quote:
-      "My girlfriend and I loved Montezuma and spent a great day viewing local wildlife and nature with JC. He is fun, informative and very focused on making sure his guests learn more about this amazing country. His tour could not have been better. When (not if) we come back we look forward to spending more time with JC's Journeys. Tuanis JC!",
-    name: "Garry and Raquel",
-    location: "Toronto, Canada",
-    year: 2015,
-  },
-  {
-    quote:
-      "We had a wonderful time in Costa Rica. The best part of the visit was taking a tour with JC's Journeys. We visited an organic farm, where we got to crush sugar cane and drink it straight as it poured in to a mug with crushed ice. We also had a wonderful journey visiting a local lady who makes her own perfumes, marmalades and coconut oil for cooking and for bathing. Was amazing. His ability to speak English and Spanish is amazing, and was most helpful as our Spanish isn't all that great. We can't wait to return and see what other Journeys we can take.",
-    name: "Martha",
-    location: "United States",
-    year: 2013,
-  },
-  {
-    quote:
-      "Pura Vida JC! I finally looked up your web site. Very nice! It brings back great memories and thoughts of our vacation and the new friends we met in Costa Rica. You helped make our visit special. I usually opt to do my nature walks without a guide but I'm glad that we had you and the knowledge you shared with us about the plants and animals in the preserve. We really enjoyed the time we had with you and Kevin. Thanks for making us feel welcomed in your country.",
-    name: "The Storck family",
-    location: "Michigan, USA",
-    year: 2014,
-  },
-  {
-    quote:
-      "Merci beaucoup a Juan Carlos de nous avoir fait découvrir les beautés du Costa Rica avec entre autre le parc de Curu! Juan Carlos est une personne passionnée et captivante dotée d'un sens de l'observation incroyable. Merci encore.",
-    name: "René Monfette, Laurianne, Jean-Sébastien et Mélanie",
-    location: "Québec, Canada",
-    year: 2014,
-  },
-  {
-    quote: "…you made our trip enjoyable and your joy in what you do shows in how you explain nature and animal life…",
-    name: "Rosie Ahumada",
-    location: "Redondo Beach, CA, USA",
+      "We stayed in Montezuma in February 2013 and our time there was amazing. The beauty of Costa Rica cannot be compared. We were fortunate to have met JC and I can tell you that he turned out to be the highlight of our trip. Our excursions were stunning and we got so much more than we expected. His eye for nature and wildlife was incredible. Seriously a must do for a wonderful Costa Rica adventure.",
+    name: "Mel & Robyn Golden",
+    location: "Lake, Ontario, Canada",
     year: 2013,
   },
 ];

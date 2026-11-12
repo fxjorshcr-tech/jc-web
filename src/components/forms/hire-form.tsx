@@ -12,6 +12,7 @@ import { DateRangePicker } from "@/components/ui/date-picker";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { hireSchema, type HireInput, type HireValues } from "@/lib/validations/hire";
+import { track } from "@/lib/analytics";
 
 export function HireForm() {
   const [pending, startTransition] = React.useTransition();
@@ -46,6 +47,7 @@ export function HireForm() {
     startTransition(async () => {
       const result = await submitHireRequest(values);
       if (result.ok) {
+        track("generate_lead", { form: "hire_a_guide" });
         setSent({ name: values.contactName, email: values.email, confirmationSent: result.confirmationSent });
         setDialogOpen(true);
         return;

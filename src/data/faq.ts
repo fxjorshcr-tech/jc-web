@@ -16,7 +16,7 @@ export const faq: FaqItem[] = [
     id: "santa-teresa",
     question: "Do you pick up in Santa Teresa and Malpaís?",
     answer:
-      "Yes. Our tours start from hotels in downtown Montezuma, and we arrange pickups in Santa Teresa, Malpaís and Cabuya on request. The drive from Santa Teresa adds roughly 40 minutes each way, so the quote reflects the longer transfer and the earlier start. Tell us where you are staying when you request a tour. See our list of [things to do in Santa Teresa beyond surfing](/blog/things-to-do-in-santa-teresa-beyond-surfing).",
+      "Yes. Our journeys start at your hotel or Airbnb, whether you are staying in Santa Teresa, Malpaís, Montezuma, Cabuya or elsewhere on the southern peninsula. The price depends on your pickup point and the size of your group, so tell us where you are staying when you book. See our list of [things to do in Santa Teresa beyond surfing](/blog/things-to-do-in-santa-teresa-beyond-surfing).",
   },
   {
     id: "payment",
@@ -46,7 +46,7 @@ export const faq: FaqItem[] = [
     id: "kids",
     question: "Are your tours suitable for small kids?",
     answer:
-      "All tours are suitable for small children except [Nocturno Montezuma Night Hike](/tours/nocturno-night-journey). While some children under the age of 12 have taken the hike, it may be challenging for some inexperienced hikers and/or unsafe if carrying a child. All other tours involve easier walking/hiking that is suitable for all ages.",
+      "All tours are suitable for small children except [Nocturno Night Journey](/tours/nocturno-night-journey). While some children under the age of 12 have taken the hike, it may be challenging for some inexperienced hikers and/or unsafe if carrying a child. All other tours involve easier walking/hiking that is suitable for all ages.",
   },
   {
     id: "itinerary",
@@ -68,7 +68,7 @@ export const faq: FaqItem[] = [
   },
   {
     id: "water",
-    question: "Is the water potable in Montezuma?",
+    question: "Is the water potable in the southern peninsula?",
     answer:
       "Yes. For this reason we do not provide bottled beverages on our tours and encourage travelers to bring refillable water bottles to reduce plastic waste. There are few occasions where the water is not recommended for drinking but in these cases you will be advised by restaurants and hotels for your health. For more information on water purification while traveling, please read [here](https://jcsjourneys.wordpress.com/wp-content/uploads/2014/03/water-purification-info-for-pre-departure-packets.pdf).",
   },

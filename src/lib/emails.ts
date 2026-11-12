@@ -212,7 +212,7 @@ ${body}
 </td></tr>
 
 <tr><td class="pad" style="padding:22px 32px 26px;background:${C.cream};border-top:1px solid ${C.line};font-family:${FONT};font-size:12px;line-height:1.7;color:${C.inkSoft};">
-<strong style="color:${C.ink};">${escapeHtml(site.name)}</strong> &middot; Montezuma, Southern Nicoya Peninsula, Costa Rica<br>
+<strong style="color:${C.ink};">${escapeHtml(site.name)}</strong> &middot; Southern Nicoya Peninsula, Costa Rica<br>
 ${escapeHtml(site.guide.shortName)} &middot; ${escapeHtml(site.guide.license)}<br>
 <a href="${site.url}" target="_blank" style="color:${C.teal};">${host}</a> &middot; <a href="https://wa.me/${site.whatsapp.number}" target="_blank" style="color:${C.teal};">WhatsApp ${escapeHtml(site.whatsapp.display)}</a> &middot; <a href="${site.social.tripadvisor}" target="_blank" style="color:${C.teal};">Tripadvisor</a>
 <div style="margin-top:10px;color:#7b867f;">${escapeHtml(reason)}</div>

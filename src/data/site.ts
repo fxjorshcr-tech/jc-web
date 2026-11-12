@@ -4,9 +4,9 @@ export const site = {
   /** Short form for tight spaces (logo subline). */
   taglineShort: "Nicoya Peninsula · Costa Rica",
   /** The towns we work from and pick up in, in the order we lead with. */
-  towns: ["Montezuma", "Santa Teresa", "Malpaís"],
+  towns: ["Santa Teresa", "Malpaís", "Montezuma"],
   description:
-    "Small-group natural and cultural journeys across the southern Nicoya Peninsula, from Montezuma to Santa Teresa and Malpaís, led by licensed local guide JC Aguirre. Birding, Curu Wildlife Refuge, family farm visits and night hikes.",
+    "Small-group natural and cultural journeys across the southern Nicoya Peninsula, from Santa Teresa and Malpaís to Montezuma, led by licensed local guide JC Aguirre. Birding, Curu Wildlife Refuge, family farm visits and night hikes.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://jcsjourneys.com",
   email: "jcsjourneys@gmail.com",
   whatsapp: {
@@ -21,7 +21,7 @@ export const site = {
     country: "CR",
     countryName: "Costa Rica",
     area: "Southern Nicoya Peninsula",
-    served: ["Montezuma", "Santa Teresa", "Malpaís", "Cabuya", "Cóbano", "Tambor", "Curu Wildlife Refuge", "Cabo Blanco"],
+    served: ["Santa Teresa", "Malpaís", "Montezuma", "Cabuya", "Cóbano", "Tambor", "Curu Wildlife Refuge", "Cabo Blanco"],
     lat: 9.6558,
     lng: -85.0697,
   },
@@ -42,7 +42,7 @@ export const site = {
   reviews: {
     platform: "Tripadvisor",
     rating: 5.0,
-    count: 56,
+    count: 55,
     url: "https://www.tripadvisor.com/Attraction_Review-g309278-d6132502-Reviews-JC_s_Journeys_Day_Tours-Montezuma_Province_of_Puntarenas.html",
   },
   travelersAgainstPlastic: {
@@ -50,6 +50,16 @@ export const site = {
     url: "https://www.travelersagainstplastic.org/",
   },
   ogImage: "og/og-default.jpg",
+  /**
+   * Google Analytics 4 and Search Console. Both values are public (they appear in the page source).
+   * Paste them here, or set the environment variables in Vercel, which take precedence.
+   */
+  analytics: {
+    /** Google tag ID from Analytics (Admin -> Data streams): "GTM-..." or a "G-..." measurement ID. Empty = Analytics off. */
+    gaId: process.env.NEXT_PUBLIC_GA_ID ?? "GTM-PX9HKMBT",
+    /** Search Console "HTML tag" verification code (the content="..." value only). Empty = no tag. */
+    googleSiteVerification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ?? "E7FcSiwuiVEHnOGF3Sk6of4Hmc2YQR_Y6RnVO8sTMNw",
+  },
 } as const;
 
 export const nav = [

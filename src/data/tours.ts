@@ -34,7 +34,7 @@ export interface Tour {
 
 /** Notes that apply to every tour (from the current site). */
 export const commonTourNotes = [
-  "Price is based on pick ups from hotels in downtown Montezuma. Price will vary for pick ups from hotels outside this area.",
+  "Price is based on pick up at your hotel or Airbnb in the southern Nicoya Peninsula. Price will vary for pick ups outside this area.",
   "We recommend bringing a refillable water bottle or canteen to help reduce plastic waste.",
 ];
 
@@ -43,22 +43,22 @@ export const tours: Tour[] = [
     slug: "nocturno-night-journey",
     name: "Nocturno Night Journey",
     shortName: "Nocturno",
-    tagline: "Montezuma comes alive at night.",
+    tagline: "The forest comes alive at night.",
     summary:
-      "A guided night hike through the forest around Montezuma, when nocturnal animals wake up and the sounds of the wild amplify.",
+      "A guided night journey through the amazing forest of the Río Bonito Reserve, when nocturnal animals wake up and the sounds of the wild amplify.",
     description: [
-      "Why take a night hike through the darkness with little more than a flashlight and water bottle? Because Montezuma comes alive at night. As day turns to dusk the sounds of surrounding wildlife amplify alerting you to the fact that there is far more to see than that which is visible during normal waking hours. Nocturnal animals fill the forest and awaken to begin searching for food, making them much more likely to be spotted when trekking around after the sun has set.",
-      "The walk itself is short and slow, on a forest trail a few minutes from town. With headlamps and an ultraviolet light we look for red-eyed tree frogs, banded geckos, tarantulas at the mouths of their burrows, scorpions that glow blue under the UV beam, walking sticks and leaf-mimic insects, birds asleep on the branches and, with luck and silence, a kinkajou or an armadillo. Expect about two hours on the trail and a very different forest from the one you walked by day.",
+      "Why take a night hike through the darkness with little more than a flashlight and water bottle? Because the forest comes alive at night. As day turns to dusk the sounds of surrounding wildlife amplify alerting you to the fact that there is far more to see than that which is visible during normal waking hours. Nocturnal animals fill the forest and awaken to begin searching for food, making them much more likely to be spotted when trekking around after the sun has set.",
+      "The walk itself is short and slow, guided along the trails of the amazing forest of the Río Bonito Reserve. With headlamps and an ultraviolet light we look for red-eyed tree frogs, banded geckos, tarantulas at the mouths of their burrows, scorpions that glow blue under the UV beam, walking sticks and leaf-mimic insects, birds asleep on the branches and, with luck and silence, a kinkajou or an armadillo. Expect about two hours on the trail and a very different forest from the one you walked by day.",
     ],
-    when: "Starts around sunset and lasts about 2 hours. Available most evenings on request; we confirm the exact start time with the season.",
-    where: "Forest trail a few minutes from Montezuma",
+    when: "Starts around sunset and lasts about 2 hours. Any evening, on request; we confirm the exact start time with the season.",
+    where: "Río Bonito Reserve",
     whatToBring: ["Closed shoes", "Long, light pants", "Insect Repellent", "Water*", "Headlamp (optional, we bring lights)", "Camera (optional)"],
     whatsIncluded: ["Guide", "Headlamps and UV light", "Transportation*"],
     notes: [
       "This is the only tour not recommended for small children. While some children under the age of 12 have taken the hike, it may be challenging for some inexperienced hikers and/or unsafe if carrying a child.",
       "Light rain is good news for frogs and we go ahead. In heavy rain or lightning we reschedule to the next available evening, or refund if that is not possible.",
     ],
-    hero: { src: "tours/nocturno-night-journey/hero.jpg", alt: "Red-eyed tree frog with bright red eyes and orange feet on a green leaf, seen on the Nocturno night hike near Montezuma" },
+    hero: { src: "tours/nocturno-night-journey/hero.jpg", alt: "Red-eyed tree frog with bright red eyes and orange feet on a green leaf, seen on the Nocturno night journey in the Río Bonito Reserve" },
     gallery: [
       { src: "tours/nocturno-night-journey/frog.jpg", alt: "Tree frog seen on the Nocturno night hike", caption: "Tree Frog – Nocturno" },
       { src: "tours/nocturno-night-journey/mushroom.jpg", alt: "Mushrooms growing on the forest floor at night", caption: "Mushrooms after the first rains" },
@@ -66,7 +66,6 @@ export const tours: Tour[] = [
     ],
     status: "available",
     suitableForSmallChildren: false,
-    video: { embedUrl: "https://player.vimeo.com/video/78227059", title: "Nocturno Montezuma Night Hike" },
     duration: "PT2H",
   },
   {
@@ -79,7 +78,7 @@ export const tours: Tour[] = [
     description: [
       "If you love birds, you've come to the right place. Take a morning to witness the golden sun rise over the Nicoya Gulf and see some of Costa Rica's most beautiful birds. With professional equipment, a trained eye (and ear) and a little patience, we'll help you spot common birds in the area and maybe even capture that essential photo to take home. Conclude your early morning outing with a light breakfast, included with this journey.",
     ],
-    when: "5:30am-8:30am. Available Tuesdays, Thursdays, Fridays and Saturdays.",
+    when: "5:30am-8:30am. Any day, on request.",
     where: "Montezuma/Cabuya",
     whatToBring: ["Binoculars or Scope (optional)", "Walking Shoes", "Water*", "Sunblock", "Insect Repellent", "Swimsuit (optional)"],
     whatsIncluded: ["Equipment", "Light Breakfast", "Guide", "Transportation*"],
@@ -105,7 +104,7 @@ export const tours: Tour[] = [
     description: [
       "Animals, nature, and more on this half day journey to Curu Wildlife Refuge. Learn about the nature that surrounds you in this unique ecosystem while spotting wildlife and concluding a 1.5-2.5K hike at a picturesque beach. Make a few additional fun stops along the way and top it off with a delicious typical Costa Rican lunch.",
     ],
-    when: "7:30am-1pm. Available Tuesdays, Thursdays, Fridays & Saturdays.",
+    when: "6:30am-12pm. Any day, on request.",
     where: "Curu Wildlife Refuge",
     whatToBring: ["Water*", "Closed Shoes (Recommended)", "Insect Repellent", "Sunblock", "Camera"],
     whatsIncluded: ["Entrance Fee", "Equipment", "Guide", "Lunch", "Transportation*"],
@@ -125,15 +124,14 @@ export const tours: Tour[] = [
     slug: "lets-get-local",
     name: "Let's Get Local",
     shortName: "Let's Get Local",
-    tagline: "A hands-on morning of rural living at Finca Los Tres Higuerones, a working family farm a short drive from Montezuma.",
+    tagline: "A hands-on morning of rural living at Finca Los Tres Higuerones, a working family farm on the southern Nicoya Peninsula.",
     summary:
       "Get an interactive experience of local living in rural Costa Rica. Visit the family at Finca Los Tres Higuerones, brew coffee the traditional way, meet the farm animals and help prepare a light meal.",
     description: [
       "Get an interactive experience of local living in rural Costa Rica on this journey. We'll stop at Finca Los Tres Higuerones, a typical Costa Rican family farm, to enjoy a cup of traditionally brewed coffee, see how organic soaps are made, and highlight the freshness and creativity of sustainable farming. Be prepared to roll up your sleeves as you help prepare a light meal with an onsite cooking demonstration from the family and work to extract fresh sugarcane juice for a refreshing beverage! This tour is an excellent option for families of all ages looking for a hands on local learning experience.",
-      "A Cabuya version of this journey is also available. On it we show you hidden spots including a fishing village, cemetery island and local marmalade producer in the quaint town of Cabuya just south of Montezuma. You'll have the opportunity to meet locals and learn about their lifestyle to get a taste of culture in the peninsula. It is a great option for families of all ages as there is minimal physical activity involved and just a short drive, but offers many interesting sights to see. Let us know your preference when you request a quote.",
     ],
-    when: "8:00am-11:00am. Available Tuesdays, Thursdays, Fridays & Saturdays. (48-hour advance reservation appreciated for this tour)",
-    where: "Finca Los Tres Higuerones (Cabuya version also available)",
+    when: "8:00am-11:00am. Any day, on request. (48-hour advance reservation appreciated for this tour)",
+    where: "Finca Los Tres Higuerones",
     whatToBring: ["Water*", "Camera", "Sunblock", "Insect Repellent", "Extra Cash (optional)*"],
     whatsIncluded: ["Coffee", "Light Meal", "Equipment", "Guide", "Transportation*"],
     notes: [
@@ -146,7 +144,6 @@ export const tours: Tour[] = [
       { src: "tours/lets-get-local/traditional-cooking.jpg", alt: "Traditional cooking demonstration at the farm", caption: "Traditional Cooking" },
       { src: "tours/lets-get-local/guest.jpg", alt: "Guest extracting sugar cane juice on the Let's Get Local tour", caption: "Let's Get Local Guest" },
       { src: "tours/lets-get-local/fresh-produce.jpg", alt: "Fresh produce from the farm", caption: "Fresh Produce" },
-      { src: "tours/lets-get-local/cabuya-cemetery-island.jpg", alt: "Cemetery island off the coast of Cabuya", caption: "Cemetery Island – Cabuya" },
     ],
     status: "available",
     suitableForSmallChildren: true,
