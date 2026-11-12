@@ -31,7 +31,7 @@ export const about = {
     image: { src: "about/forest-giant.jpg", alt: "Looking up the trunk of a giant tree in the forest of the Nicoya Peninsula" },
   },
   opportunities:
-    "We currently do not have any job opportunities available. However, if you are interested in volunteering with JC's Journeys in a particular capacity, please contact us at jcsjourneys@gmail.com with a resume and brief statement of interest. Thanks for considering joining our team!",
+    "We currently do not have any job opportunities available. However, if you are interested in volunteering with JC's Journeys in a particular capacity, please contact us at bookings@jcsjourneys.com with a resume and brief statement of interest. Thanks for considering joining our team!",
 };
 
 export const guests = {
@@ -79,7 +79,7 @@ export const community = {
 
 export const hireAGuide = {
   intro:
-    "Do you have your own transportation? Juan Carlos 'JC' Aguirre is available for hire as a freelance guide to Curu Refuge, Cabo Blanco, Tambor, Montezuma, Santa Teresa and as a private guide for customized tours outside the area. If you are interested in hiring JC, please complete the form below, or contact us directly at jcsjourneys@gmail.com with details of the trip and we will reply as soon as possible with a list of rates.",
+    "Do you have your own transportation? Juan Carlos 'JC' Aguirre is available for hire as a freelance guide to Curu Refuge, Cabo Blanco, Tambor, Montezuma, Santa Teresa and as a private guide for customized tours outside the area. If you are interested in hiring JC, please complete the form below, or contact us directly at bookings@jcsjourneys.com with details of the trip and we will reply as soon as possible with a list of rates.",
   image: { src: "hire-a-guide/jc-portrait.jpg", alt: "JC Aguirre guiding guests across a hanging bridge in the cloud forest" },
 };
 

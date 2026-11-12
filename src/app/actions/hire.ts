@@ -6,7 +6,7 @@ import { sendConfirmation, sendNotification } from "@/lib/mailer";
 import { getSupabaseAdmin, type GuideRequestRow } from "@/lib/supabase-admin";
 import { hireSchema, type HireResult } from "@/lib/validations/hire";
 
-const GENERIC_ERROR = "We could not send your request right now. Please try again in a moment or email us at jcsjourneys@gmail.com.";
+const GENERIC_ERROR = "We could not send your request right now. Please try again in a moment or email us at bookings@jcsjourneys.com.";
 
 export async function submitHireRequest(input: unknown): Promise<HireResult> {
   const parsed = hireSchema.safeParse(input);

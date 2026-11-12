@@ -8,7 +8,7 @@ export const site = {
   description:
     "Small-group natural and cultural journeys across the southern Nicoya Peninsula, from Santa Teresa and Malpaís to Montezuma, led by licensed local guide JC Aguirre. Birding, Curu Wildlife Refuge, family farm visits and night hikes.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://jcsjourneys.com",
-  email: "jcsjourneys@gmail.com",
+  email: "bookings@jcsjourneys.com",
   whatsapp: {
     /** E.164 digits only, used for wa.me links and structured data. */
     number: "50689758832",

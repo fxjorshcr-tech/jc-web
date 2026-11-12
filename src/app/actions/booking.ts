@@ -8,7 +8,7 @@ import { sendConfirmation, sendNotification } from "@/lib/mailer";
 import { getSupabaseAdmin, type BookingRow } from "@/lib/supabase-admin";
 import { bookingSchema, type BookingResult } from "@/lib/validations/booking";
 
-const GENERIC_ERROR = "We could not send your request right now. Please try again in a moment or email us at jcsjourneys@gmail.com.";
+const GENERIC_ERROR = "We could not send your request right now. Please try again in a moment or email us at bookings@jcsjourneys.com.";
 
 export async function submitBooking(input: unknown): Promise<BookingResult> {
   const parsed = bookingSchema.safeParse(input);

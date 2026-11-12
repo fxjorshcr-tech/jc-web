@@ -40,7 +40,7 @@ export const faq: FaqItem[] = [
     id: "changes",
     question: "What if we need to change or cancel our reservation?",
     answer:
-      "We appreciate a minimum of 24 hour notice for change requests or cancellation. Please WhatsApp us at [+506 8975 8832](https://wa.me/50689758832) or email [jcsjourneys@gmail.com](mailto:jcsjourneys@gmail.com) for requests. We do our best to accommodate changes to date, times, or number of guests. Please keep in mind some tours can only take place at the times indicated on our [tours page](/tours).",
+      "We appreciate a minimum of 24 hour notice for change requests or cancellation. Please WhatsApp us at [+506 8975 8832](https://wa.me/50689758832) or email [bookings@jcsjourneys.com](mailto:bookings@jcsjourneys.com) for requests. We do our best to accommodate changes to date, times, or number of guests. Please keep in mind some tours can only take place at the times indicated on our [tours page](/tours).",
   },
   {
     id: "kids",
