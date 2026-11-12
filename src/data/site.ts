@@ -58,7 +58,7 @@ export const site = {
     /** Google tag ID from Analytics (Admin -> Data streams): "GTM-..." or a "G-..." measurement ID. Empty = Analytics off. */
     gaId: process.env.NEXT_PUBLIC_GA_ID ?? "GTM-PX9HKMBT",
     /** Search Console "HTML tag" verification code (the content="..." value only). Empty = no tag. */
-    googleSiteVerification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ?? "",
+    googleSiteVerification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ?? "E7FcSiwuiVEHnOGF3Sk6of4Hmc2YQR_Y6RnVO8sTMNw",
   },
 } as const;
 
