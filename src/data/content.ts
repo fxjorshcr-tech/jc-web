@@ -4,7 +4,7 @@ export const home = {
   heroTitle: "JC's Journeys",
   heroTagline: "Natural and Cultural Journeys – Southern Nicoya Peninsula, Costa Rica",
   heroIntro:
-    "Small-group journeys across the southern Nicoya Peninsula, from Montezuma to Santa Teresa and Malpaís, with a licensed local guide who has lived here for over two decades: birds at sunrise, wildlife in Curu, a morning on a family farm and the forest after dark.",
+    "Small-group journeys across the southern Nicoya Peninsula, from Santa Teresa and Malpaís to Montezuma, with a licensed local guide who has lived here for over two decades: birds at sunrise, wildlife in Curu, a morning on a family farm and the forest after dark.",
   toursIntro:
     "All tours can be customized or arranged for private groups. Contact us with any special requests or for more information.",
 };
@@ -46,7 +46,7 @@ export const partners = {
   organicFarm: {
     title: "Family Farm Visit",
     partner: "Finca Los Tres Higuerones",
-    text: "Let's Get Local visits Finca Los Tres Higuerones, a working family farm a short drive from Montezuma. The family keeps dairy cows, a team of oxen and a yard full of chickens and ducks, and they open their home to our small groups: coffee brewed the traditional way, a hand with the morning chores and a light meal prepared together. Visiting the farm supports a local family directly and keeps the rural traditions of the peninsula alive.",
+    text: "Let's Get Local visits Finca Los Tres Higuerones, a working family farm on the southern Nicoya Peninsula. The family keeps dairy cows, a team of oxen and a yard full of chickens and ducks, and they open their home to our small groups: coffee brewed the traditional way, a hand with the morning chores and a light meal prepared together. Visiting the farm supports a local family directly and keeps the rural traditions of the peninsula alive.",
     image: { src: "partners/los-tres-higuerones.jpg", alt: "Yoked oxen under the shelter at Finca Los Tres Higuerones" },
     tourHref: "/tours/lets-get-local",
   },
@@ -85,5 +85,5 @@ export const hireAGuide = {
 
 export const booking = {
   intro:
-    "If you're ready to make a reservation, please complete and submit this form. We will contact you as soon as possible to send the payment details and confirm your hotel and pickup time. We can also help with your onward travel arrangements. If you would like assistance with transportation, hotel or other tours, please describe in the 'Special Requests' section of this form.",
+    "If you're ready to make a reservation, please complete and submit this form. We will contact you as soon as possible to send the payment details and confirm your hotel or Airbnb and pickup time. We can also help with your onward travel arrangements. If you would like assistance with transportation, hotel or other tours, please describe in the 'Special Requests' section of this form.",
 };

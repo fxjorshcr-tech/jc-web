@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Photo Album",
   description: "Photos from JC's Journeys tours: birding mornings, Curu Wildlife Refuge, the organic farm in Rio Negro, turtles in Montezuma and more.",
   alternates: { canonical: "/photos" },
-  openGraph: { title: "Photo Album | JC's Journeys", description: "Photos from our tours around Montezuma.", url: "/photos" },
+  openGraph: { title: "Photo Album | JC's Journeys", description: "Photos from our tours around the southern Nicoya Peninsula.", url: "/photos" },
 };
 
 const aspect = { square: "aspect-square", portrait: "aspect-[3/4]", landscape: "aspect-[4/3]" } as const;

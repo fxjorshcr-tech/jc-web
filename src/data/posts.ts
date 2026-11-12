@@ -74,7 +74,7 @@ export const posts: BlogPost[] = [
       { label: "Santa Teresa → Cabo Blanco", value: "≈30 min via Malpaís or Cabuya" },
       { label: "Santa Teresa → Curu Refuge", value: "≈1 h 30 min" },
       { label: "Best start", value: "Early: wildlife is active 5:30–9 am" },
-      { label: "Pickup", value: "Santa Teresa and Malpaís hotels on request" },
+      { label: "Pickup", value: "At your hotel or Airbnb in Santa Teresa or Malpaís" },
     ],
     keywords: ["things to do in Santa Teresa Costa Rica", "Santa Teresa non surf activities", "Malpais things to do", "Cabo Blanco reserve from Santa Teresa", "Santa Teresa wildlife tour", "Santa Teresa day trips"],
     relatedTours: ["curu-nature-escape", "bird-lovers-morning", "nocturno-night-journey"],
@@ -140,7 +140,7 @@ export const posts: BlogPost[] = [
       { type: "h2", html: "7. Walk the forest at night" },
       {
         type: "p",
-        html: "After sunset the forest changes crew. Red-eyed tree frogs, banded geckos, tarantulas, scorpions that glow under UV light, sleeping birds and the occasional kinkajou: the <a href=\"/tours/nocturno-night-journey\">Nocturno Night Journey</a> is two slow hours on a trail near Montezuma with headlamps and a guide who knows where to look. It fits neatly after a beach day. Read <a href=\"/blog/night-hike-montezuma-nocturno\">what you will see</a>.",
+        html: "After sunset the forest changes crew. Red-eyed tree frogs, banded geckos, tarantulas, scorpions that glow under UV light, sleeping birds and the occasional kinkajou: the <a href=\"/tours/nocturno-night-journey\">Nocturno Night Journey</a> is two slow hours in the forest of the Río Bonito Reserve with headlamps and a guide who knows where to look. It fits neatly after a beach day. Read <a href=\"/blog/night-hike-montezuma-nocturno\">what you will see</a>.",
       },
       {
         type: "image",
@@ -162,14 +162,14 @@ export const posts: BlogPost[] = [
       { type: "h2", html: "9. Cabuya's island cemetery, reached on foot at low tide" },
       {
         type: "p",
-        html: "South of Montezuma, the fishing village of <strong>Cabuya</strong> buries its dead on a small island that you can walk to across the reef at low tide. It is quiet, strange and beautiful, and the village around it is the least touristy place on this coast. The Cabuya version of Let's Get Local visits it along with a fishing beach and a local marmalade maker.",
+        html: "South of Montezuma, the fishing village of <strong>Cabuya</strong> buries its dead on a small island that you can walk to across the reef at low tide. It is quiet, strange and beautiful, and the village around it is the least touristy place on this coast.",
       },
       { type: "h2", html: "How to plan it from Santa Teresa or Malpaís" },
       {
         type: "list",
         ordered: false,
         items: [
-          "<strong>Pickups:</strong> our tours start from Montezuma hotels, and we arrange pickups in Santa Teresa and Malpaís on request. The transfer adds roughly 40 minutes each way, so starts are a little earlier and the quote reflects the drive. Tell us where you are staying.",
+          "<strong>Pickups:</strong> our journeys start at your hotel or Airbnb in Santa Teresa or Malpaís. The price depends on your pickup point and the size of your group, so tell us where you are staying.",
           "<strong>Go early:</strong> wildlife is most active from first light to about 9 am, and the heat builds by late morning. A dawn tour still leaves you the whole afternoon for the beach.",
           "<strong>Combine:</strong> Bird Lover's Morning or Let's Get Local in the morning and Nocturno after dinner make a full nature day without a single surfboard.",
           "<strong>Season:</strong> the dry season (December to April) is best for dusty roads and easy wildlife viewing; the green season (May to November) brings full waterfalls, frogs and empty trails. Our <a href=\"/blog/best-time-to-visit-montezuma\">month-by-month guide</a> covers both.",
@@ -190,7 +190,7 @@ export const posts: BlogPost[] = [
       },
       {
         question: "How far is Montezuma from Santa Teresa?",
-        answer: "About 17 km, which takes 30 to 45 minutes by road via Cóbano. Taxis, shuttles and rented ATVs all make the trip; our tours can pick you up in Santa Teresa on request.",
+        answer: "About 17 km, which takes 30 to 45 minutes by road via Cóbano. Taxis, shuttles and rented ATVs all make the trip; our tours pick you up where you are staying in Santa Teresa.",
       },
       {
         question: "Can I visit Cabo Blanco from Santa Teresa?",
@@ -199,7 +199,7 @@ export const posts: BlogPost[] = [
       },
       {
         question: "Do your tours pick up in Santa Teresa and Malpaís?",
-        answer: "Yes, on request. The transfer adds roughly 40 minutes each way compared with Montezuma, so the tour starts a little earlier and the quote includes the longer drive.",
+        answer: "Yes. Our journeys start at your hotel or Airbnb in Santa Teresa or Malpaís. The price depends on your pickup point and the size of your group.",
       },
       {
         question: "What is the best wildlife tour near Santa Teresa?",
@@ -301,7 +301,7 @@ export const posts: BlogPost[] = [
         ordered: false,
         items: [
           "<strong>Cash:</strong> Montezuma has ATMs but they run dry on busy weekends. Cóbano, 7 km up the hill, has banks.",
-          "<strong>Getting around:</strong> the village is walkable. Taxis, ATVs and bicycles cover Cabuya, Cabo Blanco and the waterfall. All of our tours include pickup at hotels in downtown Montezuma.",
+          "<strong>Getting around:</strong> the village is walkable. Taxis, ATVs and bicycles cover Cabuya, Cabo Blanco and the waterfall. Our tours pick you up at your hotel or Airbnb.",
           "<strong>Water:</strong> tap water in Montezuma is potable, so bring a refillable bottle. We keep it full on every tour.",
           "<strong>Book tours before you arrive:</strong> small-group tours run on set days. Tell us your dates and we will reply as soon as possible, by <a href=\"" + WHATSAPP + "\">WhatsApp</a> or email.",
         ],
@@ -330,7 +330,7 @@ export const posts: BlogPost[] = [
       {
         question: "Can I get to Montezuma without renting a car?",
         answer:
-          "Yes. Most visitors arrive by shared shuttle, flight or public bus and never rent a car. The village is walkable and our tours pick you up at your hotel in downtown Montezuma.",
+          "Yes. Most visitors arrive by shared shuttle, flight or public bus and never rent a car. The village is walkable and our tours pick you up at your hotel or Airbnb.",
       },
       {
         question: "Is there an airport in Montezuma?",
@@ -358,7 +358,7 @@ export const posts: BlogPost[] = [
       { label: "Best hours", value: "5:30 – 8:30 am" },
       { label: "Migrant season", value: "October – April" },
       { label: "Habitats", value: "Dry forest, mangrove, river mouth, beach, farmland" },
-      { label: "Our tour", value: "Bird Lover's Morning, Tue/Thu/Fri/Sat, breakfast included" },
+      { label: "Our tour", value: "Bird Lover's Morning, any day on request, breakfast included" },
     ],
     keywords: ["birdwatching Montezuma", "birding Cabuya Costa Rica", "Nicoya Peninsula birds", "scarlet macaw Montezuma", "turquoise-browed motmot"],
     relatedTours: ["bird-lovers-morning", "curu-nature-escape"],
@@ -509,7 +509,7 @@ export const posts: BlogPost[] = [
       { label: "From Montezuma", value: "≈1 hour by road" },
       { label: "Status", value: "Costa Rica's first private national wildlife refuge (1983)" },
       { label: "Hike on our tour", value: "1.5–2.5 km, mostly flat, ends at the beach" },
-      { label: "Our tour", value: "Curu Nature Escape, 7:30 am–1 pm, lunch and entrance included" },
+      { label: "Our tour", value: "Curu Nature Escape, 6:30 am–12 pm, lunch and entrance included" },
     ],
     keywords: ["Curu Wildlife Refuge", "Curu National Wildlife Refuge Costa Rica", "Curu from Montezuma", "Curu monkeys", "Paquera wildlife refuge"],
     relatedTours: ["curu-nature-escape", "bird-lovers-morning"],
@@ -562,16 +562,16 @@ export const posts: BlogPost[] = [
         type: "list",
         ordered: true,
         items: [
-          "<strong>7:30 am pickup</strong> at your hotel in downtown Montezuma (other pickup points on request).",
+          "<strong>6:30 am pickup</strong> at your hotel or Airbnb.",
           "About an hour's drive north through Cóbano and the hills toward Paquera, with a stop or two for whatever shows up on the way: coatis, hawks, a view over the gulf.",
           "<strong>Guided walk in the refuge</strong> with binoculars and scope, then free time to swim at the beach.",
           "<strong>Typical Costa Rican lunch</strong> at a local restaurant: a casado with rice, beans, salad and your choice of chicken, fish or a vegetarian option.",
-          "Back in Montezuma around <strong>1 pm</strong>, with the afternoon free.",
+          "Back around <strong>12 pm</strong>, with the afternoon free.",
         ],
       },
       {
         type: "p",
-        html: "Entrance fee, equipment, guide, lunch and transportation from downtown Montezuma are all included. The tour runs on Tuesdays, Thursdays, Fridays and Saturdays, and we can arrange private departures on other days.",
+        html: "Entrance fee, equipment, guide, lunch and transportation from your hotel or Airbnb are all included. The tour runs any day of the week on request, and we can arrange private departures.",
       },
       { type: "h2", html: "Can you visit Curú on your own?" },
       {
@@ -604,7 +604,7 @@ export const posts: BlogPost[] = [
     faq: [
       {
         question: "How far is Curu Wildlife Refuge from Montezuma?",
-        answer: "About an hour by road, heading north through Cóbano toward Paquera. Our Curu Nature Escape includes the transportation from hotels in downtown Montezuma.",
+        answer: "About an hour by road, heading north through Cóbano toward Paquera. Our Curu Nature Escape includes the transportation from your hotel or Airbnb.",
       },
       {
         question: "What animals can you see at Curu?",
@@ -617,7 +617,7 @@ export const posts: BlogPost[] = [
       },
       {
         question: "What is included in the Curu Nature Escape?",
-        answer: "Entrance fee, guide, binoculars and scope, a typical Costa Rican lunch and transportation from downtown Montezuma. The tour runs 7:30 am to about 1 pm on Tuesdays, Thursdays, Fridays and Saturdays.",
+        answer: "Entrance fee, guide, binoculars and scope, a typical Costa Rican lunch and transportation from your hotel or Airbnb. The tour runs 6:30 am to about 12 pm, any day on request.",
       },
       {
         question: "Can I visit Curu Wildlife Refuge without a guide?",
@@ -697,7 +697,7 @@ export const posts: BlogPost[] = [
       { type: "h2", html: "How the hike works" },
       {
         type: "p",
-        html: "We pick you up in downtown Montezuma around sunset and drive a few minutes to the trailhead. The walk itself is <strong>short and slow</strong>: distance is not the point, looking is. We carry headlamps, a UV light and a spotting light, and we spend about two hours on the trail. There are no steep climbs, but the surface is natural forest floor with roots, rocks and the occasional stream crossing, which is why we ask for closed shoes and why we do not recommend it for small children or anyone carrying one.",
+        html: "We pick you up around sunset and drive to the Río Bonito Reserve. The walk itself is <strong>short and slow</strong>: distance is not the point, looking is. We carry headlamps, a UV light and a spotting light, and we spend about two hours on the trail. There are no steep climbs, but the surface is natural forest floor with roots, rocks and the occasional stream crossing, which is why we ask for closed shoes and why we do not recommend it for small children or anyone carrying one.",
       },
       {
         type: "image",
@@ -754,7 +754,7 @@ export const posts: BlogPost[] = [
       },
       {
         question: "How long is the night hike and what time does it start?",
-        answer: "About two hours on the trail, starting with a pickup in downtown Montezuma around sunset. The exact time changes with the season; we confirm it when you book.",
+        answer: "About two hours on the trail, starting with a pickup at your hotel or Airbnb around sunset. The exact time changes with the season; we confirm it when you book.",
       },
     ],
   },
@@ -907,11 +907,11 @@ export const posts: BlogPost[] = [
     cover: "tours/lets-get-local/hero.jpg",
     coverAlt: "Guests sharing a farm breakfast of gallo pinto, eggs and coffee at a long wooden table at Finca Los Tres Higuerones",
     quickAnswer:
-      "Let's Get Local is a three-hour morning visit to Finca Los Tres Higuerones, a working family farm a short drive from Montezuma. You brew coffee the traditional way, press sugar cane juice by hand, meet the dairy cows, oxen and poultry, see how the family makes organic soap, and help prepare a light meal. It runs 8 to 11 am on Tuesdays, Thursdays, Fridays and Saturdays and suits all ages.",
+      "Let's Get Local is a three-hour morning visit to Finca Los Tres Higuerones, a working family farm on the southern Nicoya Peninsula. You brew coffee the traditional way, press sugar cane juice by hand, meet the dairy cows, oxen and poultry, see how the family makes organic soap, and help prepare a light meal. It runs 8 to 11 am, any day on request, and suits all ages.",
     keyFacts: [
-      { label: "Where", value: "Finca Los Tres Higuerones, a short drive from Montezuma" },
-      { label: "When", value: "8:00 – 11:00 am · Tue, Thu, Fri, Sat" },
-      { label: "Includes", value: "Coffee, light meal, guide, transportation from downtown Montezuma" },
+      { label: "Where", value: "Finca Los Tres Higuerones, southern Nicoya Peninsula" },
+      { label: "When", value: "8:00 – 11:00 am · any day on request" },
+      { label: "Includes", value: "Coffee, light meal, guide, transportation from your hotel or Airbnb" },
       { label: "Activity level", value: "Easy; suitable for all ages" },
       { label: "Good to know", value: "48 h advance notice appreciated · small cash for farm products" },
     ],
@@ -925,12 +925,12 @@ export const posts: BlogPost[] = [
       { type: "h2", html: "The farm" },
       {
         type: "p",
-        html: "<strong>Finca Los Tres Higuerones</strong> is named after the three big fig trees on the property. It is a working farm, not a show: there are dairy cows to milk, a team of oxen, a yard of chickens and ducks, fruit trees, a vegetable garden and a small workshop where the family makes soap from the farm's own ingredients. A short drive from Montezuma on gravel roads, it feels a long way from the beach.",
+        html: "<strong>Finca Los Tres Higuerones</strong> is named after the three big fig trees on the property. It is a working farm, not a show: there are dairy cows to milk, a team of oxen, a yard of chickens and ducks, fruit trees, a vegetable garden and a small workshop where the family makes soap from the farm's own ingredients. Reached on gravel roads, it feels a long way from the beach.",
       },
       {
         type: "image",
-        src: "tours/lets-get-local/13.jpg",
-        alt: "Guests meeting a pair of yoked oxen under a shelter at Finca Los Tres Higuerones",
+        src: "tours/lets-get-local/12.jpg",
+        alt: "The farmer yoking a pair of oxen under a shelter at Finca Los Tres Higuerones",
         caption: "The oxen still work. Costa Rica's ox-herding tradition is recognized by UNESCO as intangible cultural heritage.",
       },
       { type: "h2", html: "What you actually do" },
@@ -967,11 +967,6 @@ export const posts: BlogPost[] = [
         type: "p",
         html: "Every visit pays the family directly for their time, their food and their knowledge. That income helps keep a small farm viable in a region where land is increasingly sold for development, and it keeps traditions alive: the chorreador, the trapiche, the oxen, cooking from what the yard produces. You also buy nothing you do not want to. If the family has soap, honey or produce available, you can purchase it with small change; if not, you simply had a very good breakfast.",
       },
-      { type: "h2", html: "The Cabuya version" },
-      {
-        type: "p",
-        html: "If you prefer the coast, we offer a <strong>Cabuya version</strong> of Let's Get Local: the fishing village south of Montezuma, its cemetery island reachable on foot at low tide, a local marmalade producer and a slow morning of meeting people. Same minimal walking, same three hours, a different flavor of local life. Tell us which one you prefer when you request a quote.",
-      },
       {
         type: "image",
         src: "blog/lets-get-local-family-farm/river-crossing.jpg",
@@ -983,8 +978,8 @@ export const posts: BlogPost[] = [
         type: "list",
         ordered: false,
         items: [
-          "<strong>Time:</strong> 8:00 to 11:00 am on Tuesdays, Thursdays, Fridays and Saturdays. We appreciate 48 hours' notice so the family can prepare.",
-          "<strong>Included:</strong> coffee, light meal, guide, equipment and transportation from hotels in downtown Montezuma.",
+          "<strong>Time:</strong> 8:00 to 11:00 am, any day on request. We appreciate 48 hours' notice so the family can prepare.",
+          "<strong>Included:</strong> coffee, light meal, guide, equipment and transportation from your hotel or Airbnb.",
           "<strong>Bring:</strong> water bottle, camera, sunblock, repellent and a little cash if you would like to buy farm products.",
           "<strong>Dietary needs:</strong> tell us when you book; the family is used to vegetarian guests and can usually adapt.",
         ],

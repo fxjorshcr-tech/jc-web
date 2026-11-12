@@ -91,7 +91,7 @@ export function Footer() {
       <div className="border-t border-cream/10">
         <div className="container-site flex flex-col gap-2 py-6 text-xs text-olive-100/60 sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © {new Date().getFullYear()} {site.name}. {site.location.locality}, {site.location.area}, {site.location.countryName}.
+            © {new Date().getFullYear()} {site.name}. {site.location.area}, {site.location.countryName}.
           </p>
           <p>Natural and cultural journeys since 2013.</p>
         </div>

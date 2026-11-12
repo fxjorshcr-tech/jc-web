@@ -18,7 +18,7 @@ export const albumPhotos: AlbumPhoto[] = [
   { src: "photos/country-road.jpg", alt: "Dirt road past a farm gate on the way to the finca", caption: "Country roads", aspect: "square" },
   { src: "photos/waterfall-hike.jpg", alt: "JC with two guests in front of a waterfall", caption: "Waterfall hike", aspect: "landscape" },
   { src: "photos/mossy-trunk.jpg", alt: "Moss-covered trunk seen from below", caption: "Forest giants", aspect: "portrait" },
-  { src: "tours/lets-get-local/13.jpg", alt: "Guests meeting the oxen at Finca Los Tres Higuerones", caption: "Let's Get Local – the oxen", aspect: "landscape" },
+  { src: "tours/lets-get-local/12.jpg", alt: "The farmer yoking the oxen at Finca Los Tres Higuerones", caption: "Let's Get Local – the oxen", aspect: "landscape" },
   { src: "photos/sunset-low-tide.jpg", alt: "Sunset over the tide pools at low tide", caption: "Low tide at sunset", aspect: "portrait" },
   { src: "photos/curu-nature-escape-02.jpg", alt: "JC with guests on the mangrove bridge in Curu", caption: "Curu Nature Escape", aspect: "landscape" },
   { src: "photos/horseback-country-road.jpg", alt: "Riders on horseback moving cattle along a country road", caption: "Rural life on the peninsula", aspect: "portrait" },

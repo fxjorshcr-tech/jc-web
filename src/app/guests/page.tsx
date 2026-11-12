@@ -9,7 +9,7 @@ import { testimonials } from "@/data/testimonials";
 
 export const metadata: Metadata = {
   title: "Our Guests",
-  description: "What travelers say about their tours with JC's Journeys in Montezuma, Costa Rica.",
+  description: "What travelers say about their tours with JC's Journeys on the southern Nicoya Peninsula, Costa Rica.",
   alternates: { canonical: "/guests" },
   openGraph: { title: "Our Guests | JC's Journeys", description: "What travelers say about touring with JC.", url: "/guests" },
 };

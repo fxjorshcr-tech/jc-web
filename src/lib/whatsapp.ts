@@ -1,6 +1,6 @@
 import { site } from "@/data/site";
 
-export const defaultWhatsAppMessage = "Hi JC, I'd like to ask about a tour in Montezuma.";
+export const defaultWhatsAppMessage = "Hi JC, I'd like to ask about a Journey.";
 
 /** wa.me deep link with an optional pre-filled message. */
 export function whatsappUrl(message: string = defaultWhatsAppMessage) {

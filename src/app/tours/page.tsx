@@ -12,9 +12,9 @@ import { cn } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Tours",
   description:
-    "Five natural and cultural journeys from Montezuma, Santa Teresa and Malpaís, Costa Rica: Nocturno night journey, Bird Lover's Morning, Curu Nature Escape, Let's Get Local organic farm visit and the Finca El Paraíso ATV journey. Request a quote.",
+    "Five natural and cultural journeys from Santa Teresa, Malpaís and Montezuma, Costa Rica: Nocturno night journey, Bird Lover's Morning, Curu Nature Escape, Let's Get Local organic farm visit and the Finca El Paraíso ATV journey. Request a quote.",
   alternates: { canonical: "/tours" },
-  openGraph: { title: "Tours | JC's Journeys", description: "Five natural and cultural journeys on the southern Nicoya Peninsula: Montezuma, Santa Teresa and Malpaís.", url: "/tours" },
+  openGraph: { title: "Tours | JC's Journeys", description: "Five natural and cultural journeys on the southern Nicoya Peninsula: Santa Teresa, Malpaís and Montezuma.", url: "/tours" },
 };
 
 export default function ToursPage() {
@@ -24,7 +24,7 @@ export default function ToursPage() {
         eyebrow="Tours"
         title={
           <>
-            Five journeys from <em className="font-light">Montezuma</em>
+            Five journeys across the <em className="font-light">southern peninsula</em>
           </>
         }
         intro={<p>{home.toursIntro} Prices are quoted per request: they depend on your pickup point and the size of your group.</p>}
