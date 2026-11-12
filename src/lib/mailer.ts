@@ -1,6 +1,7 @@
 import "server-only";
 import { Resend } from "resend";
 import { site } from "@/data/site";
+import { EMAIL_LOGO_CID, EMAIL_LOGO_PNG_BASE64 } from "@/lib/email-logo";
 
 let cached: Resend | null = null;
 
@@ -56,6 +57,8 @@ export async function sendMail(mail: Mail) {
     html: mail.html,
     text: mail.text,
     replyTo: mail.replyTo,
+    // The header logo travels with the message (referenced as cid: in the HTML), so it shows even where remote images are blocked.
+    attachments: [{ filename: "jcs-journeys-logo.png", content: EMAIL_LOGO_PNG_BASE64, contentType: "image/png", contentId: EMAIL_LOGO_CID }],
   };
   let { error } = await resend.emails.send(payload);
   // Resend allows only a few requests per second: wait a moment and try once more.

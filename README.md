@@ -66,7 +66,7 @@ Both are public values and can also be pasted into `site.analytics` in `src/data
 
 All mail goes through `src/lib/mailer.ts`; the templates are in `src/lib/emails.ts`.
 
-The templates are table-based with inline styles, as email clients require. Their images are served by the site: the logo is `public/images/email/logo.png` and each tour's banner is `public/images/email/tours/<slug>.jpg` (1200x520, cropped from the tour's `hero.jpg`). A new tour gets a banner once its file is added there and its slug is listed in `EMAIL_BANNERS`; without one the email simply has no photo.
+The templates are table-based with inline styles, as email clients require. The header logo is embedded in every message (`src/lib/email-logo.ts`, a base64 copy of `public/images/email/logo.png`), so it shows even in mail apps that block remote images. The tour banners are served by the site: each tour's banner is `public/images/email/tours/<slug>.jpg` (1200x520, cropped from the tour's `hero.jpg`). A new tour gets a banner once its file is added there and its slug is listed in `EMAIL_BANNERS`; without one the email simply has no photo.
 
 | Variable | What |
 | --- | --- |

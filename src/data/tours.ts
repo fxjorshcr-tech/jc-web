@@ -78,12 +78,12 @@ export const tours: Tour[] = [
     description: [
       "If you love birds, you've come to the right place. Take a morning to witness the golden sun rise over the Nicoya Gulf and see some of Costa Rica's most beautiful birds. With professional equipment, a trained eye (and ear) and a little patience, we'll help you spot common birds in the area and maybe even capture that essential photo to take home. Conclude your early morning outing with a light breakfast, included with this journey.",
     ],
-    when: "5:30am-8:30am. Any day, on request.",
-    where: "Montezuma/Cabuya",
+    when: "5:30am-10:00am. Any day, on request.",
+    where: "JC's special birding spots in the Peninsula",
     whatToBring: ["Binoculars or Scope (optional)", "Walking Shoes", "Water*", "Sunblock", "Insect Repellent", "Swimsuit (optional)"],
     whatsIncluded: ["Equipment", "Light Breakfast", "Guide", "Transportation*"],
     notes: [],
-    hero: { src: "tours/bird-lovers-morning/hero.jpg", alt: "Crested caracara perched at sunrise near Montezuma" },
+    hero: { src: "tours/bird-lovers-morning/hero.jpg", alt: "Crested caracara perched at sunrise on the Nicoya Peninsula" },
     gallery: [
       { src: "tours/bird-lovers-morning/sunrise-cabuya.jpg", alt: "Sunrise over the Nicoya Gulf from Cabuya", caption: "Bird Lover's Morning – Sunrise" },
       { src: "tours/bird-lovers-morning/woodpecker.jpg", alt: "Woodpecker spotted during the Bird Lover's Morning", caption: "Bird Lover's Morning – Bird Sighting" },
@@ -92,7 +92,7 @@ export const tours: Tour[] = [
     ],
     status: "available",
     suitableForSmallChildren: true,
-    duration: "PT3H",
+    duration: "PT4H30M",
   },
   {
     slug: "curu-nature-escape",

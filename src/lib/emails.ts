@@ -1,4 +1,5 @@
 import { site } from "@/data/site";
+import { EMAIL_LOGO_CID } from "@/lib/email-logo";
 import type { Tour } from "@/data/tours";
 import type { BookingValues } from "@/lib/validations/booking";
 import type { HireValues } from "@/lib/validations/hire";
@@ -191,7 +192,7 @@ function layout({ preheader, kicker, headline, subline, tone = "moss", banner, b
 
 <tr><td class="pad" style="padding:20px 32px;background:${C.cream};border-bottom:1px solid ${C.line};">
 <table role="presentation" cellpadding="0" cellspacing="0"><tr>
-<td valign="middle" style="padding-right:12px;"><a href="${site.url}" target="_blank"><img src="${site.url}/images/email/logo.png" width="44" height="44" alt="" style="display:block;border:0;"></a></td>
+<td valign="middle" style="padding-right:12px;"><a href="${site.url}" target="_blank"><img src="cid:${EMAIL_LOGO_CID}" width="44" height="44" alt="JC's Journeys" style="display:block;border:0;"></a></td>
 <td valign="middle">
 <div style="font-family:${FONT};font-size:20px;font-weight:600;letter-spacing:-0.01em;color:${C.ink};">JC&rsquo;s Journeys</div>
 <div style="margin-top:3px;font-family:${FONT};font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:${C.teal};">${escapeHtml(site.taglineShort)}</div>
