@@ -119,7 +119,7 @@ export const posts: BlogPost[] = [
       { type: "h2", html: "4. Watch the sunrise with the birds" },
       {
         type: "p",
-        html: "Santa Teresa faces west, so you get the sunsets. For the sunrise you cross to Cabuya on the gulf side, where the sun comes up over the water and the shore birds are already fishing. A three-hour <a href=\"/tours/bird-lovers-morning\">Bird Lover's Morning</a> typically turns up 40 to 60 species: motmots, trogons, parakeets, herons, kingfishers, hummingbirds and increasingly Scarlet Macaws. We bring the binoculars and the scope, and breakfast is included. It is the best thing we know for a non-surfing partner, and surfers tell us it is a good way to rest the shoulders. More in our <a href=\"/blog/birdwatching-montezuma-cabuya\">birding guide</a>.",
+        html: "Santa Teresa faces west, so you get the sunsets. For the sunrise you cross to Cabuya on the gulf side, where the sun comes up over the water and the shore birds are already fishing. A <a href=\"/tours/bird-lovers-morning\">Bird Lover's Morning</a> typically turns up 40 to 60 species: motmots, trogons, parakeets, herons, kingfishers, hummingbirds and increasingly Scarlet Macaws. We bring the binoculars and the scope, and breakfast is included. It is the best thing we know for a non-surfing partner, and surfers tell us it is a good way to rest the shoulders. More in our <a href=\"/blog/birdwatching-montezuma-cabuya\">birding guide</a>.",
       },
       {
         type: "image",
@@ -433,7 +433,7 @@ export const posts: BlogPost[] = [
       { type: "h2", html: "Why early morning matters" },
       {
         type: "p",
-        html: "Birds feed hardest in the first two hours after sunrise, before the heat sets in. That is why our <a href=\"/tours/bird-lovers-morning\">Bird Lover's Morning</a> starts at 5:30 am: we watch the sun rise over the gulf from Cabuya, work the shore while the herons are still fishing, then move to forest edge as the parakeets start to move. By 8:30 am, when we sit down for a light breakfast, the list is usually long and the day is still young.",
+        html: "Birds feed hardest in the first two hours after sunrise, before the heat sets in. That is why our <a href=\"/tours/bird-lovers-morning\">Bird Lover's Morning</a> starts at 5:30 am: we watch the sun rise over the gulf, work the shore while the herons are still fishing, then move to forest edge as the parakeets start to move. By the time we sit down for a light breakfast, the list is usually long and the day is still young.",
       },
       {
         type: "image",
