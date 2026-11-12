@@ -193,7 +193,7 @@ export default function HomePage() {
           align="center"
           title={
             <>
-              &ldquo;He turned out to be the <em className="font-light">highlight</em> of our trip.&rdquo;
+              &ldquo;Get to know Costa Rica with someone who <em className="font-light">loves what he does</em>.&rdquo;
             </>
           }
         />
