@@ -55,8 +55,8 @@ export const site = {
    * Paste them here, or set the environment variables in Vercel, which take precedence.
    */
   analytics: {
-    /** GA4 measurement ID, e.g. "G-AB12CD34EF". Empty = Analytics off. */
-    gaId: process.env.NEXT_PUBLIC_GA_ID ?? "",
+    /** Google tag ID from Analytics (Admin -> Data streams): "GTM-..." or a "G-..." measurement ID. Empty = Analytics off. */
+    gaId: process.env.NEXT_PUBLIC_GA_ID ?? "GTM-PX9HKMBT",
     /** Search Console "HTML tag" verification code (the content="..." value only). Empty = no tag. */
     googleSiteVerification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ?? "",
   },

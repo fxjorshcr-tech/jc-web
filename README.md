@@ -57,7 +57,7 @@ The site never charges money.
 
 | Variable | What |
 | --- | --- |
-| `NEXT_PUBLIC_GA_ID` | GA4 measurement ID (`G-XXXXXXXXXX`). Loads Google Analytics on the production deployment only. |
+| `NEXT_PUBLIC_GA_ID` | Google tag ID from Analytics (`GTM-...` or `G-...`). Optional override of the one in `site.analytics`. Loads on the production deployment only. |
 | `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` | Search Console "HTML tag" code. Adds the `google-site-verification` meta tag to every page. |
 
 Both are public values and can also be pasted into `site.analytics` in `src/data/site.ts`. Events sent to GA4: `generate_lead` (booking and hire-a-guide forms, with `form` and `tour`), `whatsapp_click`, `email_click` and `tripadvisor_click` (with `page`). In GA4, mark `generate_lead` and `whatsapp_click` as key events. The sitemap to submit in Search Console is `/sitemap.xml`.
