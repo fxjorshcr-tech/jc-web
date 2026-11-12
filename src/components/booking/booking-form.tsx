@@ -105,8 +105,8 @@ export function BookingForm({ tour }: BookingFormProps) {
           </dl>
           <p className="mt-6 text-sm text-ink-soft">
             {success.confirmationSent ? "A copy of this confirmation is on its way to your inbox. " : ""}Questions in the meantime?{" "}
-            <a href="mailto:jcsjourneys@gmail.com" className="font-semibold text-olive-800 underline underline-offset-4">
-              jcsjourneys@gmail.com
+            <a href="mailto:bookings@jcsjourneys.com" className="font-semibold text-olive-800 underline underline-offset-4">
+              bookings@jcsjourneys.com
             </a>
           </p>
           <Button asChild variant="outline" className="mt-6">
