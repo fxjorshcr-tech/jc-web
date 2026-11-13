@@ -196,7 +196,7 @@ export function BookingForm({ tour }: BookingFormProps) {
         id="specialRequests"
         label="Special requests or comments"
         error={errors.specialRequests?.message}
-        hint="Dietary needs, mobility, children's ages, help with transportation or hotels."
+        hint={`Dietary needs, mobility, children's ages, help with transportation or hotels${tour.slug === "lets-get-local" ? ", and whether you prefer the morning (7:30am) or the afternoon (12:30pm) visit" : ""}.`}
       >
         <Textarea id="specialRequests" rows={4} aria-invalid={!!errors.specialRequests} {...register("specialRequests")} />
       </Field>
