@@ -124,13 +124,13 @@ export const tours: Tour[] = [
     slug: "lets-get-local",
     name: "Let's Get Local",
     shortName: "Let's Get Local",
-    tagline: "A hands-on morning of rural living at Finca Los Tres Higuerones, a working family farm on the southern Nicoya Peninsula.",
+    tagline: "Hands-on rural living at Finca Los Tres Higuerones, a working family farm on the southern Nicoya Peninsula.",
     summary:
       "Get an interactive experience of local living in rural Costa Rica. Visit the family at Finca Los Tres Higuerones, brew coffee the traditional way, meet the farm animals and help prepare a light meal.",
     description: [
       "Get an interactive experience of local living in rural Costa Rica on this journey. We'll stop at Finca Los Tres Higuerones, a typical Costa Rican family farm, to enjoy a cup of traditionally brewed coffee, see how organic soaps are made, and highlight the freshness and creativity of sustainable farming. Be prepared to roll up your sleeves as you help prepare a light meal with an onsite cooking demonstration from the family and work to extract fresh sugarcane juice for a refreshing beverage! This tour is an excellent option for families of all ages looking for a hands on local learning experience.",
     ],
-    when: "8:00am-11:00am. Any day, on request. (48-hour advance reservation appreciated for this tour)",
+    when: "7:30am-11:30am or 12:30pm-4:30pm. Any day, on request. (48-hour advance reservation appreciated for this tour)",
     where: "Finca Los Tres Higuerones",
     whatToBring: ["Water*", "Camera", "Sunblock", "Insect Repellent", "Extra Cash (optional)*"],
     whatsIncluded: ["Coffee", "Light Meal", "Equipment", "Guide", "Transportation*"],
@@ -147,7 +147,7 @@ export const tours: Tour[] = [
     ],
     status: "available",
     suitableForSmallChildren: true,
-    duration: "PT3H",
+    duration: "PT4H",
   },
   {
     slug: "finca-el-paraiso-atv",
@@ -185,3 +185,29 @@ export function getTour(slug: string) {
 }
 
 export const tourSlugs = tours.map((t) => t.slug);
+
+/** Extra journeys arranged on request. No tour page: guests ask about them on WhatsApp. */
+export interface OptionalJourney {
+  name: string;
+  summary: string;
+  /** Pre-filled WhatsApp message. */
+  whatsappMessage: string;
+}
+
+export const optionalJourneys: OptionalJourney[] = [
+  {
+    name: "Tortuga Island + Bioluminescence Combo",
+    summary: "A day at Tortuga Island, then the bioluminescence glowing in the water after dark.",
+    whatsappMessage: "Hi JC, I'd like to ask about the Tortuga Island + Bioluminescence Combo.",
+  },
+  {
+    name: "Coastal Fishing",
+    summary: "A fishing outing along the coast of the southern Nicoya Peninsula.",
+    whatsappMessage: "Hi JC, I'd like to ask about Coastal Fishing.",
+  },
+  {
+    name: "And more journeys around Costa Rica",
+    summary: "Traveling beyond the peninsula? Ask JC about journeys in other parts of the country.",
+    whatsappMessage: "Hi JC, I'd like to ask about journeys around Costa Rica.",
+  },
+];

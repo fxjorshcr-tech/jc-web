@@ -4,6 +4,7 @@ import { ArrowRight, Clock, MapPin } from "lucide-react";
 import { Photo } from "@/components/photo";
 import { Button } from "@/components/ui/button";
 import { CtaBand } from "@/components/site/cta-band";
+import { OptionalJourneys } from "@/components/site/optional-journeys";
 import { PageHero } from "@/components/site/page-hero";
 import { home } from "@/data/content";
 import { commonTourNotes, tours } from "@/data/tours";
@@ -72,6 +73,10 @@ export default function ToursPage() {
             </li>
           ))}
         </ol>
+      </section>
+
+      <section className="container-site pb-10 sm:pb-14">
+        <OptionalJourneys />
       </section>
 
       <section className="container-site pb-20 sm:pb-28">

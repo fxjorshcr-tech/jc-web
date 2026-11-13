@@ -907,10 +907,10 @@ export const posts: BlogPost[] = [
     cover: "tours/lets-get-local/hero.jpg",
     coverAlt: "Guests sharing a farm breakfast of gallo pinto, eggs and coffee at a long wooden table at Finca Los Tres Higuerones",
     quickAnswer:
-      "Let's Get Local is a three-hour morning visit to Finca Los Tres Higuerones, a working family farm on the southern Nicoya Peninsula. You brew coffee the traditional way, press sugar cane juice by hand, meet the dairy cows, oxen and poultry, see how the family makes organic soap, and help prepare a light meal. It runs 8 to 11 am, any day on request, and suits all ages.",
+      "Let's Get Local is a four-hour visit to Finca Los Tres Higuerones, a working family farm on the southern Nicoya Peninsula. You brew coffee the traditional way, press sugar cane juice by hand, meet the dairy cows, oxen and poultry, see how the family makes organic soap, and help prepare a light meal. It runs 7:30 to 11:30 am or 12:30 to 4:30 pm, any day on request, and suits all ages.",
     keyFacts: [
       { label: "Where", value: "Finca Los Tres Higuerones, southern Nicoya Peninsula" },
-      { label: "When", value: "8:00 – 11:00 am · any day on request" },
+      { label: "When", value: "7:30 – 11:30 am or 12:30 – 4:30 pm · any day on request" },
       { label: "Includes", value: "Coffee, light meal, guide, transportation from your hotel or Airbnb" },
       { label: "Activity level", value: "Easy; suitable for all ages" },
       { label: "Good to know", value: "48 h advance notice appreciated · small cash for farm products" },
@@ -978,7 +978,7 @@ export const posts: BlogPost[] = [
         type: "list",
         ordered: false,
         items: [
-          "<strong>Time:</strong> 8:00 to 11:00 am, any day on request. We appreciate 48 hours' notice so the family can prepare.",
+          "<strong>Time:</strong> 7:30 to 11:30 am or 12:30 to 4:30 pm, any day on request. We appreciate 48 hours' notice so the family can prepare.",
           "<strong>Included:</strong> coffee, light meal, guide, equipment and transportation from your hotel or Airbnb.",
           "<strong>Bring:</strong> water bottle, camera, sunblock, repellent and a little cash if you would like to buy farm products.",
           "<strong>Dietary needs:</strong> tell us when you book; the family is used to vegetarian guests and can usually adapt.",
@@ -987,7 +987,7 @@ export const posts: BlogPost[] = [
       {
         type: "callout",
         title: "Make a day of it",
-        html: "Let's Get Local finishes at 11 am, which leaves the afternoon for the beach or the waterfall, and the evening for the <a href=\"/tours/nocturno-night-journey\">Nocturno Night Journey</a>. Request dates on the <a href=\"/tours/lets-get-local\">tour page</a> or by <a href=\"" + WHATSAPP + "\">WhatsApp</a>.",
+        html: "The morning visit finishes at 11:30 am, which leaves the afternoon for the beach or the waterfall, and either visit leaves the evening free for the <a href=\"/tours/nocturno-night-journey\">Nocturno Night Journey</a>. Request dates on the <a href=\"/tours/lets-get-local\">tour page</a> or by <a href=\"" + WHATSAPP + "\">WhatsApp</a>.",
       },
     ],
     faq: [

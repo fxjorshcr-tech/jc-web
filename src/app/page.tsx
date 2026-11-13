@@ -5,6 +5,7 @@ import { TapBadge } from "@/components/site/tap-badge";
 import { Button } from "@/components/ui/button";
 import { CtaBand } from "@/components/site/cta-band";
 import { JsonLd } from "@/components/site/json-ld";
+import { OptionalJourneys } from "@/components/site/optional-journeys";
 import { SectionHeading } from "@/components/site/section-heading";
 import { TestimonialCard } from "@/components/site/testimonial-card";
 import { TourCard } from "@/components/site/tour-card";
@@ -168,6 +169,7 @@ export default function HomePage() {
             </p>
           </div>
         </div>
+        <OptionalJourneys className="mt-6" />
       </section>
 
       {/* Why tour */}
