@@ -14,7 +14,7 @@ import { home, whyTour } from "@/data/content";
 import { sustainabilityMeasures } from "@/data/faq";
 import { site } from "@/data/site";
 import { featuredTestimonials } from "@/data/testimonials";
-import { tours } from "@/data/tours";
+import { MIN_GUESTS, VAT_LABEL, tours } from "@/data/tours";
 import { whatsappUrl } from "@/lib/whatsapp";
 
 const facts = [
@@ -162,10 +162,13 @@ export default function HomePage() {
           <div className="flex flex-col justify-between rounded-xl bg-olive-100 p-6 sm:p-8">
             <div>
               <p className="eyebrow">Good to know</p>
-              <p className="mt-3 font-serif text-xl leading-snug text-ink">Prices depend on where we pick you up, so we confirm yours when you book.</p>
+              <p className="mt-3 font-serif text-xl leading-snug text-ink">
+                Prices include pickup at your hotel or Airbnb in the Santa Teresa, Montezuma and Tambor areas.
+              </p>
             </div>
             <p className="mt-6 text-sm leading-relaxed text-ink-soft">
-              Book on any tour page. We contact you as soon as possible with the price and payment details, and to confirm your hotel and pickup time.
+              Have your own transportation? The tour pages list a lower rate without pickup. Prices are in US dollars, plus {VAT_LABEL}, for a minimum
+              of {MIN_GUESTS} guests. Book on any tour page: no payment is taken online, we contact you with the payment details and your pickup time.
             </p>
           </div>
         </div>

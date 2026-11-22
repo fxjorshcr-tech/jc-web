@@ -12,12 +12,14 @@ import { Button } from "@/components/ui/button";
 import { DatePicker, formatDisplayDate } from "@/components/ui/date-picker";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { MIN_GUESTS, VAT_LABEL, priceUnit, rateSummary, type TourPricing } from "@/data/tours";
 import { track } from "@/lib/analytics";
+import { cn } from "@/lib/utils";
 import { bookingSchema, type BookingInput, type BookingValues } from "@/lib/validations/booking";
 
 interface BookingFormProps {
   /** The tour this form books. Each tour page books its own tour only. */
-  tour: { slug: string; name: string };
+  tour: { slug: string; name: string; pricing: TourPricing };
 }
 
 export function BookingForm({ tour }: BookingFormProps) {
@@ -41,6 +43,7 @@ export function BookingForm({ tour }: BookingFormProps) {
       email: "",
       phone: "",
       hotel: "",
+      transport: "pickup",
       adults: 2,
       children: 0,
       groupNames: "",
@@ -49,8 +52,22 @@ export function BookingForm({ tour }: BookingFormProps) {
     },
   });
 
-  const { register, control, handleSubmit, formState, setError } = form;
+  const { register, control, handleSubmit, formState, setError, watch } = form;
   const errors = formState.errors;
+  const { pricing } = tour;
+  const unit = priceUnit(pricing);
+  const ownTransport = watch("transport") === "own" && !!pricing.ownTransport;
+  const transportOptions = pricing.ownTransport
+    ? [
+        { value: "pickup", label: "Pick us up", detail: `From ${pricing.pickupAreas}`, price: pricing.withPickup },
+        {
+          value: "own",
+          label: "We have our own transportation",
+          detail: pricing.ownTransport.guideOnly ? "Guide service only" : "We meet you at the starting point",
+          price: pricing.ownTransport.price,
+        },
+      ]
+    : [];
 
   const onSubmit = handleSubmit((values) => {
     setServerError(null);
@@ -101,6 +118,10 @@ export function BookingForm({ tour }: BookingFormProps) {
                 {success.values.adults} adult{success.values.adults === 1 ? "" : "s"}
                 {success.values.children ? `, ${success.values.children} child${success.values.children === 1 ? "" : "ren"} under 12` : ""}
               </dd>
+            </div>
+            <div>
+              <dt className="text-ink-soft">Rate</dt>
+              <dd className="font-semibold text-ink">{rateSummary(tour.pricing, success.values.transport)}</dd>
             </div>
           </dl>
           <p className="mt-6 text-sm text-ink-soft">
@@ -161,6 +182,37 @@ export function BookingForm({ tour }: BookingFormProps) {
         </Field>
       </div>
 
+      {transportOptions.length > 0 && (
+        <fieldset className="flex flex-col gap-1.5">
+          <legend className="mb-1.5 text-sm font-semibold text-ink">Transportation</legend>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {transportOptions.map((option) => (
+              <label
+                key={option.value}
+                className={cn(
+                  "flex cursor-pointer items-start gap-3 rounded-md border bg-white/70 px-4 py-3 transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-olive-500/30",
+                  "has-[:checked]:border-olive-600 has-[:checked]:bg-olive-50",
+                  "border-input hover:border-olive-400",
+                )}
+              >
+                <input type="radio" value={option.value} className="mt-1 size-4 shrink-0 accent-olive-700" {...register("transport")} />
+                <span className="flex-1">
+                  <span className="block text-sm font-semibold leading-snug text-ink">{option.label}</span>
+                  <span className="mt-0.5 block text-xs leading-snug text-ink-soft">{option.detail}</span>
+                </span>
+                <span className="shrink-0 text-right">
+                  <span className="block font-serif text-lg leading-none text-ink">${option.price}</span>
+                  <span className="mt-1 block text-xs text-ink-soft">{unit}</span>
+                </span>
+              </label>
+            ))}
+          </div>
+          <p className="text-xs text-ink-soft">
+            US dollars, plus {VAT_LABEL}. Minimum {MIN_GUESTS} guests.
+          </p>
+        </fieldset>
+      )}
+
       <div className="grid gap-6 sm:grid-cols-2">
         <Field id="name" label="Name" required error={errors.name?.message}>
           <Input id="name" autoComplete="name" aria-invalid={!!errors.name} {...register("name")} />
@@ -174,7 +226,7 @@ export function BookingForm({ tour }: BookingFormProps) {
         <Field id="phone" label="Phone" error={errors.phone?.message} hint="Include your country code. WhatsApp is welcome.">
           <Input id="phone" type="tel" autoComplete="tel" inputMode="tel" aria-invalid={!!errors.phone} {...register("phone")} />
         </Field>
-        <Field id="hotel" label="Hotel or Airbnb" error={errors.hotel?.message} hint="Where should we pick you up?">
+        <Field id="hotel" label="Hotel or Airbnb" error={errors.hotel?.message} hint={ownTransport ? "Where are you staying?" : "Where should we pick you up?"}>
           <Input id="hotel" autoComplete="organization" aria-invalid={!!errors.hotel} {...register("hotel")} />
         </Field>
       </div>
@@ -209,7 +261,10 @@ export function BookingForm({ tour }: BookingFormProps) {
 
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-xs leading-relaxed text-ink-soft sm:max-w-sm">
-          Prices depend on your pickup point, so we send yours with the payment details. No payment is taken on this website.
+          {pricing.ownTransport
+            ? "We confirm your total and send the payment details by email."
+            : `$${pricing.withPickup} ${unit} (1 or 2 riders), plus ${VAT_LABEL}. We confirm your total and send the payment details by email.`}{" "}
+          No payment is taken on this website.
         </p>
         <Button type="submit" size="lg" disabled={pending} className="sm:min-w-56">
           {pending ? (

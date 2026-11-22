@@ -7,6 +7,28 @@ export interface TourImage {
 
 export type TourStatus = "available" | "coming-soon";
 
+/** Sales tax (IVA) added on top of every listed price. */
+export const VAT_LABEL = "13% VAT";
+/** Per-person tours run with at least this many guests. */
+export const MIN_GUESTS = 2;
+
+export interface TourPricing {
+  /** How the price is charged. An ATV carries one or two riders at the same price. */
+  per: "person" | "atv";
+  /** USD before VAT, with pickup at the guest's hotel or Airbnb in `pickupAreas`. */
+  withPickup: number;
+  /** Where the pickup price applies. Anywhere else is quoted separately. */
+  pickupAreas: string;
+  /** USD before VAT for guests who use their own transportation. Omitted when not offered. */
+  ownTransport?: {
+    price: number;
+    /** True when the price covers the guide's service only. */
+    guideOnly: boolean;
+  };
+}
+
+export type TransportChoice = "pickup" | "own";
+
 export interface Tour {
   slug: string;
   name: string;
@@ -30,11 +52,15 @@ export interface Tour {
   video?: { embedUrl: string; title: string };
   /** Approximate duration in ISO 8601 for structured data, e.g. "PT3H". */
   duration?: string;
+  pricing: TourPricing;
 }
+
+const PICKUP_ALL = "Santa Teresa, Montezuma or Tambor";
 
 /** Notes that apply to every tour (from the current site). */
 export const commonTourNotes = [
-  "Price is based on pick up at your hotel or Airbnb in the southern Nicoya Peninsula. Price will vary for pick ups outside this area.",
+  `Prices are in US dollars, before ${VAT_LABEL}. Prices with transportation include pick up at your hotel or Airbnb in the Santa Teresa, Montezuma and Tambor areas (Santa Teresa and Montezuma for the ATV journey). Price will vary for pick ups outside these areas.`,
+  `Per-person journeys run with a minimum of ${MIN_GUESTS} guests. Traveling solo? Ask us.`,
   "We recommend bringing a refillable water bottle or canteen to help reduce plastic waste.",
 ];
 
@@ -67,6 +93,7 @@ export const tours: Tour[] = [
     status: "available",
     suitableForSmallChildren: false,
     duration: "PT2H",
+    pricing: { per: "person", withPickup: 70, pickupAreas: PICKUP_ALL, ownTransport: { price: 45, guideOnly: false } },
   },
   {
     slug: "bird-lovers-morning",
@@ -93,6 +120,7 @@ export const tours: Tour[] = [
     status: "available",
     suitableForSmallChildren: true,
     duration: "PT4H30M",
+    pricing: { per: "person", withPickup: 85, pickupAreas: PICKUP_ALL, ownTransport: { price: 60, guideOnly: false } },
   },
   {
     slug: "curu-nature-escape",
@@ -119,6 +147,7 @@ export const tours: Tour[] = [
     status: "available",
     suitableForSmallChildren: true,
     duration: "PT5H30M",
+    pricing: { per: "person", withPickup: 95, pickupAreas: PICKUP_ALL, ownTransport: { price: 50, guideOnly: true } },
   },
   {
     slug: "lets-get-local",
@@ -148,6 +177,7 @@ export const tours: Tour[] = [
     status: "available",
     suitableForSmallChildren: true,
     duration: "PT4H",
+    pricing: { per: "person", withPickup: 105, pickupAreas: PICKUP_ALL, ownTransport: { price: 50, guideOnly: true } },
   },
   {
     slug: "finca-el-paraiso-atv",
@@ -163,7 +193,7 @@ export const tours: Tour[] = [
     when: "Morning departure, about half a day. Days on request; we confirm times when you book.",
     where: "Hill roads above Montezuma and Finca El Paraíso",
     whatToBring: ["Closed shoes", "Clothes you don't mind getting muddy", "Sunblock", "Insect Repellent", "Water*", "Swimsuit and towel", "Driver's license (to drive an ATV)"],
-    whatsIncluded: ["ATV and helmet", "Guide", "Waterfall and viewpoint stops", "Meal at the finca"],
+    whatsIncluded: ["ATV and helmet", "Guide", "Waterfall and viewpoint stops", "Meal at the finca", "Transportation*"],
     notes: [
       "A valid driver's license is required to drive an ATV. Younger guests can ride as passengers with an adult; ask us about minimum ages.",
       "Private departures only. The route can be shortened or adapted to the group and to the state of the roads in the green season.",
@@ -177,6 +207,7 @@ export const tours: Tour[] = [
     ],
     status: "available",
     suitableForSmallChildren: true,
+    pricing: { per: "atv", withPickup: 180, pickupAreas: "Santa Teresa or Montezuma" },
   },
 ];
 
@@ -185,6 +216,19 @@ export function getTour(slug: string) {
 }
 
 export const tourSlugs = tours.map((t) => t.slug);
+
+/** "per person", or "per ATV" for the journeys charged by vehicle. */
+export function priceUnit(pricing: TourPricing) {
+  return pricing.per === "atv" ? "per ATV" : "per person";
+}
+
+/** The rate a booking falls under, in one line: "Hotel pickup: $70 per person + 13% VAT". */
+export function rateSummary(pricing: TourPricing, transport: TransportChoice = "pickup") {
+  const own = transport === "own" ? pricing.ownTransport : undefined;
+  const unit = pricing.per === "atv" ? "per ATV (1 or 2 riders)" : "per person";
+  const label = own ? (own.guideOnly ? "Own transportation, guide only" : "Own transportation") : "Hotel pickup";
+  return `${label}: $${own ? own.price : pricing.withPickup} ${unit} + ${VAT_LABEL}`;
+}
 
 /** Extra journeys arranged on request. No tour page: guests ask about them on WhatsApp. */
 export interface OptionalJourney {

@@ -12,7 +12,7 @@ import { WhatsAppIcon } from "@/components/site/whatsapp-icon";
 import { booking } from "@/data/content";
 import { site } from "@/data/site";
 import { whatsappUrl } from "@/lib/whatsapp";
-import { commonTourNotes, getTour, tours } from "@/data/tours";
+import { MIN_GUESTS, VAT_LABEL, commonTourNotes, getTour, priceUnit, tours } from "@/data/tours";
 import { getTourGallery } from "@/lib/tour-photos";
 import { cn } from "@/lib/utils";
 
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const { slug } = await params;
   const tour = getTour(slug);
   if (!tour) return {};
-  const description = `${tour.summary} ${tour.when} Book online.`.slice(0, 300);
+  const description = `${tour.summary} $${tour.pricing.withPickup} ${priceUnit(tour.pricing)} with hotel pickup. Book online.`.slice(0, 300);
   return {
     title: tour.name,
     description,
@@ -68,6 +68,22 @@ export default async function TourPage({ params }: { params: Promise<Params> }) 
     { icon: Baby, label: "Children", value: tour.suitableForSmallChildren ? "Suitable for all ages" : "Not for small children" },
   ];
 
+  const { pricing } = tour;
+  const unit = priceUnit(pricing);
+  const rates = [
+    { label: "With hotel pickup", detail: `From ${pricing.pickupAreas}`, price: pricing.withPickup },
+    ...(pricing.ownTransport
+      ? [
+          {
+            label: "With your own transportation",
+            detail: pricing.ownTransport.guideOnly ? "Guide service only" : "You meet us at the starting point",
+            price: pricing.ownTransport.price,
+          },
+        ]
+      : []),
+  ];
+  const offerBase = { priceCurrency: "USD", url: `${site.url}/tours/${tour.slug}#book`, availability: "https://schema.org/InStock" };
+
   const touristTrip = {
     "@context": "https://schema.org",
     "@type": "TouristTrip",
@@ -88,13 +104,13 @@ export default async function TourPage({ params }: { params: Promise<Params> }) 
       email: site.email,
       telephone: site.whatsapp.international,
     },
-    offers: {
+    offers: rates.map((rate) => ({
       "@type": "Offer",
-      url: `${site.url}/tours/${tour.slug}#book`,
-      availability: "https://schema.org/InStock",
-      priceCurrency: "USD",
-      description: "Price on request. Quotes depend on pickup location and group size.",
-    },
+      ...offerBase,
+      name: rate.label,
+      price: rate.price,
+      description: `${rate.detail}. $${rate.price} ${unit}, plus ${VAT_LABEL}.`,
+    })),
     ...(tour.duration ? { duration: tour.duration } : {}),
   };
 
@@ -202,12 +218,24 @@ export default async function TourPage({ params }: { params: Promise<Params> }) 
 
               {/* Price / CTA */}
               <div className="border-t border-border/70 bg-olive-100 p-6 sm:p-7">
-                <div className="flex items-baseline justify-between gap-4">
-                  <p className="eyebrow">Price</p>
-                  <p className="font-serif text-xl text-ink">On request</p>
-                </div>
-                <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-                  The price depends on pickup location and group size. Book below and we contact you as soon as possible with the price and payment details, and to confirm your hotel and pickup time.
+                <p className="eyebrow">Price</p>
+                <dl className="mt-3 divide-y divide-ink/10 border-y border-ink/10">
+                  {rates.map((rate) => (
+                    <div key={rate.label} className="flex items-start justify-between gap-4 py-3">
+                      <dt>
+                        <span className="block text-[0.95rem] font-semibold leading-snug text-ink">{rate.label}</span>
+                        <span className="mt-0.5 block text-sm leading-snug text-ink-soft">{rate.detail}</span>
+                      </dt>
+                      <dd className="shrink-0 text-right">
+                        <span className="block font-serif text-2xl leading-none text-ink">${rate.price}</span>
+                        <span className="mt-1 block text-xs text-ink-soft">{unit}</span>
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+                <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+                  US dollars, plus {VAT_LABEL}. {pricing.per === "atv" ? "One or two riders share an ATV at the same price." : `Minimum ${MIN_GUESTS} guests.`} Pickups
+                  outside {pricing.per === "atv" ? "Santa Teresa and Montezuma" : "these areas"} are quoted on request. No payment is taken on this website.
                 </p>
                 <Button asChild size="lg" className="mt-4 w-full">
                   <a href="#book">Book this tour</a>
@@ -258,7 +286,7 @@ export default async function TourPage({ params }: { params: Promise<Params> }) 
             </p>
           </div>
           <div className="rounded-xl border border-border/70 bg-card p-6 sm:p-8 lg:col-span-8">
-            <BookingForm tour={{ slug: tour.slug, name: tour.name }} />
+            <BookingForm tour={{ slug: tour.slug, name: tour.name, pricing }} />
           </div>
         </div>
       </section>

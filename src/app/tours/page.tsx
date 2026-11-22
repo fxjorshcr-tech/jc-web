@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Clock, MapPin } from "lucide-react";
+import { ArrowRight, Clock, MapPin, Tag } from "lucide-react";
 import { Photo } from "@/components/photo";
 import { Button } from "@/components/ui/button";
 import { CtaBand } from "@/components/site/cta-band";
 import { OptionalJourneys } from "@/components/site/optional-journeys";
 import { PageHero } from "@/components/site/page-hero";
 import { home } from "@/data/content";
-import { commonTourNotes, tours } from "@/data/tours";
+import { commonTourNotes, priceUnit, tours } from "@/data/tours";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Tours",
   description:
-    "Five natural and cultural journeys from Santa Teresa, Malpaís and Montezuma, Costa Rica: Nocturno night journey, Bird Lover's Morning, Curu Nature Escape, Let's Get Local organic farm visit and the Finca El Paraíso ATV journey. Request a quote.",
+    "Five natural and cultural journeys from Santa Teresa, Malpaís and Montezuma, Costa Rica: Nocturno night journey, Bird Lover's Morning, Curu Nature Escape, Let's Get Local organic farm visit and the Finca El Paraíso ATV journey. From $70 per person with hotel pickup.",
   alternates: { canonical: "/tours" },
   openGraph: { title: "Tours | JC's Journeys", description: "Five natural and cultural journeys on the southern Nicoya Peninsula: Santa Teresa, Malpaís and Montezuma.", url: "/tours" },
 };
@@ -28,7 +28,7 @@ export default function ToursPage() {
             Five journeys across the <em className="font-light">southern peninsula</em>
           </>
         }
-        intro={<p>{home.toursIntro} Prices are quoted per request: they depend on your pickup point and the size of your group.</p>}
+        intro={<p>{home.toursIntro} Prices include pickup at your hotel or Airbnb, with a lower rate if you have your own transportation.</p>}
       />
 
       <section className="container-site">
@@ -59,6 +59,17 @@ export default function ToursPage() {
                     <dt className="sr-only">Where</dt>
                     <MapPin className="mt-0.5 size-4 shrink-0 text-olive-700" />
                     <dd>{tour.where}</dd>
+                  </div>
+                  <div className="flex gap-2">
+                    <dt className="sr-only">Price</dt>
+                    <Tag className="mt-0.5 size-4 shrink-0 text-olive-700" />
+                    <dd>
+                      <strong className="font-semibold text-ink">
+                        ${tour.pricing.withPickup} {priceUnit(tour.pricing)}
+                      </strong>{" "}
+                      {tour.pricing.per === "atv" ? "(1 or 2 riders)" : "with hotel pickup"}
+                      {tour.pricing.ownTransport && `, $${tour.pricing.ownTransport.price} with your own transportation`}
+                    </dd>
                   </div>
                 </dl>
                 <div className="mt-7 flex flex-wrap items-center gap-4">

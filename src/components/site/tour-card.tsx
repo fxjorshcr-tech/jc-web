@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight, Clock, MapPin } from "lucide-react";
 import { Photo } from "@/components/photo";
-import type { Tour } from "@/data/tours";
+import { priceUnit, type Tour } from "@/data/tours";
 import { cn } from "@/lib/utils";
 
 interface TourCardProps {
@@ -53,7 +53,10 @@ export function TourCard({ tour, index, className, featured }: TourCardProps) {
           </div>
         </dl>
         <div className="mt-auto flex items-center justify-between pt-6">
-          <span className="text-xs font-semibold uppercase tracking-[0.16em] text-olive-700">Book this tour</span>
+          <p className="text-sm text-ink-soft">
+            <span className="font-serif text-xl text-ink">${tour.pricing.withPickup}</span> {priceUnit(tour.pricing)}
+            <span className="block text-xs">{tour.pricing.per === "atv" ? "1 or 2 riders" : "Hotel pickup included"}</span>
+          </p>
           <ArrowUpRight className="size-5 text-ink transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
         </div>
       </div>

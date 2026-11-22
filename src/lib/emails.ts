@@ -1,6 +1,6 @@
 import { site } from "@/data/site";
 import { EMAIL_LOGO_CID } from "@/lib/email-logo";
-import type { Tour } from "@/data/tours";
+import { rateSummary, type Tour } from "@/data/tours";
 import type { BookingValues } from "@/lib/validations/booking";
 import type { HireValues } from "@/lib/validations/hire";
 
@@ -34,7 +34,7 @@ const MONO = "'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace";
 /** Tours that have a banner in /public/images/email/tours/<slug>.jpg (1200x520). */
 const EMAIL_BANNERS = new Set(["nocturno-night-journey", "bird-lovers-morning", "curu-nature-escape", "lets-get-local", "finca-el-paraiso-atv"]);
 
-type EmailTour = Pick<Tour, "slug" | "name" | "whatToBring">;
+type EmailTour = Pick<Tour, "slug" | "name" | "whatToBring" | "pricing">;
 type Row = [label: string, value: string | number | null | undefined];
 
 function escapeHtml(s: string) {
@@ -249,13 +249,14 @@ export function bookingCustomerEmail(b: BookingValues, tour: EmailTour, code: st
     ["Tour", tour.name],
     ["Preferred date", formatDate(b.preferredDate)],
     ["Guests", guests(b)],
-    ["Pickup / hotel", b.hotel || "To be confirmed with you"],
+    [b.transport === "own" ? "Hotel" : "Pickup / hotel", b.hotel || "To be confirmed with you"],
+    ["Rate", rateSummary(tour.pricing, b.transport)],
     ["In your group", b.groupNames],
     ["Special requests", b.specialRequests],
   ];
   const next = [
-    "We contact you as soon as possible with the <strong>price and payment details</strong>.",
-    "We confirm your <strong>hotel pickup and the exact time</strong>.",
+    "We contact you as soon as possible with your <strong>total and the payment details</strong>.",
+    b.transport === "own" ? "We confirm the <strong>meeting point and the exact time</strong>." : "We confirm your <strong>hotel pickup and the exact time</strong>.",
     "You meet JC and enjoy the journey.",
   ];
   const bring = tour.whatToBring.map((item) => item.replace(/\*+$/, "").trim()).filter(Boolean);
@@ -288,8 +289,8 @@ Mention it whenever you write to us.
 ${textRows(rows)}
 
 What happens next
-1. We contact you as soon as possible with the price and payment details.
-2. We confirm your hotel pickup and the exact time.
+1. We contact you as soon as possible with your total and the payment details.
+2. ${b.transport === "own" ? "We confirm the meeting point and the exact time." : "We confirm your hotel pickup and the exact time."}
 3. You meet JC and enjoy the journey.
 ${bring.length ? `\nWhat to bring: ${bring.join(", ")}\n` : ""}
 Something to change or a question? Reply to this email or message us on WhatsApp: ${site.whatsapp.display}
@@ -310,13 +311,14 @@ export function bookingNotifyEmail(b: BookingValues, tour: EmailTour, code: stri
     ["Name", b.name],
     ["Email", b.email],
     ["Phone", b.phone],
-    ["Hotel / pickup", b.hotel || "Not given yet"],
+    [b.transport === "own" ? "Hotel (own transportation)" : "Hotel / pickup", b.hotel || "Not given yet"],
   ];
   const bookingRows: Row[] = [
     ["Booking code", code],
     ["Tour", tour.name],
     ["Preferred date", date],
     ["Guests", guests(b)],
+    ["Rate", rateSummary(tour.pricing, b.transport)],
     ["Group members", b.groupNames],
   ];
 
@@ -333,7 +335,7 @@ export function bookingNotifyEmail(b: BookingValues, tour: EmailTour, code: stri
 ${b.specialRequests ? note("Special requests", multiline(b.specialRequests)) : ""}
 ${details("Guest", guestRows)}
 ${details("Booking", bookingRows)}
-${steps("To do", ["Send the <strong>price and payment details</strong>.", "Confirm the <strong>hotel pickup and exact time</strong>."])}`,
+${steps("To do", ["Send the <strong>total and payment details</strong>.", b.transport === "own" ? "Confirm the <strong>meeting point and exact time</strong>." : "Confirm the <strong>hotel pickup and exact time</strong>."])}`,
   });
 
   const text = `New booking ${code}
@@ -348,8 +350,8 @@ BOOKING
 ${textRows([...bookingRows, ["Special requests", b.specialRequests]])}
 
 To do
-1. Send the price and payment details.
-2. Confirm the hotel pickup and exact time.
+1. Send the total and payment details.
+2. ${b.transport === "own" ? "Confirm the meeting point and exact time." : "Confirm the hotel pickup and exact time."}
 
 Reply to this email to write to the guest.`;
 
