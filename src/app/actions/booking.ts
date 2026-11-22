@@ -15,13 +15,14 @@ export async function submitBooking(input: unknown): Promise<BookingResult> {
   if (!parsed.success) {
     return { ok: false, message: "Please review the highlighted fields.", fieldErrors: z.flattenError(parsed.error).fieldErrors };
   }
-  const data = parsed.data;
-
   // Honeypot filled in: pretend success without doing anything.
-  if (data.website) return { ok: true, code: generateBookingCode(), confirmationSent: true };
+  if (parsed.data.website) return { ok: true, code: generateBookingCode(), confirmationSent: true };
 
-  const tour = getTour(data.tourSlug);
+  const tour = getTour(parsed.data.tourSlug);
   if (!tour) return { ok: false, message: "Unknown tour. Please choose a tour from the list." };
+
+  // The own-transportation rate only exists on some tours.
+  const data = { ...parsed.data, transport: tour.pricing.ownTransport ? parsed.data.transport : ("pickup" as const) };
 
   // Store the request. Email is the source of truth, so a storage problem must not lose the booking.
   const row: Omit<BookingRow, "code"> = {
@@ -33,6 +34,7 @@ export async function submitBooking(input: unknown): Promise<BookingResult> {
     email: data.email,
     phone: data.phone || null,
     hotel: data.hotel || null,
+    transport: data.transport,
     adults: data.adults,
     children: data.children,
     group_names: data.groupNames,
@@ -44,12 +46,17 @@ export async function submitBooking(input: unknown): Promise<BookingResult> {
   let stored = false;
   try {
     const supabase = getSupabaseAdmin();
+    let payload: Partial<typeof row> = row;
     for (let attempt = 0; attempt < 5 && !stored; attempt++) {
-      if (attempt > 0) code = generateBookingCode();
-      const { error } = await supabase.from("bookings").insert({ ...row, code });
+      const { error } = await supabase.from("bookings").insert({ ...payload, code });
       if (!error) {
         stored = true;
-      } else if (error.code !== "23505") {
+      } else if (error.code === "23505") {
+        code = generateBookingCode();
+      } else if (error.code === "PGRST204" && payload.transport) {
+        // The `transport` column is not in the database yet (see supabase/schema.sql): store the rest, the emails carry the choice.
+        payload = { ...row, transport: undefined };
+      } else {
         console.error("[booking] insert failed", error);
         break;
       }

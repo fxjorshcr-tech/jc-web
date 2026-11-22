@@ -31,6 +31,7 @@ export interface BookingRow {
   email: string;
   phone: string | null;
   hotel: string | null;
+  transport: "pickup" | "own";
   adults: number;
   children: number;
   group_names: string;

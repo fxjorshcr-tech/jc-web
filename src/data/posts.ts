@@ -169,7 +169,7 @@ export const posts: BlogPost[] = [
         type: "list",
         ordered: false,
         items: [
-          "<strong>Pickups:</strong> our journeys start at your hotel or Airbnb in Santa Teresa or Malpaís. The price depends on your pickup point and the size of your group, so tell us where you are staying.",
+          "<strong>Pickups:</strong> our journeys start at your hotel or Airbnb in Santa Teresa or Malpaís, and the pickup is included in the price of each tour. Tell us where you are staying when you book.",
           "<strong>Go early:</strong> wildlife is most active from first light to about 9 am, and the heat builds by late morning. A dawn tour still leaves you the whole afternoon for the beach.",
           "<strong>Combine:</strong> Bird Lover's Morning or Let's Get Local in the morning and Nocturno after dinner make a full nature day without a single surfboard.",
           "<strong>Season:</strong> the dry season (December to April) is best for dusty roads and easy wildlife viewing; the green season (May to November) brings full waterfalls, frogs and empty trails. Our <a href=\"/blog/best-time-to-visit-montezuma\">month-by-month guide</a> covers both.",
@@ -199,7 +199,7 @@ export const posts: BlogPost[] = [
       },
       {
         question: "Do your tours pick up in Santa Teresa and Malpaís?",
-        answer: "Yes. Our journeys start at your hotel or Airbnb in Santa Teresa or Malpaís. The price depends on your pickup point and the size of your group.",
+        answer: "Yes. Our journeys start at your hotel or Airbnb in Santa Teresa or Malpaís, and the pickup is included in the price of each tour.",
       },
       {
         question: "What is the best wildlife tour near Santa Teresa?",

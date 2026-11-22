@@ -17,6 +17,8 @@ export const bookingSchema = z.object({
   email: z.email("Please enter a valid email address"),
   phone: optionalText(40),
   hotel: optionalText(160),
+  /** Hotel pickup, or the lower rate for guests with their own transportation (where the tour offers it). */
+  transport: z.enum(["pickup", "own"]).default("pickup"),
   adults: z.coerce.number({ message: "How many adults?" }).int().min(1, "At least one adult").max(40, "For groups this large, please email us"),
   children: z.coerce.number({ message: "Enter 0 if none" }).int().min(0, "Enter 0 if none").max(40),
   groupNames: z.string().trim().min(2, "Please list the names of each member of your group").max(2000),

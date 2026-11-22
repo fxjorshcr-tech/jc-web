@@ -20,7 +20,9 @@ create table if not exists public.bookings (
   email             text not null,
   phone             text,
   hotel             text,
-  adults            integer not null check (adults >= 1),
+  transport         text not null default 'pickup'
+                    check (transport in ('pickup', 'own')),      -- hotel pickup, or the guest's own transportation
+  adults           integer not null check (adults >= 1),
   children          integer not null default 0 check (children >= 0),
   group_names       text not null,
   special_requests  text,
@@ -31,6 +33,10 @@ create table if not exists public.bookings (
   created_at        timestamptz not null default now(),
   updated_at        timestamptz not null default now()
 );
+
+-- Databases created before the transport choice existed: add the column.
+alter table public.bookings
+  add column if not exists transport text not null default 'pickup' check (transport in ('pickup', 'own'));
 
 comment on table public.bookings is 'Tour booking requests submitted from jcsjourneys.com. Status moves pending -> confirmed -> paid, or cancelled.';
 

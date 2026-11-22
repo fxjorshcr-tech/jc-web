@@ -16,7 +16,7 @@ export const faq: FaqItem[] = [
     id: "santa-teresa",
     question: "Do you pick up in Santa Teresa and Malpaís?",
     answer:
-      "Yes. Our journeys start at your hotel or Airbnb, whether you are staying in Santa Teresa, Malpaís, Montezuma, Cabuya or elsewhere on the southern peninsula. The price depends on your pickup point and the size of your group, so tell us where you are staying when you book. See our list of [things to do in Santa Teresa beyond surfing](/blog/things-to-do-in-santa-teresa-beyond-surfing).",
+      "Yes. Our journeys start at your hotel or Airbnb, whether you are staying in Santa Teresa, Malpaís, Montezuma, Cabuya or elsewhere on the southern peninsula. The prices on each [tour page](/tours) include pickup in the Santa Teresa, Montezuma and Tambor areas, and there is a lower rate if you have your own transportation. Tell us where you are staying when you book. See our list of [things to do in Santa Teresa beyond surfing](/blog/things-to-do-in-santa-teresa-beyond-surfing).",
   },
   {
     id: "payment",
